@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="admin">
+<meta name="description"
+    content="In this post I would use Perfview /ETW to diagnose the delayed start-up of visual studio.
+To analyze the problem start-up VS within Perfview as a run command
+[gist https://gist.github.com/naveensrinivasan/5eb6406d6d38f2143acb]
+This would launch visual studio and collect etw traces. I have also enabled CodeMarkers , which is ETW traces for Visual Studio in case if you want to trace any extensions performance.
+After it completes I choose the CPU Stacks and filtered with devenv." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/p1469/" />
+
+
+<title>
+    
+    The case of slow Visual Studio startup :: naveen srinivasan  — Write code.Loves to read
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="theme-color" content="#252627">
+<meta itemprop="name" content="The case of slow Visual Studio startup">
+<meta itemprop="description" content="In this post I would use Perfview /ETW to diagnose the delayed start-up of visual studio.
+To analyze the problem start-up VS within Perfview as a run command
+[gist https://gist.github.com/naveensrinivasan/5eb6406d6d38f2143acb]
+This would launch visual studio and collect etw traces. I have also enabled CodeMarkers , which is ETW traces for Visual Studio in case if you want to trace any extensions performance.
+After it completes I choose the CPU Stacks and filtered with devenv.">
+
+
+<meta itemprop="datePublished" content="2015-05-20T01:23:35&#43;00:00" />
+<meta itemprop="dateModified" content="2015-05-20T01:23:35&#43;00:00" />
+<meta itemprop="wordCount" content="190">
+
+
+
+<meta itemprop="keywords" content="ETW,Perfview," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="The case of slow Visual Studio startup"/>
+<meta name="twitter:description" content="In this post I would use Perfview /ETW to diagnose the delayed start-up of visual studio.
+To analyze the problem start-up VS within Perfview as a run command
+[gist https://gist.github.com/naveensrinivasan/5eb6406d6d38f2143acb]
+This would launch visual studio and collect etw traces. I have also enabled CodeMarkers , which is ETW traces for Visual Studio in case if you want to trace any extensions performance.
+After it completes I choose the CPU Stacks and filtered with devenv."/>
+
+
+
+<meta property="article:section" content="ETW" />
+
+<meta property="article:published_time" content="2015-05-20 01:23:35 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">cd /home</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/posts">posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/p1469/">The case of slow Visual Studio startup</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>In this post I would use Perfview /ETW to diagnose the delayed start-up of visual studio.</p>
+
+<p>To analyze the problem start-up VS within Perfview as a run command</p>
+
+<p>[gist <a href="https://gist.github.com/naveensrinivasan/5eb6406d6d38f2143acb">https://gist.github.com/naveensrinivasan/5eb6406d6d38f2143acb</a>]</p>
+
+<p>This would launch visual studio and collect etw traces. I have also enabled CodeMarkers , which is ETW traces for Visual Studio in case if you want to trace any extensions performance.</p>
+
+<p><a href="https://naveensrinivasan.files.wordpress.com/2015/05/perfview-main.jpg"><img class="alignleft size-full wp-image-1474" src="https://naveensrinivasan.files.wordpress.com/2015/05/perfview-main.jpg" alt="perfview-main" width="660" height="353" srcset="https://www.naveensrinivasan.com/wp-content/uploads/2015/05/perfview-main.jpg 1000w, https://www.naveensrinivasan.com/wp-content/uploads/2015/05/perfview-main-300x161.jpg 300w, https://www.naveensrinivasan.com/wp-content/uploads/2015/05/perfview-main-768x411.jpg 768w" sizes="(max-width: 660px) 100vw, 660px" /></a>After it completes I choose the CPU Stacks and filtered with devenv.exe process.</p>
+
+<p>On the CPU window I choose call-tree tab which displays the threads.<a href="https://naveensrinivasan.files.wordpress.com/2015/05/perfviewcpuview.jpg"><img class="alignleft size-full wp-image-1475" src="https://naveensrinivasan.files.wordpress.com/2015/05/perfviewcpuview.jpg" alt="perfviewcpuview" width="660" height="501" srcset="https://www.naveensrinivasan.com/wp-content/uploads/2015/05/perfviewcpuview.jpg 961w, https://www.naveensrinivasan.com/wp-content/uploads/2015/05/perfviewcpuview-300x228.jpg 300w, https://www.naveensrinivasan.com/wp-content/uploads/2015/05/perfviewcpuview-768x583.jpg 768w" sizes="(max-width: 660px) 100vw, 660px" /></a>The most amount of time is spent on the start-up thread and that is what we want to zoom into.</p>
+
+<p><a href="https://naveensrinivasan.files.wordpress.com/2015/05/groupedcall-stacks.png"><img class="alignleft size-full wp-image-1477" src="https://naveensrinivasan.files.wordpress.com/2015/05/groupedcall-stacks.png" alt="groupedcall-stacks" width="660" height="426" srcset="https://www.naveensrinivasan.com/wp-content/uploads/2015/05/groupedcall-stacks.png 835w, https://www.naveensrinivasan.com/wp-content/uploads/2015/05/groupedcall-stacks-300x194.png 300w, https://www.naveensrinivasan.com/wp-content/uploads/2015/05/groupedcall-stacks-768x496.png 768w" sizes="(max-width: 660px) 100vw, 660px" /></a>When I expanded it does not show the information and everything is grouped into OTHER which does not help me.</p>
+
+<p>The reason for that is perfview groups call-stacks for better viewing. I cleared the &#8220;groupparts&#8221; textbox and then expanded the start-up thread.</p>
+
+<p><a href="https://naveensrinivasan.files.wordpress.com/2015/05/actualcallstacks.jpg"><img class="alignleft wp-image-1478 size-full" src="https://naveensrinivasan.files.wordpress.com/2015/05/actualcallstacks.jpg" alt="actualcallstacks" width="660" height="352" srcset="https://www.naveensrinivasan.com/wp-content/uploads/2015/05/actualcallstacks.jpg 1366w, https://www.naveensrinivasan.com/wp-content/uploads/2015/05/actualcallstacks-300x160.jpg 300w, https://www.naveensrinivasan.com/wp-content/uploads/2015/05/actualcallstacks-768x409.jpg 768w, https://www.naveensrinivasan.com/wp-content/uploads/2015/05/actualcallstacks-1024x546.jpg 1024w" sizes="(max-width: 660px) 100vw, 660px" /></a>From the call-stacks I could make almost 42% of time is spent on Xamarin and DevExpress extensions within VS. Now I could turn them off and have a better performance.</p>
+
+<p>Perfview is great tool for identifying where the time is being spent!</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="/tags/etw">ETW</a></span><span class="tag"><a href="/tags/perfview">Perfview</a></span>
+  				</p>
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+            <span></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.9e52e68b082cf2a30a7fead88260edb8818fbd7f7831e39674917d4539ec75df41ba88eaddfbd916594ab4fb2a31913b46cf2d6094cf80381edb8c632512a8ca.js" integrity="sha512-nlLmiwgs8qMKf&#43;rYgmDtuIGPvX94MeOWdJF9RTnsdd9Buojq3fvZFllKtPsqMZE7Rs8tYJTPgDge24xjJRKoyg=="></script>
+
+
+
+    </body>
+</html>

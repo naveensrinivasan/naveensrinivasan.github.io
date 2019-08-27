@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="admin">
+<meta name="description"
+    content="I happened to notice the new I happened to notice the new and it had COM based API for dbgeng. The sample code were in VB Script. I much comfortable writing managed code compared to VB script. So I decided to use COM based API in managed code.
+Here are couple of ways to solve certain problems using this
+ Parallel GC Roots :- Getting GC Roots from memory dump is the most time consuming because SOS is single threaded." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/p1168/" />
+
+
+<title>
+    
+    Using Managed Code to debug Memory Dumps :: naveen srinivasan  — Write code.Loves to read
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="theme-color" content="#252627">
+<meta itemprop="name" content="Using Managed Code to debug Memory Dumps">
+<meta itemprop="description" content="I happened to notice the new I happened to notice the new and it had COM based API for dbgeng. The sample code were in VB Script. I much comfortable writing managed code compared to VB script. So I decided to use COM based API in managed code.
+Here are couple of ways to solve certain problems using this
+ Parallel GC Roots :- Getting GC Roots from memory dump is the most time consuming because SOS is single threaded.">
+
+
+<meta itemprop="datePublished" content="2010-11-11T22:21:02&#43;00:00" />
+<meta itemprop="dateModified" content="2010-11-11T22:21:02&#43;00:00" />
+<meta itemprop="wordCount" content="932">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Using Managed Code to debug Memory Dumps"/>
+<meta name="twitter:description" content="I happened to notice the new I happened to notice the new and it had COM based API for dbgeng. The sample code were in VB Script. I much comfortable writing managed code compared to VB script. So I decided to use COM based API in managed code.
+Here are couple of ways to solve certain problems using this
+ Parallel GC Roots :- Getting GC Roots from memory dump is the most time consuming because SOS is single threaded."/>
+
+
+
+<meta property="article:section" content="Windbg" />
+
+<meta property="article:published_time" content="2010-11-11 22:21:02 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">cd /home</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/posts">posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/p1168/">Using Managed Code to debug Memory Dumps</a></h2>
+
+            
+
+            <div class="post-content">
+                
+
+<p>I happened to notice the new <a href="http://translate.google.com/translate?hl=en&amp;sl=pt&amp;u=http://blogs.technet.com/b/carnevale/archive/2010/10/04/debugdiag-1-2-beta1.aspx&amp;ei=dwbcTOe4DIGglAfc6uWuCQ&amp;sa=X&amp;oi=translate&amp;ct=result&amp;resnum=5&amp;ved=0CDkQ7gEwBA&amp;prev=/search%3Fq%3Ddebugdiag%2B1.2%26hl%3Den%26client%3Dfirefox-a%26hs%3DNUZ%26rls%3Dorg.mozilla:en-US:official%26prmd%3Div">I happened to notice the new</a> and it had COM based API for dbgeng. The sample code were in VB Script. I much comfortable writing managed code compared to VB script. So I  decided to use COM based API in managed code.</p>
+
+<p>Here are couple of ways to solve certain problems using this</p>
+
+<ol>
+<li><strong>Parallel GC Roots</strong> :- Getting GC Roots from memory dump is the most time consuming because SOS is single threaded. I use PFX to do them in parallel.</li>
+<li><strong>Reconstructing manged objects</strong> :- Creating an instance of an object by reading data from the memory dump.</li>
+</ol>
+
+<p>Need to add reference to the COM Library</p>
+
+<p><a href="http://104.197.135.42/wp-content/uploads/2010/11/dbghost2.png"><img class="alignnone size-full wp-image-1171" title="dbghost" src="http://104.197.135.42/wp-content/uploads/2010/11/dbghost2.png" alt="" width="700" height="403" /></a></p>
+
+<p>And in VS2010 (.NET 4.0) by default  COM Interop types have  Embed Interop Types turned on. I couldn&#8217;t compile the code with this option. I had to turn off Embed Interop types.</p>
+
+<p>Few extension methods for the DbgObj</p>
+
+<p>[sourcecode language=&#8221;csharp&#8221;]</p>
+
+<p>static class DbgExtensions {</p>
+
+<p>public static DbgObj OpenDump(this DbgControlClass dbg, string dumpPath) {</p>
+
+<p>var path = Environment.GetEnvironmentVariable(&rdquo;_NT_SYMBOL_PATH&rdquo;);</p>
+
+<p>return dbg.OpenDump(dumpPath, path, path, null);</p>
+
+<p>}</p>
+
+<p>public static void LoadSOS(this DbgObj dbg){</p>
+
+<p>// By default it only loads psscor2.dll and It will not work for .NET 4.0</p>
+
+<p>dbg.UnloadExtensions();</p>
+
+<p>// Will load sos based on the framework version</p>
+
+<p>var sos = dbg.GetModuleByModuleName(&ldquo;clr&rdquo;) == null ? &ldquo;.loadby sos mscorwks&rdquo; : &ldquo;.loadby sos clr&rdquo;;</p>
+
+<p>dbg.Execute(sos);</p>
+
+<p>}</p>
+
+<p>public static IEnumerable<string> DumpHeap(this DbgObj dbg, string typeorMT, bool isMT = false) {</p>
+
+<p>var parameter = isMT ? &ldquo;-MT &rdquo; : &ldquo;-type &ldquo;;</p>
+
+<p>return dbg.Execute(&ldquo;!dumpheap -short &rdquo; + parameter + typeorMT).Split(new[] { &ldquo;n&rdquo; },</p>
+
+<p>StringSplitOptions.RemoveEmptyEntries);</p>
+
+<p>}</p>
+
+<p>public static string GCRoot(this DbgObj dbg, string address) {</p>
+
+<p>return dbg.Execute(&ldquo;!GcRoot&rdquo; + address);</p>
+
+<p>}</p>
+
+<p>public static double ReadDouble(this DbgObj dbg, string address, string offset) {</p>
+
+<p>return (double)Int32.Parse(</p>
+
+<p>dbg.Execute(string.Format(&ldquo;dd {0}+{1} L1&rdquo;, address, offset)).Replace(&ldquo;n&rdquo;, &ldquo;&rdquo;)</p>
+
+<p>.Split(new[] { &ldquo; &rdquo; }, StringSplitOptions.RemoveEmptyEntries)</p>
+
+<p>.ElementAt(1),</p>
+
+<p>NumberStyles.AllowHexSpecifier);</p>
+
+<p>}</p>
+
+<p>public static string ReadString(this DbgObj dbg, string address, string offset) {</p>
+
+<p>// The managed string in x86 starts at 8th offset</p>
+
+<p>return dbg.ReadUnicodeString(ReadDouble(dbg, address, offset) + 8);</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>[/sourcecode]</p>
+
+<h3 id="parallel-gc-roots">Parallel GC Roots</h3>
+
+<p>Anybody who is debugged memory dumps for leaks understands the pain of running gcroots within a loop. AFAIK sos is single threaded.  I have had customers who had 24 way CPU&#8217;s who wanted to use all the CPU&#8217;s to debug memory leaks, but it wasn&#8217;t possible.</p>
+
+<p>Here is a code that would make parallel gc roots possible</p>
+
+<p>[sourcecode language=&#8221;csharp&#8221;]</p>
+
+<p>using System;</p>
+
+<p>using System.Collections.Generic;</p>
+
+<p>using System.Linq;</p>
+
+<p>using System.Globalization;</p>
+
+<p>using DbgHostLib;</p>
+
+<p>namespace ConsoleApplication1 {</p>
+
+<p>class Program {</p>
+
+<p>static void Main(string[] args) {</p>
+
+<p>var dump = new DbgControlClass().OpenDump(@&ldquo;C:TestClass.dmp&rdquo;).LoadSOS();</p>
+
+<p>var testInstances = dump.DumpHeap(&ldquo;Test.TestClass&rdquo;);</p>
+
+<p>var roots = testInstances.AsParallel().Select(testclass =&gt;</p>
+
+<p>new DbgControlClass().OpenDump(@&ldquo;C:TestClass.dmp&rdquo;).LoadSOS().GCRoot(testclass)).ToList();</p>
+
+<p>Console.Read();</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>static class DbgExtensions {</p>
+
+<p>public static DbgObj OpenDump(this DbgControlClass dbg, string dumpPath) {</p>
+
+<p>var path = Environment.GetEnvironmentVariable(&rdquo;_NT_SYMBOL_PATH&rdquo;);</p>
+
+<p>return dbg.OpenDump(dumpPath, path, path, null);</p>
+
+<p>}</p>
+
+<p>public static DbgObj LoadSOS(this DbgObj dbg){</p>
+
+<p>// By default it loads psscor2</p>
+
+<p>dbg.UnloadExtensions();</p>
+
+<p>// Will load sos based on the framework version</p>
+
+<p>var sos = dbg.GetModuleByModuleName(&ldquo;clr&rdquo;) == null ? &rdquo;.loadby sos mscorwks&rdquo; : &rdquo;.loadby sos clr&rdquo;;</p>
+
+<p>dbg.Execute(sos);</p>
+
+<p>return dbg;</p>
+
+<p>}</p>
+
+<p>public static IEnumerable<string> DumpHeap(this DbgObj dbg, string typeorMT, bool isMT = false) {</p>
+
+<p>var parameter = isMT ? &rdquo;-MT &rdquo; : &rdquo;-type &rdquo;;</p>
+
+<p>return dbg.Execute(&ldquo;!dumpheap -short &rdquo; + parameter + typeorMT).Split(new[] { &rdquo;n&rdquo; },</p>
+
+<p>StringSplitOptions.RemoveEmptyEntries);</p>
+
+<p>}</p>
+
+<p>public static string GCRoot(this DbgObj dbg, string address) {</p>
+
+<p>var s = dbg.IsClrExtensionMissing;</p>
+
+<p>return dbg.Execute(&ldquo;!gcroot &rdquo; + address);</p>
+
+<p>}</p>
+
+<p>public static double ReadDouble(this DbgObj dbg, string address, string offset) {</p>
+
+<p>return (double)Int32.Parse(</p>
+
+<p>dbg.Execute(string.Format(&ldquo;dd {0}+{1} L1&rdquo;, address, offset)).Replace(&ldquo;n&rdquo;, &rdquo;&ldquo;)</p>
+
+<p>.Split(new[] { &rdquo; &rdquo; }, StringSplitOptions.RemoveEmptyEntries)</p>
+
+<p>.ElementAt(1),</p>
+
+<p>NumberStyles.AllowHexSpecifier);</p>
+
+<p>}</p>
+
+<p>public static string ReadString(this DbgObj dbg, string address, string offset) {</p>
+
+<p>// The managed string in x86 starts at 8th offset</p>
+
+<p>return dbg.ReadUnicodeString(ReadDouble(dbg, address, offset) + 8);</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>[/sourcecode]</p>
+
+<p>The above code loads a memory dump and looks for object type &#8220;Test.TestClass&#8221; and gets its addresses. Then gets GCRoots in parallel using the AsParallel option.</p>
+
+<p><a href="http://104.197.135.42/wp-content/uploads/2010/11/parallelgcroots2.png"><img class="alignnone size-medium wp-image-1175" title="ParallelGCRoots" src="http://104.197.135.42/wp-content/uploads/2010/11/parallelgcroots2.png?w=300" alt="" width="300" height="96" /></a></p>
+
+<h3 id="reconstructing-manged-objects">Reconstructing manged objects</h3>
+
+<p>Using the same API it is pretty easy to create an actual instance of a class from a memory dump.  Here is the code for which I dumped the memory.</p>
+
+<p>[sourcecode language=&#8221;csharp&#8221;]</p>
+
+<p>using System;</p>
+
+<p>namespace Test {</p>
+
+<p>class Program {</p>
+
+<p>static Foo[] foo= new Foo[5];</p>
+
+<p>static void Main(string[] args) {</p>
+
+<p>for (int i = 0; i &lt; 5; i++)</p>
+
+<p>foo[i] = new Foo() { counter = i, Name = &rdquo;Name &rdquo; + i.ToString() };</p>
+
+<p>Console.WriteLine(foo);</p>
+
+<p>Console.Read();</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>class Foo {</p>
+
+<p>public int counter;</p>
+
+<p>public string Name;</p>
+
+<p>public override string ToString() {</p>
+
+<p>return string.Format(&ldquo;Counter :- {0} , Name :-  {1} &rdquo;, counter, Name);</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>[/sourcecode]</p>
+
+<p>Here is the memory structure of Foo</p>
+
+<blockquote>
+<p>0:005&gt; !do 00f1c660</p>
+
+<p>Name:        Test.Foo</p>
+
+<p>MethodTable: 009b38bc</p>
+
+<p>EEClass:     009b14a4</p>
+
+<p>Size:        16(0x10) bytes</p>
+
+<p>File:        C:FoobinDebugFoo.exe</p>
+
+<p>Fields:</p>
+
+<p>MT                  Field          Offset                    Type  VT     Attr    Value Name</p>
+
+<p>79ba2978  4000002        8         System.Int32  1 instance        2 counter</p>
+
+<p>79b9f9ac  4000003        4        System.String  0 instance 00f1c680 Name</p>
+</blockquote>
+
+<p>Notice the variable &#8220;Name&#8221; is in the 4th offset and counter is in the 8th offset. I use these offsets to read its contents from the dump.Here is the code that recreates instances of Foo from the memory dump.</p>
+
+<p>[sourcecode language=&#8221;csharp&#8221;]</p>
+
+<p>class Program {</p>
+
+<p>static void Main(string[] args) {</p>
+
+<p>var dump = new DbgControlClass().OpenDump(@&ldquo;C:tempFoo.dmp&rdquo;).LoadSOS();</p>
+
+<p>var foos = dump.DumpHeap(@&ldquo;Test.Foo&rdquo;);</p>
+
+<p>foos.Select(s =&gt; new Foo() { counter = (int)dump.ReadDouble(s, &rdquo;0x8&rdquo;), Name = dump.ReadString(s, &rdquo;0x4&rdquo;) }).</p>
+
+<p>ToList().ForEach(Console.WriteLine);</p>
+
+<p>Console.Read();</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>[/sourcecode]</p>
+
+<p>And here is the output from the above code.</p>
+
+<blockquote>
+<p>Counter :- 0 , Name :-  Name 0</p>
+
+<p>Counter :- 1 , Name :-  Name 1</p>
+
+<p>Counter :- 2 , Name :-  Name 2</p>
+
+<p>Counter :- 3 , Name :-  Name 3</p>
+
+<p>Counter :- 4 , Name :-  Name 4</p>
+</blockquote>
+
+<p>There is lot more to explore than what I have shown above. Happy debugging  🙂</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+            <span></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.9e52e68b082cf2a30a7fead88260edb8818fbd7f7831e39674917d4539ec75df41ba88eaddfbd916594ab4fb2a31913b46cf2d6094cf80381edb8c632512a8ca.js" integrity="sha512-nlLmiwgs8qMKf&#43;rYgmDtuIGPvX94MeOWdJF9RTnsdd9Buojq3fvZFllKtPsqMZE7Rs8tYJTPgDge24xjJRKoyg=="></script>
+
+
+
+    </body>
+</html>

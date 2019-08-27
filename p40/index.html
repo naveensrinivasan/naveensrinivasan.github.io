@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="admin">
+<meta name="description"
+    content="I am sure most of us are aware that one of the common reasons for High CPU usage .NET is because of, percentage time spent on GC is high. There are lot of write up about this. Tess has amazing blog post on this specifically, which explains in detail how to identify the symptoms. But one thing that I want share was the experience I had ,where in i could identify the real call stack which was causing allocation on LOH by have a break-point on the CLR Garbage collector itself." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/p40/" />
+
+
+<title>
+    
+    Identifying High CPU in GC (.NET) because of LOH – using Windbg :: naveen srinivasan  — Write code.Loves to read
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="theme-color" content="#252627">
+<meta itemprop="name" content="Identifying High CPU in GC (.NET) because of LOH – using Windbg">
+<meta itemprop="description" content="I am sure most of us are aware that one of the common reasons for High CPU usage .NET is because of, percentage time spent on GC is high. There are lot of write up about this. Tess has amazing blog post on this specifically, which explains in detail how to identify the symptoms. But one thing that I want share was the experience I had ,where in i could identify the real call stack which was causing allocation on LOH by have a break-point on the CLR Garbage collector itself.">
+
+
+<meta itemprop="datePublished" content="2010-02-15T04:57:22&#43;00:00" />
+<meta itemprop="dateModified" content="2010-02-15T04:57:22&#43;00:00" />
+<meta itemprop="wordCount" content="741">
+
+
+
+<meta itemprop="keywords" content="GC," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Identifying High CPU in GC (.NET) because of LOH – using Windbg"/>
+<meta name="twitter:description" content="I am sure most of us are aware that one of the common reasons for High CPU usage .NET is because of, percentage time spent on GC is high. There are lot of write up about this. Tess has amazing blog post on this specifically, which explains in detail how to identify the symptoms. But one thing that I want share was the experience I had ,where in i could identify the real call stack which was causing allocation on LOH by have a break-point on the CLR Garbage collector itself."/>
+
+
+
+<meta property="article:section" content=".NET" />
+<meta property="article:section" content="Windbg" />
+
+<meta property="article:published_time" content="2010-02-15 04:57:22 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">cd /home</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/posts">posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/p40/">Identifying High CPU in GC (.NET) because of LOH – using Windbg</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>I am sure most of us are aware that one of the common reasons for High CPU usage .NET is because of, percentage time spent on GC is high. There are lot of write up about this. <a href="http://blogs.msdn.com/tess/archive/2006/06/22/643309.aspx" target="_blank">Tess</a> has amazing blog post  on this specifically, which explains in detail how to identify the symptoms. But one thing that I want share was the experience I had ,where in i could identify the real call stack which was causing allocation on LOH by have a break-point on the CLR Garbage collector itself. I am going to assume that you are aware of CLR GC and LOH and basic debugging using windbg.</p>
+
+<p>FYI the Perfmon counter like “% Time spent in GC”, “Large Object Heap size” can identify we have an issue with allocation in LOH. But this only indicates there is a problem in High allocations that’s causing  GC to work hard and in turn causing high CPU usage . But does not point where the exact problem is .If there is a large code base and all of sudden if there is an issue like this it is hard to pinpoint where the root cause of the problem.</p>
+
+<p>I am going to walk through an example on a button click the code allocates objects on LOH and identify it using windbg.</p>
+
+<p><span style="color:blue;">using </span>System;</p>
+
+<p><span style="color:blue;">using</span>System.Collections.Generic;</p>
+
+<p><span style="color:blue;">using</span>System.Linq;</p>
+
+<p><span style="color:blue;">using</span>System.Windows.Forms;</p>
+
+<p><span style="color:blue;">namespace</span>WindowsFormsApplication1</p>
+
+<p>{</p>
+
+<p><span style="color:blue;">public partial class</span><span style="color:#2b91af;">Form1</span>: <span style="color:#2b91af;">Form<br /> </span>{</p>
+
+<p><span style="color:blue;">public</span><span style="color:#2b91af;">List</span>&lt;<span style="color:blue;">byte</span>[]&gt; buffer = <span style="color:blue;">new</span><span style="color:#2b91af;">List</span>&lt;<span style="color:blue;">byte</span>[]&gt;();</p>
+
+<p style="padding-left:30px;">
+  <span style="color:blue;">public</span>Form1()<br /> {<br /> InitializeComponent();<br /> }
+</p>
+
+<p style="padding-left:30px;">
+  <span style="color:blue;">private void</span>Button1Click(<span style="color:blue;">object</span>sender, <span style="color:#2b91af;">EventArgs </span>e)<br /> {<br /> AllocateinLOH();<br /> }
+</p>
+
+<p style="padding-left:30px;">
+  <span style="color:blue;">void</span>AllocateinLOH()<br /> {<br /> <span style="color:blue;">var </span>b = <span style="color:blue;">new byte</span>[85001];<br /> b.ToList().ForEach(<br /> (x) => x = <span style="color:blue;">new byte</span>());
+</p>
+
+<p style="padding-left:30px;">
+  buffer.Add(<span style="color:blue;">new byte</span>[85001]);<br /> }
+</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>[]<a href="http://11011.net/software/vspaste">1</a>In the above code AllocateinLOH will cause the heap allocations to LOH because the size is more than 85000 bytes. The next step is to launch the application and attach it to the debugger. To figure out the cause I could have got multiple memory dumps  and checked at every call stack when GC was happening . That is the harder way and we could be spending lot of time on that.</p>
+
+<p>To get to solve the problem i always like to approach from the bottom of the stack. I was certain there should be a function within the CLR / GC which should be doing this and I was certain it has to be within MSCORWKS.dll. The next step was examine symbols using “x” command and here is the output</p>
+
+<blockquote>
+<p>0:000&gt; x mscorwks!wks::gc_heap::*</p>
+
+<p>000007fe`e90d1340 mscorwks!WKS::gc_heap::alloc_allocated = <no type information></p>
+
+<p>000007fe`e89fd380 mscorwks!WKS::gc_heap::limit_from_size = <no type information></p>
+
+<p>000007fe`e8907e20 mscorwks!WKS::gc_heap::fix_older_allocation_area = <no type information></p>
+
+<p>000007fe`e90d1310 mscorwks!WKS::gc_heap::max_free_space_items = <no type information></p>
+
+<p>000007fe`e90cba38 mscorwks!WKS::gc_heap::gc_low = <no type information></p>
+
+<p>000007fe`e8dae150 mscorwks!WKS::gc_heap::grow_brick_card_tables = <no type information></p>
+
+<p>000007fe`e8a12d40 mscorwks!WKS::gc_heap::fix_generation_bounds = <no type information></p>
+
+<p>000007fe`e8a13040 mscorwks!WKS::gc_heap::fix_large_allocation_area = <no type information></p>
+
+<p>000007fe`e8a2c680 mscorwks!WKS::gc_heap::allocate_large_object = <no type information></p>
+
+<p>000007fe`e90c0478 mscorwks!WKS::gc_heap::slow = <no type information></p>
+
+<p>000007fe`e8ed8ec0 mscorwks!WKS::gc_heap::c_promote_callback = <no type information></p>
+</blockquote>
+
+<p>The above results are only partial because it was not necessary to get all the methods. The command “x mscorwks!wks::gc_heap::*” causes the debugger to get all the functions that are within the mscorwks dll with class name gc_heap. I knew it is gc_heap because prior to this I issued the command “x mscorwks!*gc*”. Because we don’t have private symbols for mscorwks we cannot see the type information. But we don’t need that for our purpose. The public symbols has FPO information for us to have break-point.</p>
+
+<p>Form the above result the method name should be “allocate_large_object”</p>
+
+<p>The next step was to put a break-point on the method</p>
+
+<blockquote>
+<p>bp mscorwks!wks::gc_heap::allocate_large_object &#8220;!CLRStack&#8221;</p>
+</blockquote>
+
+<p>And then click button and here is the callstack output</p>
+
+<blockquote>
+<p>0:004&gt; g</p>
+
+<p>OS Thread Id: 0xf6f4 (0)</p>
+
+<p>Child-SP         RetAddr          Call Site</p>
+
+<p>000000000027e000 000007ff00190684 WindowsFormsApplication1.Form1.AllocateinLOH()</p>
+
+<p>000000000027e060 000007feeab00555 WindowsFormsApplication1.Form1.Button1Click(System.Object, System.EventArgs)</p>
+
+<p>000000000027e090 000007feeb1f5873 System.Windows.Forms.Control.OnClick(System.EventArgs)</p>
+
+<p>000000000027e0d0 000007feeb1aadf7 System.Windows.Forms.Button.OnMouseUp(System.Windows.Forms.MouseEventArgs)</p>
+
+<p>000000000027e130 000007feeb702b7d System.Windows.Forms.Control.WmMouseUp(System.Windows.Forms.Message ByRef, System.Windows.Forms.MouseButtons, Int32)</p>
+
+<p>000000000027e200 000007feeab49b5a System.Windows.Forms.Control.WndProc(System.Windows.Forms.Message ByRef)</p>
+
+<p>000000000027e3b0 000007feeab49954 System.Windows.Forms.ButtonBase.WndProc(System.Windows.Forms.Message ByRef)</p>
+
+<p>000000000027e430 000007feeab53aa6 System.Windows.Forms.Button.WndProc(System.Windows.Forms.Message ByRef)</p>
+
+<p>000000000027e460 000007feeab53945 System.Windows.Forms.Control+ControlNativeWindow.WndProc(System.Windows.Forms.Message ByRef)</p>
+
+<p>000000000027e4b0 000007feeab52244 System.Windows.Forms.NativeWindow.Callback(IntPtr, Int32, IntPtr, IntPtr)</p>
+
+<p>000000000027e560 000007fee8aab07a DomainBoundILStubClass.IL_STUB(Int64, Int32, Int64, Int64)</p>
+
+<p>000000000027e810 000007feeab6e883 DomainBoundILStubClass.IL_STUB(MSG ByRef)</p>
+
+<p>000000000027e990 000007feeab6e0f8 System.Windows.Forms.Application+ComponentManager.System.Windows.Forms.</p>
+
+<p>UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(Int32, Int32, Int32)</p>
+
+<p>000000000027ebe0 000007feeab6db65 System.Windows.Forms.Application+ThreadContext.RunMessageLoopInner(Int32, System.Windows.Forms.ApplicationContext)</p>
+
+<p>000000000027ed30 000007ff00190171 System.Windows.Forms.Application+ThreadContext.RunMessageLoop(Int32, System.Windows.Forms.ApplicationContext)</p>
+
+<p>000000000027ed90 000007fee8aad502 WindowsFormsApplication1.Program.Main()</p>
+
+<p>mscorwks!WKS::gc_heap::allocate_large_object:</p>
+
+<p>000007fe`e8a2c680 4053            push    rbx</p>
+</blockquote>
+
+<p>Bingo now at the bottom of the stack we can see the “allocate_large_object” and on the top of the stack it is the managed code that we wrote “AllocateinLOH”.  Now we have solved the reason behind the High CPU usage in GC because of LOH.</p>
+
+<p>The “allocate_large_object” is not documented by Microsoft as a public API and I don’t know whether the name would be same going forward from .NET framework 4.0.  This holds good until .NET framework 3.5. The idea behind this is just digging in to the framework can give us some information which has saved us valuable time and effort.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="/tags/gc">GC</a></span>
+  				</p>
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+            <span></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.9e52e68b082cf2a30a7fead88260edb8818fbd7f7831e39674917d4539ec75df41ba88eaddfbd916594ab4fb2a31913b46cf2d6094cf80381edb8c632512a8ca.js" integrity="sha512-nlLmiwgs8qMKf&#43;rYgmDtuIGPvX94MeOWdJF9RTnsdd9Buojq3fvZFllKtPsqMZE7Rs8tYJTPgDge24xjJRKoyg=="></script>
+
+
+
+    </body>
+</html>

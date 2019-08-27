@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="admin">
+<meta name="description"
+    content="In this post I would show a simple trick to update .NET strings in memory with Windbg. The caveat is make sure the string that you&amp;#8217;re updating is long enough to fit into the string buffer. If not there would be a memory corruption.
+Here is a simple windows form application with title &amp;#8220;Good&amp;#8221;
+
+The goal is to update the title from &amp;#8220;Good&amp;#8221; to &amp;#8220;Bad&amp;#8221;.
+[sourcecode language=&amp;#8221;csharp&amp;#8221;]
+button1.Click &#43;= (s,b) =&amp;gt; Text = _caption;" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/p1353/" />
+
+
+<title>
+    
+    Updating .NET String in memory with Windbg :: naveen srinivasan  — Write code.Loves to read
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="theme-color" content="#252627">
+<meta itemprop="name" content="Updating .NET String in memory with Windbg">
+<meta itemprop="description" content="In this post I would show a simple trick to update .NET strings in memory with Windbg. The caveat is make sure the string that you&#8217;re updating is long enough to fit into the string buffer. If not there would be a memory corruption.
+Here is a simple windows form application with title &#8220;Good&#8221;
+
+The goal is to update the title from &#8220;Good&#8221; to &#8220;Bad&#8221;.
+[sourcecode language=&#8221;csharp&#8221;]
+button1.Click &#43;= (s,b) =&gt; Text = _caption;">
+
+
+<meta itemprop="datePublished" content="2011-06-14T16:42:24&#43;00:00" />
+<meta itemprop="dateModified" content="2011-06-14T16:42:24&#43;00:00" />
+<meta itemprop="wordCount" content="225">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Updating .NET String in memory with Windbg"/>
+<meta name="twitter:description" content="In this post I would show a simple trick to update .NET strings in memory with Windbg. The caveat is make sure the string that you&#8217;re updating is long enough to fit into the string buffer. If not there would be a memory corruption.
+Here is a simple windows form application with title &#8220;Good&#8221;
+
+The goal is to update the title from &#8220;Good&#8221; to &#8220;Bad&#8221;.
+[sourcecode language=&#8221;csharp&#8221;]
+button1.Click &#43;= (s,b) =&gt; Text = _caption;"/>
+
+
+
+<meta property="article:section" content=".NET" />
+<meta property="article:section" content="Windbg" />
+
+<meta property="article:published_time" content="2011-06-14 16:42:24 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">cd /home</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/posts">posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/p1353/">Updating .NET String in memory with Windbg</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>In this post I would show a simple trick to update .NET strings in memory with Windbg. The caveat is make sure the string that you&#8217;re updating is long enough to fit into the string buffer. If not there would be a memory corruption.</p>
+
+<p>Here is a simple windows form application with title &#8220;Good&#8221;</p>
+
+<p><a href="http://104.197.135.42/wp-content/uploads/2011/06/updatestring13.jpg"><img class="alignnone size-full wp-image-1356" title="updatestring" src="http://104.197.135.42/wp-content/uploads/2011/06/updatestring13.jpg" alt="" width="301" height="300" /></a></p>
+
+<p>The goal is to update the title from &#8220;Good&#8221; to &#8220;Bad&#8221;.</p>
+
+<p>[sourcecode language=&#8221;csharp&#8221;]</p>
+
+<p>button1.Click += (s,b) =&gt; Text = _caption;</p>
+
+<p>[/sourcecode]</p>
+
+<p><span class="Apple-style-span" style="font-family:Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif;font-size:13px;line-height:19px;white-space:normal;">I am updating the title in the button click.</span></p>
+
+<p>Here is the actual string object within the debugger</p>
+
+<pre>0:006&gt; !do 0294d0a0
+Name:        System.String
+MethodTable: 59b9fb64
+EEClass:     598d8bb0
+Size:        22(0x16) bytes
+File:        C:WindowsMicrosoft.NetassemblyGAC_32mscorlib
+v4.0_4.0.0.0__b77a5c561934e089mscorlib.dll
+String:      Good
+Fields:
+      MT    Field   Offset                 Type VT     Attr    Value Name
+59ba2b30  40000ed        4         System.Int32  1 instance        4 m_stringLength
+59ba1f80  40000ee        8          System.Char  1 instance       47 m_firstChar
+59b9fb64  40000ef        8        System.String  0   shared   static Empty
+    &gt;&gt; Domain:Value  004b0308:02941228 &lt;&lt;</pre>
+
+<p>I would be using the <a title="e" href="http://msdn.microsoft.com/en-us/library/ff545308(VS.85).aspx" target="_blank">e</a>  command to update the memory. The <strong>ezu </strong>command is used for updating  Null-terminated Unicode string .</p>
+
+<p>Notice the first character starts in the 8th offset from the above. So we would have start updating the string only from the 8th offset. The first 8 bytes of object are for syncblock index and method table pointer.</p>
+
+<p>Here is the command to update the string memory.</p>
+
+<blockquote>
+<p>ezu 0294d0a0+8 &#8220;Bad&#8221;</p>
+</blockquote>
+
+<p>And the updated form title.</p>
+
+<p><a href="http://104.197.135.42/wp-content/uploads/2011/06/bad2.jpg"><img class="alignnone size-full wp-image-1358" title="bad" src="http://104.197.135.42/wp-content/uploads/2011/06/bad2.jpg" alt="" width="301" height="300" /></a></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+            <span></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.9e52e68b082cf2a30a7fead88260edb8818fbd7f7831e39674917d4539ec75df41ba88eaddfbd916594ab4fb2a31913b46cf2d6094cf80381edb8c632512a8ca.js" integrity="sha512-nlLmiwgs8qMKf&#43;rYgmDtuIGPvX94MeOWdJF9RTnsdd9Buojq3fvZFllKtPsqMZE7Rs8tYJTPgDge24xjJRKoyg=="></script>
+
+
+
+    </body>
+</html>

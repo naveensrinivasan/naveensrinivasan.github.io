@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fsharp on naveen srinivasan</title>
+    <link>/tags/fsharp/</link>
+    <description>Recent content in fsharp on naveen srinivasan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Jan 2016 22:33:14 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/fsharp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Solution to Adventcode Day 7 in FSharp</title>
+      <link>/p2641/</link>
+      <pubDate>Tue, 12 Jan 2016 22:33:14 +0000</pubDate>
+      
+      <guid>/p2641/</guid>
+      <description>Here is my solution to adventcode problem 7  using F#.
+I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer&amp;#8217;s and these depend on other gates.
+The puzzle starts of with simple problem
+ 123 -&amp;gt; x 456 -&amp;gt; y ``Here is my solution to adventcode problem 7  using F#.</description>
+    </item>
+    
+    <item>
+      <title>fsharp docker image</title>
+      <link>/p2481/</link>
+      <pubDate>Wed, 11 Nov 2015 02:41:14 +0000</pubDate>
+      
+      <guid>/p2481/</guid>
+      <description>The fsharp project has a official docker image https://github.com/fsprojects/docker-fsharp . The one issue with that is it is based on mono 4.0.4 which is buggy and fsharp does not work very well. The latest alpha release of the mono with which fsharp works well is 4.2.0. The 4.2.0 isn&amp;#8217;t available in stable channels.
+So I created a docker image with the latest mono from their alpha repo and using the latest fsharp from the github.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="admin">
+<meta name="description"
+    content="This post is all about exploring the CLR loader to load an assembly from GAC and from private bin path. This is not possible because, if an assembly is loaded from GAC and if the code uses Assembly.LoadFrom to load the same assembly, then the loader would return the assembly that has already been loaded from the GAC.
+Here is the ClassLibrary2 code
+[sourcecode language=&amp;#8221;csharp&amp;#8221;]
+using System;
+namespace ClassLibrary2
+{" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/p966/" />
+
+
+<title>
+    
+    Load the same Assembly from GAC and private bin path in .NET :: naveen srinivasan  — Write code.Loves to read
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="theme-color" content="#252627">
+<meta itemprop="name" content="Load the same Assembly from GAC and private bin path in .NET">
+<meta itemprop="description" content="This post is all about exploring the CLR loader to load an assembly from GAC and from private bin path. This is not possible because, if an assembly is loaded from GAC and if the code uses Assembly.LoadFrom to load the same assembly, then the loader would return the assembly that has already been loaded from the GAC.
+Here is the ClassLibrary2 code
+[sourcecode language=&#8221;csharp&#8221;]
+using System;
+namespace ClassLibrary2
+{">
+
+
+<meta itemprop="datePublished" content="2010-07-12T21:31:40&#43;00:00" />
+<meta itemprop="dateModified" content="2010-07-12T21:31:40&#43;00:00" />
+<meta itemprop="wordCount" content="545">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Load the same Assembly from GAC and private bin path in .NET"/>
+<meta name="twitter:description" content="This post is all about exploring the CLR loader to load an assembly from GAC and from private bin path. This is not possible because, if an assembly is loaded from GAC and if the code uses Assembly.LoadFrom to load the same assembly, then the loader would return the assembly that has already been loaded from the GAC.
+Here is the ClassLibrary2 code
+[sourcecode language=&#8221;csharp&#8221;]
+using System;
+namespace ClassLibrary2
+{"/>
+
+
+
+<meta property="article:section" content=".NET" />
+<meta property="article:section" content="Loader" />
+
+<meta property="article:published_time" content="2010-07-12 21:31:40 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">cd /home</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/posts">posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/p966/">Load the same Assembly from GAC and private bin path in .NET</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>This post is all about exploring the CLR loader to load an assembly from GAC and from private bin path. This is not possible because, if an assembly is loaded from GAC and if the code uses Assembly.LoadFrom to load the same assembly, then the loader would return the assembly that has already been loaded from the GAC.</p>
+
+<p>Here is the ClassLibrary2 code</p>
+
+<p>[sourcecode language=&#8221;csharp&#8221;]</p>
+
+<p>using System;</p>
+
+<p>namespace ClassLibrary2</p>
+
+<p>{</p>
+
+<p>public class Class1</p>
+
+<p>{</p>
+
+<p>public string Bar()</p>
+
+<p>{</p>
+
+<p>return &ldquo;bar&rdquo;;</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>[/sourcecode]</p>
+
+<p>Here is the Winforms application to load the Class Library Code</p>
+
+<p>[sourcecode language=&#8221;csharp&#8221;]</p>
+
+<p>using System;</p>
+
+<p>using System.Reflection;</p>
+
+<p>using System.Windows.Forms;</p>
+
+<p>using ClassLibrary2;</p>
+
+<p>namespace WindowsFormsApplication4</p>
+
+<p>{</p>
+
+<p>public partial class Form1 : Form</p>
+
+<p>{</p>
+
+<p>public Form1()</p>
+
+<p>{</p>
+
+<p>InitializeComponent();</p>
+
+<p>var c = new Class1();</p>
+
+<p>Console.WriteLine(c.Bar());</p>
+
+<p>}</p>
+
+<p>private void button1_Click(object sender, EventArgs e)</p>
+
+<p>{</p>
+
+<p>var  ad = AppDomain.CreateDomain(&ldquo;Test&rdquo;);</p>
+
+<p>ad.AssemblyResolve += ((a1,e1) =&gt; Assembly.LoadFile(@&ldquo;C:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication9ClassLibrary2binDebugClassLibrary2.dll&rdquo;));</p>
+
+<p>var a = ad.Load(&ldquo;ClassLibrary&rdquo;);</p>
+
+<p>var c1 = a.CreateInstance(&ldquo;ClassLibrary2.Class1&rdquo;) as Class1;</p>
+
+<p>c1.Bar();</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>}</p>
+
+<p>[/sourcecode]</p>
+
+<p>If you notice the code creates an instance of the “Class1” in the Form1 constructor, this will essentially load the ClassLibrary2 in to memory. FYI the ClassLibrary2 is GACed when the application launches. Here is the fusglovwr output , which shows the assembly being loaded from GAC.</p>
+
+<blockquote>
+<p>LOG: This bind starts in default load context.</p>
+
+<p>LOG: Using application configuration file: C:UsersnaveenDocumentsVisual Studio 2010ProjectsWindowsFormsApplication4binDebugWindowsFormsApplication4.exe.Config</p>
+
+<p>LOG: Using host configuration file:</p>
+
+<p>LOG: Using machine configuration file from C:WindowsMicrosoft.NETFrameworkv4.0.30319configmachine.config.</p>
+
+<p>LOG: Post-policy reference: ClassLibrary2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3a0a06f4596f3e16</p>
+
+<p>LOG: Found assembly by looking in the GAC.</p>
+
+<p>LOG: Binding succeeds. Returns assembly from C:WindowsMicrosoft.NetassemblyGAC_MSILClassLibrary2v4.0_1.0.0.0__3a0a06f4596f3e16ClassLibrary2.dll.</p>
+
+<p>LOG: Assembly is loaded in default load context.</p>
+</blockquote>
+
+<p>After verifying fuslogvwr output , I uninstall the assembly from gac using gacutil /u (without closing the app). After which I click the button1 ,which will call the Assembly.LoadFrom to load the same assembly from private bin path. And here fuslogvwr output of loading the assembly using the load from, notice GAC lookup was unsuccessful.</p>
+
+<blockquote>
+<p>LOG: This bind starts in default load context.</p>
+
+<p>LOG: Using application configuration file: C:UsersnaveenDocumentsVisual Studio 2010ProjectsWindowsFormsApplication4binDebugWindowsFormsApplication4.exe.Config</p>
+
+<p>LOG: Using host configuration file:</p>
+
+<p>LOG: Using machine configuration file from C:WindowsMicrosoft.NETFrameworkv4.0.30319configmachine.config.</p>
+
+<p>LOG: Post-policy reference: ClassLibrary2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3a0a06f4596f3e16</p>
+
+<p>LOG: GAC Lookup was unsuccessful.</p>
+
+<p>LOG: Attempting download of new URL file:///C:/Users/naveen/Documents/Visual Studio 2010/Projects/WindowsFormsApplication4/bin/Debug/ClassLibrary2.DLL.</p>
+
+<p>LOG: Assembly download was successful. Attempting setup of file: C:UsersnaveenDocumentsVisual Studio 2010ProjectsWindowsFormsApplication4binDebugClassLibrary2.dll</p>
+
+<p>LOG: Entering run-from-source setup phase.</p>
+
+<p>LOG: Assembly Name is: ClassLibrary2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3a0a06f4596f3e16</p>
+
+<p>LOG: Binding succeeds. Returns assembly from C:UsersnaveenDocumentsVisual Studio 2010ProjectsWindowsFormsApplication4binDebugClassLibrary2.dll.</p>
+
+<p>LOG: Assembly is loaded in default load context.</p>
+</blockquote>
+
+<p>And here is the !dumpdomain output from windbg for this process</p>
+
+<blockquote>
+<p>Assembly:           003ce1e0 [C:WindowsMicrosoft.NetassemblyGAC_MSILClassLibrary2v4.0_1.0.0.0__3a0a06f4596f3e16ClassLibrary2.dll]</p>
+
+<p>ClassLoader:        003ee5b8</p>
+
+<p>SecurityDescriptor: 003d2838</p>
+
+<p>Module Name</p>
+
+<p>00306b28            C:WindowsMicrosoft.NetassemblyGAC_MSILClassLibrary2v4.0_1.0.0.0__3a0a06f4596f3e16ClassLibrary2.dll</p>
+
+<p>Assembly:           003ceae0 [C:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication9ClassLibrary2binDebugClassLibrary2.dll]</p>
+
+<p>ClassLoader:        0044f418</p>
+
+<p>SecurityDescriptor: 00445ea8</p>
+
+<p>Module Name</p>
+
+<p>011ee6b4            C:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication9ClassLibrary2binDebugClassLibrary2.dll</p>
+</blockquote>
+
+<p>Notice the first assembly is loaded from the GAC and the second one is loaded from the bin path.</p>
+
+<p>This is not something that I would ever do. This was merely an exercise to bypass the loader.</p>
+
+<p>FYI when the assembly is uninstalled from GAC, the gacutil.exe creates a temp copy and stores the assembly in the temp directory because it is being used by a process. And the temp copy of the assembly is deleted when the process ends. Here is the screen shot of Procmon creating an temp copy of the GACed assembly which I uninstalled.</p>
+
+<p><a href="http://104.197.135.42/wp-content/uploads/2010/07/gacutil1.jpg"><img class="alignnone size-full wp-image-967" title="gacutil" src="http://104.197.135.42/wp-content/uploads/2010/07/gacutil1.jpg" alt="" width="700" height="418" /></a></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+            <span></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.9e52e68b082cf2a30a7fead88260edb8818fbd7f7831e39674917d4539ec75df41ba88eaddfbd916594ab4fb2a31913b46cf2d6094cf80381edb8c632512a8ca.js" integrity="sha512-nlLmiwgs8qMKf&#43;rYgmDtuIGPvX94MeOWdJF9RTnsdd9Buojq3fvZFllKtPsqMZE7Rs8tYJTPgDge24xjJRKoyg=="></script>
+
+
+
+    </body>
+</html>

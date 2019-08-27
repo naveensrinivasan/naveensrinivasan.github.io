@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="admin">
+<meta name="description"
+    content="Here is my learning of how I debugged the CrashLoopBackOff in kubernetes when the pod wasn&amp;#8217;t starting.
+I wanted to deploy the jenkins docker image in the cluster. As mentioned in the jenkins docker repo I wanted to mount an external drive which is an AWS EBS volume. Here is my deployment yaml.
+[gist id = &amp;#8220;98aa6da98ebb9b7e3d7f996c8ef2cb38&amp;#8221;]
+After starting the deployment the pod never came up and this the output of kubectl get pod" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/p3163/" />
+
+
+<title>
+    
+    How to debug the CrashLoopBackOff in Kubernetes when pod is not starting :: naveen srinivasan  — Write code.Loves to read
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="theme-color" content="#252627">
+<meta itemprop="name" content="How to debug the CrashLoopBackOff in Kubernetes when pod is not starting">
+<meta itemprop="description" content="Here is my learning of how I debugged the CrashLoopBackOff in kubernetes when the pod wasn&#8217;t starting.
+I wanted to deploy the jenkins docker image in the cluster. As mentioned in the jenkins docker repo I wanted to mount an external drive which is an AWS EBS volume. Here is my deployment yaml.
+[gist id = &#8220;98aa6da98ebb9b7e3d7f996c8ef2cb38&#8221;]
+After starting the deployment the pod never came up and this the output of kubectl get pod">
+
+
+<meta itemprop="datePublished" content="2016-05-26T02:01:16&#43;00:00" />
+<meta itemprop="dateModified" content="2016-05-26T02:01:16&#43;00:00" />
+<meta itemprop="wordCount" content="383">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="How to debug the CrashLoopBackOff in Kubernetes when pod is not starting"/>
+<meta name="twitter:description" content="Here is my learning of how I debugged the CrashLoopBackOff in kubernetes when the pod wasn&#8217;t starting.
+I wanted to deploy the jenkins docker image in the cluster. As mentioned in the jenkins docker repo I wanted to mount an external drive which is an AWS EBS volume. Here is my deployment yaml.
+[gist id = &#8220;98aa6da98ebb9b7e3d7f996c8ef2cb38&#8221;]
+After starting the deployment the pod never came up and this the output of kubectl get pod"/>
+
+
+
+<meta property="article:section" content="kubernetes" />
+
+<meta property="article:published_time" content="2016-05-26 02:01:16 &#43;0000 &#43;0000" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">cd /home</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/posts">posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/p3163/">How to debug the CrashLoopBackOff in Kubernetes when pod is not starting</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>Here is my learning of how I debugged the CrashLoopBackOff in kubernetes when the pod wasn&#8217;t starting.</p>
+
+<p>I wanted to deploy the <a href="https://hub.docker.com/_/jenkins/" target="_blank">jenkins docker</a> image in the cluster. As mentioned in the jenkins docker  repo I wanted to mount an external drive which is an AWS EBS volume.  Here is my deployment yaml.</p>
+
+<p>[gist id = &#8220;98aa6da98ebb9b7e3d7f996c8ef2cb38&#8221;]</p>
+
+<p>After starting the deployment the pod never came up and this the output of  <em>kubectl get pod</em></p>
+
+<p><em>NAME                                      READY      STATUS                  RESTARTS  AGE</em></p>
+
+<p><em>jenkins-3317895845-x84u3  0/1       CrashLoopBackOff      10                 27m</em></p>
+
+<p>The next step was to issue the <em>kubectl describe pod jenkins-3317895845-x84u3</em></p>
+
+<p>[gist id = &#8220;7a79af84b53fc923aa609997fdb4fcfd&#8221;]</p>
+
+<p>So from the logs I could make out the container is being pulled correctly but it is failing on <strong>StartContainer</strong>.  Now based on this information the next step was to get the docker logs. But the docker logs aren&#8217;t accessible from my box because it is managed by kubernetes. The only way to get the docker logs was to actually ssh into the box.</p>
+
+<p>But which box should I ssh? The describe output has the node information which is <em>Node: ip-172-20-0-29.us-west-2.compute.internal/172.20.0.29</em> . This_ _is the private ip of the box in aws but with that information you should be able to figure out the public ip to ssh.</p>
+
+<p>Now I know I have to ssh but where is the key for this server. If you have used the <a href="http://releases.k8s.io/release-1.2/cluster/kube-up.sh" target="_blank">kube-up.sh</a> then the keys would be stored  in this location <em>~/.ssh/kube_aws_rsa. ssh -i ~/.ssh/kube_aws_rsa admin@public-ip-oftheabovenode.</em></p>
+
+<p>After_ _sshing into the box I issued the command _sudo docker ps -a | grep naveen _because the container could have been stopped and looked for naveen because that was my container name. This gave me container id which was stopped with exit status as 1.</p>
+
+<p>And this was the output of docker logs command</p>
+
+<p><em>admin@ip-172-20-0-29:~$ sudo docker logs c98a338268a1</em></p>
+
+<p>_touch: cannot touch ‘/var/jenkins_home/copy_reference<em>file.log’: Permission denied</em></p>
+
+<p>_Can not write to /var/jenkins_home/copy_reference<em>file.log. Wrong volume permissions?</em></p>
+
+<p>which identified the _/var/jenkins_home  _which was mounted with aws ebs voulme  didn&#8217;t have permission to write by the jenkins user <a href="https://github.com/kubernetes/kubernetes/issues/2630" target="_blank"><a href="https://github.com/kubernetes/kubernetes/issues/2630">https://github.com/kubernetes/kubernetes/issues/2630</a></a>.</p>
+
+<p>And after doing all of this I realized I could have done _kubectl logs jenkins-3317895845-x84u3_ which would have given the same output without having to ssh into the box. But knowing this handy because when things go wrong we really need to debug the root cause.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+            <span></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.9e52e68b082cf2a30a7fead88260edb8818fbd7f7831e39674917d4539ec75df41ba88eaddfbd916594ab4fb2a31913b46cf2d6094cf80381edb8c632512a8ca.js" integrity="sha512-nlLmiwgs8qMKf&#43;rYgmDtuIGPvX94MeOWdJF9RTnsdd9Buojq3fvZFllKtPsqMZE7Rs8tYJTPgDge24xjJRKoyg=="></script>
+
+
+
+    </body>
+</html>

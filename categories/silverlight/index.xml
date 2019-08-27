@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Silverlight on naveen srinivasan</title>
+    <link>/categories/silverlight/</link>
+    <description>Recent content in Silverlight on naveen srinivasan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Aug 2010 02:32:52 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/silverlight/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Get GC Information in Silverlight</title>
+      <link>/p1050/</link>
+      <pubDate>Wed, 11 Aug 2010 02:32:52 +0000</pubDate>
+      
+      <guid>/p1050/</guid>
+      <description>I had earlier written a post on getting GC information on Silverlight using ETW. With that we would have to write code to parse the ETW csv file. In this post I am going to be using Perfmonitor to do this. This tools uses the same ETW under covers, but it does all the plumbing and gives a nice report , which is much easier to read. Here are the reports</description>
+    </item>
+    
+  </channel>
+</rss>

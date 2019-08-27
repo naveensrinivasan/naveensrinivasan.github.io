@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SOS on naveen srinivasan</title>
+    <link>/tags/sos/</link>
+    <description>Recent content in SOS on naveen srinivasan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 Feb 2010 13:30:13 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/sos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Identify and Patch .NET Code using Windbg</title>
+      <link>/p19/</link>
+      <pubDate>Sun, 07 Feb 2010 13:30:13 +0000</pubDate>
+      
+      <guid>/p19/</guid>
+      <description>&amp;#160;
+The last week was really an interesting one with debugging production code. I was debugging a Winforms application which was using .NET framework 3.5 version. The real problem was with the latest release of the code, there was bug which caused certain elements on the UI not to be displayed. This is was High priority bug and very important to the business.
+The code that was causing this bug was an integer variable inside a class.</description>
+    </item>
+    
+  </channel>
+</rss>

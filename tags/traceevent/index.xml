@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TraceEvent on naveen srinivasan</title>
+    <link>/tags/traceevent/</link>
+    <description>Recent content in TraceEvent on naveen srinivasan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 May 2015 01:14:34 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/traceevent/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Measure GC Allocations and Collections using TraceEvent</title>
+      <link>/p1437/</link>
+      <pubDate>Tue, 12 May 2015 01:14:34 +0000</pubDate>
+      
+      <guid>/p1437/</guid>
+      <description>In this post I will explore how we could use TraceEvent to measure our code (even at function level) for GC Allocations and Collections.
+  Save this with &amp;#8220;.linq&amp;#8221; extension and then open in linqpad.
+[gist https://gist.github.com/naveensrinivasan/b72fd80876eb67557ae8]
+Here is the TL;DR
+Why would I want to know GC events on a function level? Doesn&amp;#8217;t the PerfMon counter provide that information on an application level? Isn&amp;#8217;t Premature optimization root of all evil?</description>
+    </item>
+    
+  </channel>
+</rss>
