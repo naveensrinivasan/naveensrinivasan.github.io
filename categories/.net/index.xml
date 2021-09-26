@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>.NET on naveen srinivasan</title><link>/categories/.net/</link><description>Recent content in .NET on naveen srinivasan</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 14 May 2015 23:14:45 +0000</lastBuildDate><atom:link href="/categories/.net/index.xml" rel="self" type="application/rss+xml"/><item><title>Managed Stack Explorer using ClrMD</title><link>/?p=1457/</link><pubDate>Thu, 14 May 2015 23:14:45 +0000</pubDate><guid>/?p=1457/</guid><description>How often we run into an issue in the field where we just want to see the managed call-stack where the exception is or where the thread is hung. One of the options is debugger or something like ETW.
+So I built a managed stack explorer
+http://naveensrinivasan.github.io/ManagedStackExplorer/
+Managed Stack Explorer provides call stack for .NET applications using managed code with thread local variables. The API as of now does not provide values for the local variables.</description></item><item><title>Measure GC Allocations and Collections using TraceEvent</title><link>/?p=1437/</link><pubDate>Tue, 12 May 2015 01:14:34 +0000</pubDate><guid>/?p=1437/</guid><description>In this post I will explore how we could use TraceEventto measure our code (even at function level) for GC Allocations and Collections.
+Save this with “.linq” extension and then open in linqpad.
+[gist https://gist.github.com/naveensrinivasan/b72fd80876eb67557ae8]
+Here is the TL;DR
+Why would I want to know GC events on a function level? Doesn’t the PerfMon counter provide that information on an application level? Isn’t Premature optimization root of all evil?
+Yes, for most of the part Premature optimization is not necessary.</description></item><item><title>Look ma I figured out why my ETW EventSource isn’t tracing</title><link>/?p=1414/</link><pubDate>Tue, 05 May 2015 13:47:39 +0000</pubDate><guid>/?p=1414/</guid><description>The EventSource class in the framework 4.5 helps in writing custom ETW tracing.
+When using EventSource class built within the framework, if the order of the methods don’t match ordinal number position in the class it would fail generating ETW traces. The EventSource has dependency on the order of the methods in the class.
+This code would produce a valid ETW traces
+[gist https://gist.github.com/naveensrinivasan/a1fcd0ec78d2473499d5]
+This one would fail producing any ETW Traces.</description></item><item><title>Making an Image Easier to Debug</title><link>/?p=1368/</link><pubDate>Mon, 20 Jun 2011 17:45:24 +0000</pubDate><guid>/?p=1368/</guid><description>I am doing security review for a managed application which is obfuscated. So I am doing a lot of disassembling code at runtime using Windbg. One of the issues is that code gets JIT optimized because of the retail build. This makes it harder for me debug when mapping it back. Realized that I could turnoff JIT Optimization’s using the ini file.
+[sourcecode]
+[.NET Framework Debugging Control]
+GenerateTrackingInfo=1
+AllowOptimize=0
+[/sourcecode]</description></item><item><title>Updating .NET String in memory with Windbg</title><link>/?p=1353/</link><pubDate>Tue, 14 Jun 2011 16:42:24 +0000</pubDate><guid>/?p=1353/</guid><description>In this post I would show a simple trick to update .NET strings in memory with Windbg. The caveat is make sure the string that you’re updating is long enough to fit into the string buffer. If not there would be a memory corruption.
+Here is a simple windows form application with title “Good”
+The goal is to update the title from “Good” to “Bad”.
+[sourcecode language=”csharp”]
+button1.Click += (s,b) =&amp;gt; Text = _caption;</description></item><item><title>Conditional BreakPoint based on callstack within Windbg – .NET</title><link>/?p=1314/</link><pubDate>Wed, 29 Dec 2010 02:00:12 +0000</pubDate><guid>/?p=1314/</guid><description>Someone recently asked me “How to have a break-point on a method based on certain function in the call-stack?”
+Here is the sample code to demonstrate this
+[sourcecode language=”csharp”]
+using System;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+namespace Test
+{
+class Program
+{
+string connectionString = @&amp;ldquo;Data Source=.sqlexpress;Initial Catalog=Tfs_Configuration;Integrated Security=True&amp;rdquo;;
+public void Bar()
+{
+using (var c = new SqlConnection(connectionString))
+{
+c.Open();
+var command = new SqlCommand(@&amp;ldquo;update [tbl_AccessMapping] set [DisplayName] = @param&amp;rdquo;, c);</description></item><item><title>Saving Dynamic Assembly in .NET 4.0 using Windbg</title><link>/?p=1298/</link><pubDate>Thu, 23 Dec 2010 23:37:45 +0000</pubDate><guid>/?p=1298/</guid><description>I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the AppDomain.AssemblyResolveevent. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the AppDomain.</description></item><item><title>Dumping Generic List in .NET within Windbg</title><link>/?p=1281/</link><pubDate>Fri, 10 Dec 2010 03:15:43 +0000</pubDate><guid>/?p=1281/</guid><description>Most of the code uses Listfor storing items. The present solutions don’ t have a way to dump Listwithin windbg. Even though sosex has an option to dump the Listusing !mdt it still doesn’t meet the scripting requirements. For example here is an output using sosex “!mdt -e 029a91c0”
+0:000&amp;gt; !mdt -e 029a91c0
+029a91c0 (System.Collections.Generic.List`1[[Test.Foo, Test]])
+Count = 2
+[0] 029a9200 (Test.Foo)
+[1] 029a9210 (Test.</description></item><item><title>Why isn’t the !bpmd in sos / windbg not working?</title><link>/?p=1271/</link><pubDate>Mon, 06 Dec 2010 00:16:53 +0000</pubDate><guid>/?p=1271/</guid><description>I recently noticed another blog post refer to one of my post. The issue was, sos wasn’t enabling the break-points on non-jitted functions. The classic example being “Main”. Thanks to Steve I have been using sosex and not sos for setting break-points.
+From my previous post you can understand how CLR is using clrn/CLRNotificationException to notify sos/sosex on JIT. With this information when I looked at the rotor code, I noticed an interesting member variable “g_dacNotificationFlags”.</description></item><item><title>Decoding clr20r3 .NET exception – using mono cecil</title><link>/?p=1208/</link><pubDate>Wed, 17 Nov 2010 02:01:13 +0000</pubDate><guid>/?p=1208/</guid><description>I have often seen Devs trying to figure out the cause of the app crash without a memory dump. The only information that is available to analyze is the Windows Error Reporting message in the event viewer which would have “Event Name: CLR20r3” along with Watson bucket information like this.
+Fault bucket , type 0
+Event Name: CLR20r3
+Response: Not available
+Cab Id: 0</description></item><item><title>Dumping .NET strings to files using Windbg</title><link>/?p=1128/</link><pubDate>Mon, 01 Nov 2010 21:37:16 +0000</pubDate><guid>/?p=1128/</guid><description>In this post I would demonstrate how to dump strings from a memory dump /live process to a file. Recently I had to debug a process which had few big strings where I had to analyze its contents. The !dumpobj from sos would only dump partial strings. I had to dump few hundred XML strings that I had to analyze using some automation. And hence comes the script.
+[sourcecode]
+$$ Dumps the managed strings to a file</description></item><item><title>Dumping ASP.NET Session (x86 /x64) within Windbg</title><link>/?p=1071/</link><pubDate>Wed, 27 Oct 2010 01:18:21 +0000</pubDate><guid>/?p=1071/</guid><description>This post is going to be about dumping ASP.NET session objects using Windbg. I had recently answered a stackoverflow question in which someone wanted to dump ASP.NET session objects for 64-bit IIS (x64). I thought why not blog about the same which might be useful to others. The challenge is to write one script that should work in both x86/x64. FYI there is a script from Tess that does dump out the session contents, AFAIK it will not work on x64 and my script iterates through the array using the array length instead of using “.</description></item><item><title>GC Start and Stop events in .NET using Windbg</title><link>/?p=1064/</link><pubDate>Wed, 08 Sep 2010 01:55:27 +0000</pubDate><guid>/?p=1064/</guid><description>I was recently showing someone the new ETW features in .NET especially the GC Event notification and I was asked if we can get this using Windbg.
+So here is the sample code for the GC Collection
+[sourcecode language=”csharp”]
+namespace GCStartStop
+{
+public partial class Form1 : Form
+{
+public Form1()
+{
+InitializeComponent();
+button1.Click += (s, b) =&amp;gt; GC.Collect(2);
+button1.Click += (s, b) =&amp;gt; GC.Collect(1);
+}
+}
+}
+[/sourcecode]
+The goal is set to a break-point only when the collection count is 2.</description></item><item><title>Debugging .NET – mystery between DEBUG versus RELEASE within windbg</title><link>/?p=1015/</link><pubDate>Thu, 22 Jul 2010 02:48:17 +0000</pubDate><guid>/?p=1015/</guid><description>I am sure most of us have debugged applications that are build with debug turned on, which is obviously much easier compared to debugging release build (optimized code). In this post I am going to share one of my experiences of debugging release build code. I will demonstrate this with a simple Console Application.
+Here is the code
+[sourcecode language=”csharp”]
+using System;
+namespace ConsoleApplication
+{
+class Program
+{
+static void Main(string[] args)</description></item><item><title>Load the same Assembly from GAC and private bin path in .NET</title><link>/?p=966/</link><pubDate>Mon, 12 Jul 2010 21:31:40 +0000</pubDate><guid>/?p=966/</guid><description>This post is all about exploring the CLR loader to load an assembly from GAC and from private bin path. This is not possible because, if an assembly is loaded from GAC and if the code uses Assembly.LoadFrom to load the same assembly, then the loader would return the assembly that has already been loaded from the GAC.
+Here is the ClassLibrary2 code
+[sourcecode language=”csharp”]
+using System;
+namespace ClassLibrary2
+{</description></item><item><title>Customizing Witty Twitter Client Part 1- using C# as Compiler Service</title><link>/?p=840/</link><pubDate>Sun, 20 Jun 2010 03:28:46 +0000</pubDate><guid>/?p=840/</guid><description>This is going to be a multipart blog post where I am going to be demonstrating how I have customized This is going to be a multipart blog post where I am going to be demonstrating how I have customized twitter client for my need. I chose Witty because it is the only OSS .NET twitter client I know of.
+One of the reasons for customizing is primarily using C# as compiler service to extend it for my needs dynamically.</description></item><item><title>Using Tuple as Dictionary / Map key</title><link>/?p=829/</link><pubDate>Sat, 19 Jun 2010 12:37:53 +0000</pubDate><guid>/?p=829/</guid><description>I recently had to create a dictionary which needed a multipart key like &amp;lt;string,int&amp;gt; . To do this I would have to create a custom class override equals and gethashcode. That’s when someone told I could use Tuple, but weren’t sure it was possible. Here was the quick sample to try it in F#
+[sourcecode]
+let x = [(&amp;ldquo;naveen&amp;rdquo;,1),1;(&amp;ldquo;naveen&amp;rdquo;,1),2] |&amp;gt; Map.ofList
+[/sourcecode]
+as expected only one item in the Map</description></item><item><title>Piracy in .NET Code – Part 3 – Even when the code is obfuscated</title><link>/?p=769/</link><pubDate>Sat, 12 Jun 2010 00:37:46 +0000</pubDate><guid>/?p=769/</guid><description>Continuing with my series on Piracy, in this post I am going to be exploring how someone with little advanced knowledge in CLR / Windows can bypass important function calls like license validation.
+Most of the developers assume just because the code is obfuscated nobody can bypass the licensing logic. I am going to be demonstrating how to bypass certain function call,this is very similar to “Set Next Statement ” in VS.</description></item><item><title>Using Windows Error Reporting (WER) API in managed code to generate memory dump</title><link>/?p=750/</link><pubDate>Thu, 10 Jun 2010 03:01:09 +0000</pubDate><guid>/?p=750/</guid><description>The WER is a pretty cool technology from Microsoft for collecting memory dumps on process crash/ hang. This can be extended to generate on demand when the application needs to. The usual reason for getting a memory dump could be based on certain conditions, for example, the customer feels the application is slow and would want to send the information to WinQual (WER server). If the application happens to be installed on hundreds / thousands of boxes then its not going to be possible to get from individual customers, the best bet is WER.</description></item><item><title>Identifying High CPU in GC (.NET) because of LOH – using Windbg</title><link>/?p=40/</link><pubDate>Mon, 15 Feb 2010 04:57:22 +0000</pubDate><guid>/?p=40/</guid><description>I am sure most of us are aware that one of the common reasons for High CPU usage .NET is because of, percentage time spent on GC is high. There are lot of write up about this. Tesshas amazing blog post on this specifically, which explains in detail how to identify the symptoms. But one thing that I want share was the experience I had ,where in i could identify the real call stack which was causing allocation on LOH by have a break-point on the CLR Garbage collector itself.</description></item><item><title>Function hit count using Pseudo-Register in Windbg</title><link>/?p=30/</link><pubDate>Sat, 13 Feb 2010 01:41:01 +0000</pubDate><guid>/?p=30/</guid><description>What if we want to know the number of times a function was invoked. We can have “.echo” or “.printf” on break-point of a function and count the output manually. The better way to do this is using pseudo-registers.
+In my previouspost I had mentioned about alias inside the debugger. The debugger also provides User defined Pseudo-Registers for scripting inside the debugger. We can use them to manipulate values within our scripts.</description></item><item><title>Identify and Patch .NET Code using Windbg</title><link>/?p=19/</link><pubDate>Sun, 07 Feb 2010 13:30:13 +0000</pubDate><guid>/?p=19/</guid><description>The last week was really an interesting one with debugging production code. I was debugging a Winforms application which was using .NET framework 3.5 version. The real problem was with the latest release of the code, there was bug which caused certain elements on the UI not to be displayed. This is was High priority bug and very important to the business.
+The code that was causing this bug was an integer variable inside a class.</description></item></channel></rss>

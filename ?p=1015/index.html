@@ -1,0 +1,526 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=author content="admin">
+<meta name=description content="I am sure most of us have debugged applications that are build with debug turned on, which is obviously much easier compared to debugging release build (optimized code). In this post I am going to share one of my experiences of debugging release build code. I will demonstrate this with a simple Console Application.
+Here is the code
+[sourcecode language=”csharp”]
+using System;
+namespace ConsoleApplication
+{
+class Program
+{
+static void Main(string[] args)">
+<meta name=keywords content>
+<meta name=robots content="noodp">
+<meta name=theme-color content>
+<link rel=canonical href="/?p=1015/">
+<title>
+Debugging .NET – mystery between DEBUG versus RELEASE within windbg :: naveen srinivasan — Write code.Loves to read
+</title>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css rel=stylesheet type=text/css>
+<link rel=stylesheet href=/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css>
+<meta itemprop=name content="Debugging .NET – mystery between DEBUG versus RELEASE within windbg">
+<meta itemprop=description content="I am sure most of us have debugged applications that are build with debug turned on, which is obviously much easier compared to debugging release build (optimized code). In this post I am going to share one of my experiences of debugging release build code. I will demonstrate this with a simple Console Application.
+Here is the code
+[sourcecode language=”csharp”]
+using System;
+namespace ConsoleApplication
+{
+class Program
+{
+static void Main(string[] args)"><meta itemprop=datePublished content="2010-07-22T02:48:17+00:00">
+<meta itemprop=dateModified content="2010-07-22T02:48:17+00:00">
+<meta itemprop=wordCount content="1126"><meta itemprop=image content="/">
+<meta itemprop=keywords content>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="/">
+<meta name=twitter:title content="Debugging .NET – mystery between DEBUG versus RELEASE within windbg">
+<meta name=twitter:description content="I am sure most of us have debugged applications that are build with debug turned on, which is obviously much easier compared to debugging release build (optimized code). In this post I am going to share one of my experiences of debugging release build code. I will demonstrate this with a simple Console Application.
+Here is the code
+[sourcecode language=”csharp”]
+using System;
+namespace ConsoleApplication
+{
+class Program
+{
+static void Main(string[] args)">
+<meta property="article:section" content=".NET">
+<meta property="article:section" content="Windbg">
+<meta property="article:published_time" content="2010-07-22 02:48:17 +0000 UTC">
+</head>
+<body>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=/ style=text-decoration:none>
+<div class=logo>
+<span class=logo__mark>></span>
+<span class=logo__text>cd /home</span>
+<span class=logo__cursor>
+</span>
+</div>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class=menu__inner><li><a href=/posts>posts</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<main class=post>
+<div class=post-info>
+</p>
+</div>
+<article>
+<h2 class=post-title><a href="/?p=1015/">Debugging .NET – mystery between DEBUG versus RELEASE within windbg</a></h2>
+<div class=post-content>
+<p>I am sure most of us have debugged applications that are build with debug turned on, which is obviously much easier compared to debugging release build (optimized code). In this post I am going to share one of my experiences of debugging release build code. I will demonstrate this with a simple Console Application.</p>
+<p>Here is the code</p>
+<p>[sourcecode language=”csharp”]</p>
+<p>using System;</p>
+<p>namespace ConsoleApplication</p>
+<p>{</p>
+<p>class Program</p>
+<p>{</p>
+<p>static void Main(string[] args)</p>
+<p>{</p>
+<p>var x = 10;</p>
+<p>var name = &ldquo;naveen&rdquo;;</p>
+<p>Console.WriteLine(name);</p>
+<p>Console.Read();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>[/sourcecode]</p>
+<p>I compiled it under release mode and launched it within the debugger. The goal is to have a break-point on Console.WriteLine(name). First thing was to set up a sx notification on load for mscorlib.</p>
+<p>[sourcecode]</p>
+<p>sxe ld:mscorlib</p>
+<p>[/sourcecode]</p>
+<p>And when the break-point hits for the above event, then issued the following command to load sosex , sos and set an bp on Console.WriteLine which is nothing fancy</p>
+<p>[sourcecode]</p>
+<p>.load sosex;.loadby sos clr;!mbm *System.Console.WriteLine* &ldquo;!mk&rdquo;;g</p>
+<p>[/sourcecode]</p>
+<p>I would imagine that the break-point would hit and I would get a call-stack, but to my surprise this was the output</p>
+<blockquote>
+<p>0:000> .load sosex;.loadby sos clr;!mbm *System.Console.WriteLine* “!mk”;g</p>
+</blockquote>
+<blockquote>
+<p>The breakpoint could not be resolved immediately.</p>
+</blockquote>
+<blockquote>
+<p>Further attempts will be made as modules are loaded.</p>
+</blockquote>
+<blockquote>
+<p>(1090.11fc): CLR notification exception – code e0444143 (first chance)</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine().</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(Boolean).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(Char).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(Char[]).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(Char[], Int32, Int32).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(System.Decimal).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(Double).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(Single).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(Int32).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(UInt32).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(Int64).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(UInt64).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(System.Object).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(System.String).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(System.String, System.Object).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(System.String, System.Object, System.Object).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(System.String, System.Object, System.Object, System.Object).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(System.String, System.Object, System.Object, System.Object, System.Object, …).</p>
+</blockquote>
+<blockquote>
+<p>Breakpoint set at System.Console.WriteLine(System.String, System.Object[]).</p>
+</blockquote>
+<blockquote>
+<p>(1090.11fc): CLR notification exception – code e0444143 (first chance)</p>
+</blockquote>
+<p>That’s it. And I never got an hit for the break-point. I checked to make sure there was an actual breakpoint set by issuing a “bl” command. I could see there were break-points for Console.WriteLine. The next step was to  disassemble the code. So got the instruction pointer from the !mk call-stack. Here is the output of !mk. FYI this is when the code is blocked on Console.Read</p>
+<blockquote>
+<p>00:U 003def90 75d273ea KERNEL32!ReadConsoleInternal+0x15</p>
+</blockquote>
+<blockquote>
+<p>01:U 003def98 75d27041 KERNEL32!ReadConsoleA+0x40</p>
+</blockquote>
+<blockquote>
+<p>02:U 003df020 75caf489 KERNEL32!ReadFileImplementation+0x75</p>
+</blockquote>
+<blockquote>
+<p>03:M 003df068 65651c8b DomainNeutralILStubClass.IL_STUB_PInvoke(Microsoft.Win32.SafeHandles.SafeFileHandle, Byte*, Int32, Int32 ByRef, IntPtr)(+0x0 IL)(+0x0 Native)</p>
+</blockquote>
+<blockquote>
+<p>04:M 003df0e8 65cbf7e8 System.IO.__ConsoleStream.ReadFileNative(Microsoft.Win32.SafeHandles.SafeFileHandle, Byte[], Int32, Int32, Int32, Int32 ByRef)(+0x53 IL)(+0x8c Native) [f:ddndpclrsrcBCLSystemIO__ConsoleStream.cs, @ 16707566,0]</p>
+</blockquote>
+<blockquote>
+<p>05:M 003df110 65cbf6d0 System.IO.__ConsoleStream.Read(Byte[], Int32, Int32)(+0x5d IL)(+0x9c Native) [f:ddndpclrsrcBCLSystemIO__ConsoleStream.cs, @ 131,13]</p>
+</blockquote>
+<blockquote>
+<p>06:M 003df138 65608bfb System.IO.StreamReader.ReadBuffer()(+0xa0 IL)(+0x3b Native) [f:ddndpclrsrcBCLSystemIOStreamReader.cs, @ 488,21]</p>
+</blockquote>
+<blockquote>
+<p>07:M 003df154 65bcacc3 System.IO.StreamReader.Read()(+0x1b IL)(+0x23 Native) [f:ddndpclrsrcBCLSystemIOStreamReader.cs, @ 302,17]</p>
+</blockquote>
+<blockquote>
+<p>08:M 003df160 65cc5e9d System.IO.TextReader+SyncTextReader.Read()(+0x0 IL)(+0x19 Native) [f:ddndpclrsrcBCLSystemIOTextReader.cs, @ 244,17]</p>
+</blockquote>
+<blockquote>
+<p>09:M 003df170 0066009a *** WARNING: Unable to verify checksum for ConsoleApplication.exe</p>
+</blockquote>
+<blockquote>
+<p>ConsoleApplication.Program.Main(System.String[])(+0x0 IL)(+0x2a Native) [c:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication11Program.cs, @ 10,13]</p>
+</blockquote>
+<blockquote>
+<p>0a:U 003df17c 661621db clr!CallDescrWorker+0x33</p>
+</blockquote>
+<p>Next disassemble Main Method using the ip which is 0066009a</p>
+<p>[sourcecode]</p>
+<p>!u 0066009a</p>
+<p>[/sourcecode]</p>
+<p>Here is the output</p>
+<blockquote>
+<p>0:000> !u 0066009a</p>
+</blockquote>
+<blockquote>
+<p>Normal JIT generated code</p>
+</blockquote>
+<blockquote>
+<p>ConsoleApplication.Program.Main(System.String[])</p>
+</blockquote>
+<blockquote>
+<p>Begin 00660070, size 2d</p>
+</blockquote>
+<blockquote>
+<p>c:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication11Program.cs @ 10:</p>
+</blockquote>
+<blockquote>
+<p>00660070 55 push ebp</p>
+</blockquote>
+<blockquote>
+<p>00660071 8bec mov ebp,esp</p>
+</blockquote>
+<blockquote>
+<p>00660073 56 push esi</p>
+</blockquote>
+<blockquote>
+<p>00660074 8b3530206b03 mov esi,dword ptr ds:[36B2030h] (“naveen”)</p>
+</blockquote>
+<blockquote>
+<p>c:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication11Program.cs @ 11:</p>
+</blockquote>
+<blockquote>
+<p>0066007a e85170f864 call mscorlib_ni+0x2570d0 (655e70d0) (System.Console.get_Out(), mdToken: 060008cd)</p>
+</blockquote>
+<blockquote>
+<p>0066007f 8bc8 mov ecx,eax</p>
+</blockquote>
+<blockquote>
+<p>00660081 8bd6 mov edx,esi</p>
+</blockquote>
+<blockquote>
+<p>00660083 8b01 mov eax,dword ptr [ecx]</p>
+</blockquote>
+<blockquote>
+<p>00660085 8b403c mov eax,dword ptr [eax+3Ch]</p>
+</blockquote>
+<blockquote>
+<p>00660088 ff5010 call dword ptr [eax+10h]</p>
+</blockquote>
+<blockquote>
+<p>0066008b e8f0a55565 call mscorlib_ni+0x82a680 (65bba680) (System.Console.get_In(), mdToken: 060008cc)</p>
+</blockquote>
+<blockquote>
+<p>00660090 8bc8 mov ecx,eax</p>
+</blockquote>
+<blockquote>
+<p>00660092 8b01 mov eax,dword ptr [ecx]</p>
+</blockquote>
+<blockquote>
+<p>00660094 8b402c mov eax,dword ptr [eax+2Ch]</p>
+</blockquote>
+<blockquote>
+<p>00660097 ff500c call dword ptr [eax+0Ch]</p>
+</blockquote>
+<blockquote>
+<p>c:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication11Program.cs @ 13:</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>0066009a 5e pop esi</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>0066009b 5d pop ebp</p>
+</blockquote>
+<blockquote>
+<p>0066009c c3 ret</p>
+</blockquote>
+<p>And I see System.Console.get_Out instead of System.Console.WriteLine which I was totally surprised. This was  the reason the break-point never hit. Next I wanted check the IL which was compiled , what we see above is jitted x86 mixed with IL. Here is the command to check the compiled IL. First I had to get the methodesc from the ip using !ip2md</p>
+<p>[sourcecode]</p>
+<p>!ip2md 0066009a</p>
+<p>[/sourcecode]</p>
+<blockquote>
+<p>0:000> !ip2md 0066009a</p>
+</blockquote>
+<blockquote>
+<p>MethodDesc: 002237f0</p>
+</blockquote>
+<blockquote>
+<p>Method Name: ConsoleApplication.Program.Main(System.String[])</p>
+</blockquote>
+<blockquote>
+<p>Class: 002213f8</p>
+</blockquote>
+<blockquote>
+<p>MethodTable: 00223804</p>
+</blockquote>
+<blockquote>
+<p>mdToken: 06000001</p>
+</blockquote>
+<blockquote>
+<p>Module: 00222e9c</p>
+</blockquote>
+<blockquote>
+<p>IsJitted: yes</p>
+</blockquote>
+<blockquote>
+<p>CodeAddr: 00660070</p>
+</blockquote>
+<blockquote>
+<p>Transparency: Critical</p>
+</blockquote>
+<blockquote>
+<p>Source file: c:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication11Program.cs @ 13</p>
+</blockquote>
+<p>Here is from the methoddesc to IL</p>
+<p>[sourcecode]</p>
+<p>!dumpil 002237f0</p>
+<p>[/sourcecode]</p>
+<blockquote>
+<p>0:000> !dumpil 002237f0</p>
+</blockquote>
+<blockquote>
+<p>ilAddr = 012a2050</p>
+</blockquote>
+<blockquote>
+<p>IL_0000: ldstr “naveen”</p>
+</blockquote>
+<blockquote>
+<p>IL_0005: stloc.0</p>
+</blockquote>
+<blockquote>
+<p>IL_0006: ldloc.0</p>
+</blockquote>
+<blockquote>
+<p>IL_0007: call System.Console::WriteLine</p>
+</blockquote>
+<blockquote>
+<p>IL_000c: call System.Console::Read</p>
+</blockquote>
+<blockquote>
+<p>IL_0011: pop</p>
+</blockquote>
+<blockquote>
+<p>IL_0012: ret</p>
+</blockquote>
+<p>Which looks very similar to my C# code. So looks like CLR optimized the code ,converted the Console.WriteLine to Console.get_Out. To validate it restarted the app with this as the command for break-point</p>
+<p>[sourcecode]</p>
+<p>.load sosex;.loadby sos clr;!mbm *System.Console.get_Out* &ldquo;!mk&rdquo;;g</p>
+<p>[/sourcecode]</p>
+<p>And here is the output</p>
+<blockquote>
+<p>00:M 0032ed58 655e70d1 System.Console.get_Out()(+0x0 IL)(+0x1 Native) [f:ddndpclrsrcBCLSystemConsole.cs, @ 193,17]</p>
+</blockquote>
+<blockquote>
+<p>01:M 0032ed60 003a007f *** WARNING: Unable to verify checksum for ConsoleApplication.exe</p>
+</blockquote>
+<blockquote>
+<p>ConsoleApplication.Program.Main(System.String[])(+0x6 IL)(+0xf Native) [c:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication11Program.cs, @ 11,13]</p>
+</blockquote>
+<blockquote>
+<p>02:U 0032ed6c 661621db clr!CallDescrWorker+0x33</p>
+</blockquote>
+<p>Now that I have solved this I wanted to check the same on the debug build (optimized -) . To validate if it was Console.get_Out or Console.WriteLine. So when mscorlib loaded here was my command to check this</p>
+<p>[sourcecode]</p>
+<p>.load sosex;.loadby sos clr;!mbm *Program.Main* &ldquo;!u @eip&rdquo;;g</p>
+<p>[/sourcecode]</p>
+<p>In the above command I am setting a break-point on Main method and when the break-point hits “!u @eip” will disassemble the ip, the @eip register will have the address of the current function. Here is the output from !u @eip</p>
+<blockquote>
+<p>*** WARNING: Unable to verify checksum for ConsoleApplication11.exe</p>
+<p>c:usersnaveendocumentsvisual studio 2010ProjectsConsoleApplication11Program.cs @ 11:</p>
+</blockquote>
+<blockquote>
+<p>01f10070 55 push ebp</p>
+</blockquote>
+<blockquote>
+<p>01f10071 8bec mov ebp,esp</p>
+</blockquote>
+<blockquote>
+<p>01f10073 83ec0c sub esp,0Ch</p>
+</blockquote>
+<blockquote>
+<p>01f10076 894dfc mov dword ptr [ebp-4],ecx</p>
+</blockquote>
+<blockquote>
+<p>01f10079 833d3c31360000 cmp dword ptr ds:[36313Ch],0</p>
+</blockquote>
+<blockquote>
+<p>01f10080 7405 je 01f10087</p>
+</blockquote>
+<blockquote>
+<p>01f10082 e8c85a5064 call clr!JIT_DbgIsJustMyCode (66415b4f)</p>
+</blockquote>
+<blockquote>
+<p>01f10087 33d2 xor edx,edx</p>
+</blockquote>
+<blockquote>
+<p>01f10089 8955f4 mov dword ptr [ebp-0Ch],edx</p>
+</blockquote>
+<blockquote>
+<p>01f1008c 33d2 xor edx,edx</p>
+</blockquote>
+<blockquote>
+<p>01f1008e 8955f8 mov dword ptr [ebp-8],edx</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>01f10091 90 nop</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>c:usersnaveendocumentsvisual studio 2010ProjectsConsoleApplication11Program.cs @ 12:</p>
+</blockquote>
+<blockquote>
+<p>01f10092 c745f80a000000 mov dword ptr [ebp-8],0Ah</p>
+</blockquote>
+<blockquote>
+<p>c:usersnaveendocumentsvisual studio 2010ProjectsConsoleApplication11Program.cs @ 13:</p>
+</blockquote>
+<blockquote>
+<p>01f10099 8b0530200f03 mov eax,dword ptr ds:[30F2030h] (“naveen”)</p>
+</blockquote>
+<blockquote>
+<p>01f1009f 8945f4 mov dword ptr [ebp-0Ch],eax</p>
+</blockquote>
+<blockquote>
+<p>c:usersnaveendocumentsvisual studio 2010ProjectsConsoleApplication11Program.cs @ 14:</p>
+</blockquote>
+<blockquote>
+<p>01f100a2 8b4df4 mov ecx,dword ptr [ebp-0Ch]</p>
+</blockquote>
+<blockquote>
+<p>*** WARNING: Unable to verify checksum for C:WindowsassemblyNativeImages_v4.0.30319_32mscorlib246f1a5abb686b9dcdf22d3505b08ceamscorlib.ni.dll</p>
+</blockquote>
+<blockquote>
+<p>01f100a5 e802706d63 call mscorlib_ni+0x2570ac (655e70ac) (System.Console.WriteLine(System.String) , mdToken: 06000919)</p>
+</blockquote>
+<blockquote>
+<p>01f100aa 90 nop</p>
+</blockquote>
+<blockquote>
+<p>c:usersnaveendocumentsvisual studio 2010ProjectsConsoleApplication11Program.cs @ 15:</p>
+</blockquote>
+<blockquote>
+<p>01f100ab e8b4c1ca63 call mscorlib_ni+0x82c264 (65bbc264) (System.Console.Read(), mdToken: 0600090a)</p>
+</blockquote>
+<blockquote>
+<p>01f100b0 90 nop</p>
+</blockquote>
+<blockquote>
+<p>c:usersnaveendocumentsvisual studio 2010ProjectsConsoleApplication11Program.cs @ 17:</p>
+</blockquote>
+<blockquote>
+<p>01f100b1 90 nop</p>
+</blockquote>
+<blockquote>
+<p>01f100b2 8be5 mov esp,ebp</p>
+</blockquote>
+<blockquote>
+<p>01f100b4 5d pop ebp</p>
+</blockquote>
+<blockquote>
+<p>01f100b5 c3 ret</p>
+</blockquote>
+<blockquote>
+<p>eax=003637f0 ebx=00000000 ecx=020fbc7c edx=00000000 esi=004bb2d0 edi=0016f400</p>
+</blockquote>
+<blockquote>
+<p>eip=01f10091 esp=0016f3c8 ebp=0016f3d4 iopl=0 nv up ei pl zr na pe nc</p>
+</blockquote>
+<blockquote>
+<p>cs=0023 ss=002b ds=002b es=002b fs=0053 gs=002b efl=00000246</p>
+</blockquote>
+<blockquote>
+<p>01f10091 90 nop</p>
+</blockquote>
+<p>Notice in the above code it is Console.WriteLine and not Console.get_Out.</p>
+<p>Here is one of gotchas of debugging optimized code.</p>
+</div>
+</article>
+<hr>
+<div class=post-info>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+<span class=tag><a href=/categories/.net/>.NET</a></span>
+<span class=tag><a href=/categories/windbg/>Windbg</a></span>
+</p>
+</div>
+</main>
+</div>
+<footer class=footer>
+</footer>
+</div>
+<script type=text/javascript src=/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+</body>
+</html>

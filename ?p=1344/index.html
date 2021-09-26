@@ -1,0 +1,369 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=author content="admin">
+<meta name=description content="It so happens most of the applications block the UI thread and do sync I/O, which is most common reason for “Not Responding” window. Here is a post http://blogs.msdn.com/b/nathannesbit/archive/2010/12/28/detecting-ui-thread-misuse.aspx that tries helping in detecting this. I like to handle this from bottom of the stack because we have a cool tool called debugger.
+The approach is simple as having a break-point on a function like “KERNEL32!WaitFor*” and checking if the current thread is a UI thread.">
+<meta name=keywords content>
+<meta name=robots content="noodp">
+<meta name=theme-color content>
+<link rel=canonical href="/?p=1344/">
+<title>
+Who is is blocking my UI Thread? Diagnosing the cause using Windbg :: naveen srinivasan — Write code.Loves to read
+</title>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css rel=stylesheet type=text/css>
+<link rel=stylesheet href=/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css>
+<meta itemprop=name content="Who is is blocking my UI Thread? Diagnosing the cause using Windbg">
+<meta itemprop=description content="It so happens most of the applications block the UI thread and do sync I/O, which is most common reason for “Not Responding” window. Here is a post http://blogs.msdn.com/b/nathannesbit/archive/2010/12/28/detecting-ui-thread-misuse.aspx that tries helping in detecting this. I like to handle this from bottom of the stack because we have a cool tool called debugger.
+The approach is simple as having a break-point on a function like “KERNEL32!WaitFor*” and checking if the current thread is a UI thread."><meta itemprop=datePublished content="2011-04-01T18:59:06+00:00">
+<meta itemprop=dateModified content="2011-04-01T18:59:06+00:00">
+<meta itemprop=wordCount content="691"><meta itemprop=image content="/">
+<meta itemprop=keywords content>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="/">
+<meta name=twitter:title content="Who is is blocking my UI Thread? Diagnosing the cause using Windbg">
+<meta name=twitter:description content="It so happens most of the applications block the UI thread and do sync I/O, which is most common reason for “Not Responding” window. Here is a post http://blogs.msdn.com/b/nathannesbit/archive/2010/12/28/detecting-ui-thread-misuse.aspx that tries helping in detecting this. I like to handle this from bottom of the stack because we have a cool tool called debugger.
+The approach is simple as having a break-point on a function like “KERNEL32!WaitFor*” and checking if the current thread is a UI thread.">
+<meta property="article:section" content="Windbg">
+<meta property="article:published_time" content="2011-04-01 18:59:06 +0000 UTC">
+</head>
+<body>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=/ style=text-decoration:none>
+<div class=logo>
+<span class=logo__mark>></span>
+<span class=logo__text>cd /home</span>
+<span class=logo__cursor>
+</span>
+</div>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class=menu__inner><li><a href=/posts>posts</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<main class=post>
+<div class=post-info>
+</p>
+</div>
+<article>
+<h2 class=post-title><a href="/?p=1344/">Who is is blocking my UI Thread? Diagnosing the cause using Windbg</a></h2>
+<div class=post-content>
+<p>It so happens most of the applications block the UI thread and do sync I/O, which is most common reason for “Not Responding” window. Here is a post <a href=http://blogs.msdn.com/b/nathannesbit/archive/2010/12/28/detecting-ui-thread-misuse.aspx>http://blogs.msdn.com/b/nathannesbit/archive/2010/12/28/detecting-ui-thread-misuse.aspx</a> that tries helping in detecting this. I like to handle this from bottom of the stack because we have a cool tool called debugger.</p>
+<p>The approach is simple as having a break-point on a function like “KERNEL32!WaitFor*” and checking if the current thread is a UI thread. This could also be done for other functions like Sleep on UI thread by having a break-point on “KERNELBASE!SleepEx”.</p>
+<p>Here are steps to determine if a thread is a STA thread / UI Thread. This is information is stored in TEB structure (thread environment block). Here is the output of the teb on the UI Thread</p>
+<blockquote>
+<p>0:000> dt ntdll!_TEB @$teb</p>
+</blockquote>
+<blockquote>
+<p>+0x000 NtTib            : _NT_TIB</p>
+</blockquote>
+<blockquote>
+<p>+0x01c EnvironmentPointer : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0x020 ClientId         : _CLIENT_ID</p>
+</blockquote>
+<blockquote>
+<p>+0x028 ActiveRpcHandle  : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0x02c ThreadLocalStoragePointer : 0x7efdd02c</p>
+</blockquote>
+<blockquote>
+<p>+0x030 ProcessEnvironmentBlock : 0x7efde000 _PEB</p>
+</blockquote>
+<blockquote>
+<p>+0x034 LastErrorValue   : 0</p>
+</blockquote>
+<blockquote>
+<p>+0x038 CountOfOwnedCriticalSections : 0</p>
+</blockquote>
+<blockquote>
+<p>+0x03c CsrClientThread  : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0x040 Win32ThreadInfo  : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0x044 User32Reserved   : [26] 0</p>
+</blockquote>
+<blockquote>
+<p>+0x0ac UserReserved     : [5] 0</p>
+</blockquote>
+<blockquote>
+<p>+0x0c0 WOW32Reserved    : 0x751b2320</p>
+</blockquote>
+<blockquote>
+<p>+0x0c4 CurrentLocale    : 0x409</p>
+</blockquote>
+<blockquote>
+<p>+0x0c8 FpSoftwareStatusRegister : 0</p>
+</blockquote>
+<blockquote>
+<p>+0x0cc SystemReserved1  : [54] (null)</p>
+</blockquote>
+<blockquote>
+<p>+0x1a4 ExceptionCode    : 0</p>
+</blockquote>
+<blockquote>
+<p>+0x1a8 ActivationContextStackPointer : 0x001a07d0 _ACTIVATION_CONTEXT_STACK</p>
+</blockquote>
+<blockquote>
+<p>+0x1ac SpareBytes       : [36]  “”</p>
+</blockquote>
+<blockquote>
+<p>+0x1d0 TxFsContext      : 0xfffe</p>
+</blockquote>
+<blockquote>
+<p>+0x1d4 GdiTebBatch      : _GDI_TEB_BATCH</p>
+</blockquote>
+<blockquote>
+<p>+0x6b4 RealClientId     : _CLIENT_ID</p>
+</blockquote>
+<blockquote>
+<p>+0x6bc GdiCachedProcessHandle : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0x6c0 GdiClientPID     : 0</p>
+</blockquote>
+<blockquote>
+<p>+0x6c4 GdiClientTID     : 0</p>
+</blockquote>
+<blockquote>
+<p>+0x6c8 GdiThreadLocalInfo : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0x6cc Win32ClientInfo  : [62] 0</p>
+</blockquote>
+<blockquote>
+<p>+0x7c4 glDispatchTable  : [233] (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xb68 glReserved1      : [29] 0</p>
+</blockquote>
+<blockquote>
+<p>+0xbdc glReserved2      : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xbe0 glSectionInfo    : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xbe4 glSection        : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xbe8 glTable          : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xbec glCurrentRC      : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xbf0 glContext        : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xbf4 LastStatusValue  : 0xc0000139</p>
+</blockquote>
+<blockquote>
+<p>+0xbf8 StaticUnicodeString : _UNICODE_STRING “”</p>
+</blockquote>
+<blockquote>
+<p>+0xc00 StaticUnicodeBuffer : [261]  “”</p>
+</blockquote>
+<blockquote>
+<p>+0xe0c DeallocationStack : 0x00320000</p>
+</blockquote>
+<blockquote>
+<p>+0xe10 TlsSlots         : [64] (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xf10 TlsLinks         : _LIST_ENTRY [ 0x0 – 0x0 ]</p>
+</blockquote>
+<blockquote>
+<p>+0xf18 Vdm              : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xf1c ReservedForNtRpc : 0x001d8c70</p>
+</blockquote>
+<blockquote>
+<p>+0xf20 DbgSsReserved    : [2] (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xf28 HardErrorMode    : 0</p>
+</blockquote>
+<blockquote>
+<p>+0xf2c Instrumentation  : [9] (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xf50 ActivityId       : _GUID {00000000-0000-0000-0000-000000000000}</p>
+</blockquote>
+<blockquote>
+<p>+0xf60 SubProcessTag    : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xf64 EtwLocalData     : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xf68 EtwTraceData     : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xf6c WinSockData      : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xf70 GdiBatchCount    : 0x7efdb000</p>
+</blockquote>
+<blockquote>
+<p>+0xf74 CurrentIdealProcessor : _PROCESSOR_NUMBER</p>
+</blockquote>
+<blockquote>
+<p>+0xf74 IdealProcessorValue : 0x1010000</p>
+</blockquote>
+<blockquote>
+<p>+0xf74 ReservedPad0     : 0 ”</p>
+</blockquote>
+<blockquote>
+<p>+0xf75 ReservedPad1     : 0 ”</p>
+</blockquote>
+<blockquote>
+<p>+0xf76 ReservedPad2     : 0x1 ”</p>
+</blockquote>
+<blockquote>
+<p>+0xf77 IdealProcessor   : 0x1 ”</p>
+</blockquote>
+<blockquote>
+<p>+0xf78 GuaranteedStackBytes : 0x1000</p>
+</blockquote>
+<blockquote>
+<p>+0xf7c ReservedForPerf  : (null)</p>
+</blockquote>
+<blockquote>
+<p>+0xf80 ReservedForOle   : 0x001ffd50</p>
+</blockquote>
+<p>I have shown only the partial output because we are interested only in “<strong>ReservedForOle</strong>” member which is in the <strong>oxf80</strong> offset. Within this structure in “<strong>0xc</strong>” offset contains the information on whether it is STA / MTA / Unkown and here is a write up on this from John Robbins <a href=http://www.microsoft.com/msj/1099/bugslayer/bugslayer1099.aspx>http://www.microsoft.com/msj/1099/bugslayer/bugslayer1099.aspx</a>.  Though the posts mentions STA as <strong>0x80</strong> and MTA as <strong>0x140</strong> with current version of windows value of STA is <strong>81</strong> and MTA is <strong>141</strong>.</p>
+<p>With this information it was pretty easy to create a script which will give us a call-stack if a UI Thread is blocking.</p>
+<p>[sourcecode]</p>
+<p>bm KERNEL32!WaitFor* &ldquo;.if (poi(@$teb+0xf80) != 0) { .if (poi(poi(@$teb+0xf80)+0xc) = 81) {!clrstack;g} .else {g}} .else {gh}&rdquo;</p>
+<p>bp KERNELBASE!SleepEx &ldquo;.if (poi(@$teb+0xf80) != 0) { .if (poi(poi(@$teb+0xf80)+0xc) = 81) {!clrstack;g} .else {g}} .else {gh}&rdquo;</p>
+<p>[/sourcecode]</p>
+<p>Here is a example call-stack from the above break-point which indicates that we are blocking on the UI Thread</p>
+<blockquote>
+<p>OS Thread Id: 0x76c (0)</p>
+</blockquote>
+<blockquote>
+<p>Child SP IP       Call Site</p>
+</blockquote>
+<blockquote>
+<p>0029e74c 775c118e [InlinedCallFrame: 0029e74c]</p>
+</blockquote>
+<blockquote>
+<p>0029e748 5affbc00 DomainBoundILStubClass.IL_STUB_PInvoke(System.Net.Sockets.AddressFamily, System.Net.Sockets.SocketType, System.Net.Sockets.ProtocolType, IntPtr, UInt32, System.Net.SocketConstructorFlags)</p>
+</blockquote>
+<blockquote>
+<p>0029e74c 5afa72e4 [InlinedCallFrame: 0029e74c] System.Net.UnsafeNclNativeMethods+OSSOCK.WSASocket(System.Net.Sockets.AddressFamily, System.Net.Sockets.SocketType, System.Net.Sockets.ProtocolType, IntPtr, UInt32, System.Net.SocketConstructorFlags)</p>
+</blockquote>
+<blockquote>
+<p>0029e7a4 5afa72e4 System.Net.Sockets.Socket.InitializeSockets()</p>
+</blockquote>
+<blockquote>
+<p>0029e7f4 5afcc3ca System.Net.NetworkAddressChangePolled..ctor()</p>
+</blockquote>
+<blockquote>
+<p>0029e808 5afcc326 System.Net.AutoWebProxyScriptEngine+AutoDetector.Initialize()</p>
+</blockquote>
+<blockquote>
+<p>0029e838 5af7534d System.Net.AutoWebProxyScriptEngine+AutoDetector.get_CurrentAutoDetector()</p>
+</blockquote>
+<blockquote>
+<p>0029e83c 5af75263 System.Net.AutoWebProxyScriptEngine..ctor(System.Net.WebProxy, Boolean)</p>
+</blockquote>
+<blockquote>
+<p>0029e858 5af75202 System.Net.WebProxy.UnsafeUpdateFromRegistry()</p>
+</blockquote>
+<blockquote>
+<p>0029e868 5af751c8 System.Net.WebProxy..ctor(Boolean)</p>
+</blockquote>
+<blockquote>
+<p>0029e86c 5af74c79 System.Net.Configuration.DefaultProxySectionInternal..ctor(System.Net.Configuration.DefaultProxySection)</p>
+</blockquote>
+<blockquote>
+<p>0029e8b0 5af748d2 System.Net.Configuration.DefaultProxySectionInternal.GetSection()</p>
+</blockquote>
+<blockquote>
+<p>0029e8e4 5afcbf76 System.Net.WebRequest.get_InternalDefaultWebProxy()</p>
+</blockquote>
+<blockquote>
+<p>0029e914 5afcbc86 System.Net.HttpWebRequest..ctor(System.Uri, System.Net.ServicePoint)</p>
+</blockquote>
+<blockquote>
+<p>0029e92c 5afcbbcb System.Net.HttpRequestCreator.Create(System.Uri)</p>
+</blockquote>
+<blockquote>
+<p>0029e938 5afcb772 System.Net.WebRequest.Create(System.Uri, Boolean)</p>
+</blockquote>
+<blockquote>
+<p>0029e95c 5af94cad System.Net.WebRequest.Create(System.String)</p>
+</blockquote>
+<blockquote>
+<p>0029e96c 0087056e WindowsFormsApplication1.Form1.&lt;.ctor>b__0(System.Object, System.EventArgs) [C:UsersnaveenDocumentsVisual Studio 2010ProjectsWindowsFormsApplication1WindowsFormsApplication1Form1.cs @ 15]</p>
+</blockquote>
+<blockquote>
+<p>0029e9ac 592b4ae8 System.Windows.Forms.Control.OnClick(System.EventArgs)</p>
+</blockquote>
+<blockquote>
+<p>0029e9c4 592b70a2 System.Windows.Forms.Button.OnClick(System.EventArgs)</p>
+</blockquote>
+<blockquote>
+<p>0029e9dc 59846174 System.Windows.Forms.Button.OnMouseUp(System.Windows.Forms.MouseEventArgs)</p>
+</blockquote>
+<blockquote>
+<p>0029e9f8 598195b5 System.Windows.Forms.Control.WmMouseUp(System.Windows.Forms.Message ByRef, System.Windows.Forms.MouseButtons, Int32)</p>
+</blockquote>
+<blockquote>
+<p>0029ea8c 59bda1bf System.Windows.Forms.Control.WndProc(System.Windows.Forms.Message ByRef)</p>
+</blockquote>
+<blockquote>
+<p>0029ea90 59be18dd [InlinedCallFrame: 0029ea90]</p>
+</blockquote>
+<blockquote>
+<p>0029eae4 59be18dd System.Windows.Forms.ButtonBase.WndProc(System.Windows.Forms.Message ByRef)</p>
+</blockquote>
+<blockquote>
+<p>0029eb28 5931de00 System.Windows.Forms.Button.WndProc(System.Windows.Forms.Message ByRef)</p>
+</blockquote>
+<blockquote>
+<p>0029eb34 593070f3 System.Windows.Forms.Control+ControlNativeWindow.OnMessage(System.Windows.Forms.Message ByRef)</p>
+</blockquote>
+<blockquote>
+<p>0029eb3c 59307071 System.Windows.Forms.Control+ControlNativeWindow.WndProc(System.Windows.Forms.Message ByRef)</p>
+</blockquote>
+<blockquote>
+<p>0029eb50 59306fb6 System.Windows.Forms.NativeWindow.Callback(IntPtr, Int32, IntPtr, IntPtr)</p>
+</blockquote>
+<blockquote>
+<p>0029ecf4 01010a35 [InlinedCallFrame: 0029ecf4]</p>
+</blockquote>
+</div>
+</article>
+<hr>
+<div class=post-info>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+<span class=tag><a href=/categories/windbg/>Windbg</a></span>
+</p>
+</div>
+</main>
+</div>
+<footer class=footer>
+</footer>
+</div>
+<script type=text/javascript src=/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+</body>
+</html>
