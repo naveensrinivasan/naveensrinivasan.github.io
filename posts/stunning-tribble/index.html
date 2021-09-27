@@ -1,0 +1,113 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=author content>
+<meta name=description content="Defending from including OSV/CVE in go dependencies tldr: If you want to avoid including OSV/CVE in your go.mod/go.sum you can utilize this https://github.com/naveensrinivasan/stunning-tribble tool do that. Here is an example of how this is being used in scorecard https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72
+I contribute to a project that is primarily focused on supply chain security https://github.com/ossf/scorecard which is part of Open Source Security Foundation, which is also part of Linux Foundation.
+We happened to realize that between version 1.">
+<meta name=keywords content=",supplychain">
+<meta name=robots content="noodp">
+<meta name=theme-color content>
+<link rel=canonical href=/posts/stunning-tribble/>
+<title>
+Stunning Tribble :: naveen srinivasan — Write code.Loves to read
+</title>
+<link href=https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css rel=stylesheet type=text/css>
+<link rel=stylesheet href=/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css>
+<meta itemprop=name content="Stunning Tribble">
+<meta itemprop=description content="Defending from including OSV/CVE in go dependencies tldr: If you want to avoid including OSV/CVE in your go.mod/go.sum you can utilize this https://github.com/naveensrinivasan/stunning-tribble tool do that. Here is an example of how this is being used in scorecard https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72
+I contribute to a project that is primarily focused on supply chain security https://github.com/ossf/scorecard which is part of Open Source Security Foundation, which is also part of Linux Foundation.
+We happened to realize that between version 1."><meta itemprop=datePublished content="2021-09-27T00:37:38+00:00">
+<meta itemprop=dateModified content="2021-09-27T00:37:38+00:00">
+<meta itemprop=wordCount content="232"><meta itemprop=image content="/">
+<meta itemprop=keywords content="supplychain,">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="/">
+<meta name=twitter:title content="Stunning Tribble">
+<meta name=twitter:description content="Defending from including OSV/CVE in go dependencies tldr: If you want to avoid including OSV/CVE in your go.mod/go.sum you can utilize this https://github.com/naveensrinivasan/stunning-tribble tool do that. Here is an example of how this is being used in scorecard https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72
+I contribute to a project that is primarily focused on supply chain security https://github.com/ossf/scorecard which is part of Open Source Security Foundation, which is also part of Linux Foundation.
+We happened to realize that between version 1.">
+<meta property="article:published_time" content="2021-09-27 00:37:38 +0000 UTC">
+</head>
+<body>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=/ style=text-decoration:none>
+<div class=logo>
+<span class=logo__mark>></span>
+<span class=logo__text>cd /home</span>
+<span class=logo__cursor>
+</span>
+</div>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class=menu__inner><li><a href=/posts>posts</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<main class=post>
+<div class=post-info>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+2 minutes
+</p>
+</div>
+<article>
+<h1 class=post-title>
+<a href=/posts/stunning-tribble/>Stunning Tribble</a>
+</h1>
+<div class=post-content>
+<h2 id=defending-from-including-osvcve-in-go-dependencies>Defending from including OSV/CVE in go dependencies</h2>
+<p>tldr: If you want to avoid including OSV/CVE in your <code>go.mod/go.sum</code> you can utilize this <a href=https://github.com/naveensrinivasan/stunning-tribble>https://github.com/naveensrinivasan/stunning-tribble</a> tool do that. Here is an example of how this is being used in scorecard <a href=https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72>https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72</a></p>
+<p>I contribute to a project that is primarily focused on supply chain security <a href=https://github.com/ossf/scorecard>https://github.com/ossf/scorecard</a> which is part of Open Source Security Foundation, which is also part of Linux Foundation.</p>
+<p>We happened to realize that between version 1.2.0 and 2.0.0 we have included a library that happens to have OSV(<a href=https://osv.dev>https://osv.dev</a>) <a href="https://deps.dev/go/github.com%2Fossf%2Fscorecard/v1.2.0/comparev2=v2.0.0%2Bincompatible">https://deps.dev/go/github.com%2Fossf%2Fscorecard/v1.2.0/comparev2=v2.0.0%2Bincompatible</a>. This was accidental, and we wanted to check how to avoid this in the future.</p>
+<p>The goal was to make this process part of every PR to check to be aware of any new OSV that we could be introducing. We also wanted an option to ignore any pre-existing OSV until we fix them.</p>
+<p>So this led to <a href=https://github.com/naveensrinivasan/stunning-tribble>https://github.com/naveensrinivasan/stunning-tribble</a>. Stunning-tribble takes input as stream and looks for OSV from osv.dev.
+The stream is based on the format <code>go list -m -f '{{if not (or .Main)}}{{.Path}}@{{.Version}}_{{.Replace}}{{end}}' all</code>. This will provide all the dependencies, including the replace directives.</p>
+<p>The tool is specifically built with the idea of not having any external dependency to avoid it having any OSV.</p>
+<p>To ignore existing OSV pass them as CSV <code>stunning-tribble GO-2020-0018,GO-2020-0016</code></p>
+<p>Supply chain security is one of the new ways in which lots of attacks are happening <a href=https://github.com/cncf/tag-security/tree/main/supply-chain-security/compromises>https://github.com/cncf/tag-security/tree/main/supply-chain-security/compromises</a></p>
+</div>
+</article>
+<hr>
+<div class=post-info>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83.0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7" y2="7"/></svg>
+<span class=tag><a href=/tags/supplychain/>supplychain</a></span>
+</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6A2 2 0 004 4v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+232 Words
+</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+2021-09-27 00:37 +0000
+</p>
+</div>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h>Read other posts</span>
+<hr>
+</div>
+<div class=pagination__buttons>
+<span class="button next">
+<a href=/posts/google-peer-bonus-award/>
+<span class=button__text>Google Peer Bonus Award</span>
+<span class=button__icon>→</span>
+</a>
+</span>
+</div>
+</div>
+</main>
+</div>
+<footer class=footer>
+</footer>
+</div>
+<script type=text/javascript src=/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+</body>
+</html>
