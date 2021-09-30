@@ -1,4 +1,32 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on naveen srinivasan</title><link>/posts/</link><description>Recent content in Posts on naveen srinivasan</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 27 Sep 2021 00:37:38 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Stunning Tribble</title><link>/posts/stunning-tribble/</link><pubDate>Mon, 27 Sep 2021 00:37:38 +0000</pubDate><guid>/posts/stunning-tribble/</guid><description>Defending from including OSV/CVE in go dependencies tldr: If you want to avoid including OSV/CVE in your go.mod/go.sum you can utilize this https://github.com/naveensrinivasan/stunning-tribble tool do that. Here is an example of how this is being used in scorecard https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on naveen srinivasan</title><link>/posts/</link><description>Recent content in Posts on naveen srinivasan</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 30 Sep 2021 23:48:46 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Zero Trust Development Environment</title><link>/posts/zero-trust-development-environment/</link><pubDate>Thu, 30 Sep 2021 23:48:46 +0000</pubDate><guid>/posts/zero-trust-development-environment/</guid><description>Zero trust development environment Photo by novia wu on Unsplash
+I am paranoid about running unknown code on my machine. I have been using a MacBook for some years now, but the way I used to install any software was brew like most developers.
+Later I asked the question, &amp;ldquo;How do I trust my brew installs?&amp;rdquo; But like most of us, I had to try new packages and deploy software to do my work.</description><content type="html"><![CDATA[<h1 id="zero-trust-development-environment">Zero trust development environment</h1>
+<p><img src="https://i.imgur.com/eHwmG9V.jpg" alt="">
+<em><a href="https://unsplash.com/photos/JyepCoDqics?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink">Photo by novia wu on Unsplash</a></em></p>
+<p>I am paranoid about running unknown code on my machine. I have been using a MacBook for some years now, but the way I used to install any software was <code>brew</code> like most developers.</p>
+<p>Later I asked the question, &ldquo;How do I trust my <code>brew installs</code>?&rdquo; But like most of us, I had to try new packages and deploy software to do my work.</p>
+<p>I contribute to many different OSS projects, and I also wanted to keep the environments separate. For example, one of the OSS projects requires <code>go 1.15</code> whereas the other one needs <code>go 1.17</code>.</p>
+<p>The question I get asked is, aren&rsquo;t you overblowing the situation? No, I am not, and here are few examples of supply chain issues <a href="https://github.com/cncf/tag-security/tree/main/supply-chain-security/compromises">https://github.com/cncf/tag-security/tree/main/supply-chain-security/compromises</a> and a great article by Paulo Gomes, <a href="https://itnext.io/golang-stop-trusting-your-dependencies-a4c916533b04">Golang: stop trusting your dependencies!</a></p>
+<p>Here are the things that I wanted for my new ENV</p>
+<ol>
+<li>I wanted an automatable environment.</li>
+<li>It has to be on a Linux box.</li>
+<li>It would be nice to have an immutable environment.</li>
+<li>It should be easy to maintain, and it would be great to have a community.</li>
+<li>I was ready to pay not more than $20 for my ENV per month. I meant for the hardware on a cloud instance. In my opinion, the cost of security is worth it.</li>
+</ol>
+<p>With the above requirements, I ran into NixOS and nixpkgs.
+NixOS has a high learning curve like anything else, but I think it is worth the time spent on learning it.</p>
+<p>Now my environment is still a Macbook with a terminal. I only install packages from the App Store or signed packages, which has reduced my attack vector.</p>
+<p>I have different shell ENVs with nixpkgs for various projects:</p>
+<ul>
+<li><a href="https://github.com/naveensrinivasan/dotvim/blob/master/lnd.nix">https://github.com/naveensrinivasan/dotvim/blob/master/lnd.nix</a></li>
+<li><a href="https://github.com/naveensrinivasan/dotvim/blob/master/blog.nix">https://github.com/naveensrinivasan/dotvim/blob/master/blog.nix</a></li>
+<li><a href="https://github.com/naveensrinivasan/dotvim/blob/master/shell.nix">https://github.com/naveensrinivasan/dotvim/blob/master/shell.nix</a></li>
+</ul>
+<p>I have tmux sessions for each ENV, which are still running on a single cloud instance VM. I can update packages and don&rsquo;t have to worry about messing with the ENV&rsquo;s or compromising my machine security.</p>
+<p>It would be best if you were comfortable using CLI-based ENV. I have been using vim for a while now, and I don&rsquo;t miss my UI for writing code.</p>
+]]></content></item><item><title>Stunning Tribble</title><link>/posts/stunning-tribble/</link><pubDate>Mon, 27 Sep 2021 00:37:38 +0000</pubDate><guid>/posts/stunning-tribble/</guid><description>Defending from including OSV/CVE in go dependencies tldr: If you want to avoid including OSV/CVE in your go.mod/go.sum you can utilize this https://github.com/naveensrinivasan/stunning-tribble tool do that. Here is an example of how this is being used in scorecard https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72
 I contribute to a project that is primarily focused on supply chain security https://github.com/ossf/scorecard which is part of Open Source Security Foundation, which is also part of Linux Foundation.
 We happened to realize that between version 1.</description><content type="html"><![CDATA[<h2 id="defending-from-including-osvcve-in-go-dependencies">Defending from including OSV/CVE in go dependencies</h2>
 <p>tldr: If you want to avoid including OSV/CVE in your <code>go.mod/go.sum</code> you can utilize this <a href="https://github.com/naveensrinivasan/stunning-tribble">https://github.com/naveensrinivasan/stunning-tribble</a> tool do that. Here is an example of how this is being used in scorecard <a href="https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72">https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72</a></p>
