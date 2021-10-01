@@ -4,7 +4,7 @@ Later I asked the question, &amp;ldquo;How do I trust my brew installs?&amp;rdqu
 <em><a href="https://unsplash.com/photos/JyepCoDqics?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink">Photo by novia wu on Unsplash</a></em></p>
 <p>I am paranoid about running unknown code on my machine. I have been using a MacBook for some years now, but the way I used to install any software was <code>brew</code> like most developers.</p>
 <p>Later I asked the question, &ldquo;How do I trust my <code>brew installs</code>?&rdquo; But like most of us, I had to try new packages and deploy software to do my work.</p>
-<p>I contribute to many different OSS projects, and I also wanted to keep the environments separate. For example, one of the OSS projects requires <code>go 1.15</code> whereas the other one needs <code>go 1.17</code>.</p>
+<p>I contribute to many different <a href="https://github.com/naveensrinivasan">OSS projects</a>, and I also wanted to keep the environments separate. For example, one of the OSS projects requires <code>go 1.15</code> whereas the other one needs <code>go 1.17</code>.</p>
 <p>The question I get asked is, aren&rsquo;t you overblowing the situation? No, I am not, and here are few examples of supply chain issues <a href="https://github.com/cncf/tag-security/tree/main/supply-chain-security/compromises">https://github.com/cncf/tag-security/tree/main/supply-chain-security/compromises</a> and a great article by Paulo Gomes, <a href="https://itnext.io/golang-stop-trusting-your-dependencies-a4c916533b04">Golang: stop trusting your dependencies!</a></p>
 <p>Here are the things that I wanted for my new ENV</p>
 <ol>
