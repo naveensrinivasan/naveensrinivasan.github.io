@@ -1,13 +1,11 @@
 ---
-title: "Resume"
+title: "Naveen Srinivasan"
 date: 2021-12-09T23:17:39Z
 
 ---
 
 _https://github.com/naveensrinivasan_
 
-Naveen Srinivasan 
-============
 
 _https://twitter.com/snaveen_ 
 
