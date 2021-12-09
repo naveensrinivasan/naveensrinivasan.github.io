@@ -54,4 +54,4 @@ theme = "hugo-theme-hello-friend-ng"
       [[languages.en.menu.main]]
         identifier = "resume"
         name = "resume"
-        url = "/posts"
+        url = "/resume"
