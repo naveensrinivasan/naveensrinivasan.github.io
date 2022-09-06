@@ -1,4 +1,8 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on naveen srinivasan</title><link>/posts/</link><description>Recent content in Posts on naveen srinivasan</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 30 Sep 2021 23:48:46 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Zero Trust Development Environment</title><link>/posts/zero-trust-development-environment/</link><pubDate>Thu, 30 Sep 2021 23:48:46 +0000</pubDate><guid>/posts/zero-trust-development-environment/</guid><description>Photo by novia wu on Unsplash
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on naveen srinivasan</title><link>/posts/</link><description>Recent content in Posts on naveen srinivasan</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 26 Aug 2022 02:01:16 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>google peer bonus</title><link>/posts/2022-09-06-google-peer-bonus/</link><pubDate>Fri, 26 Aug 2022 02:01:16 +0000</pubDate><guid>/posts/2022-09-06-google-peer-bonus/</guid><description>I am honored to – once again – be a recipient of this award Google hands out to open source contributors annually. Getting this token of appreciation feels incredible. Thank you, Google! I have been a recipient of this award before, in 2021.
+The award is a small token of appreciation from Google to open-source contributors. It is a way for Google to say “thank you” for the time and effort you have put into the open source community.</description><content type="html"><![CDATA[<p>I am honored to – once again – be a recipient of this award Google hands out to open source contributors annually. Getting this token of appreciation feels incredible. Thank you, Google! I have been a recipient of this award before, in 2021.</p>
+<p>The award is a small token of appreciation from Google to open-source contributors. It is a way for Google to say “thank you” for the time and effort you have put into the open source community.
+<img src="https://i.imgur.com/HknykHT.jpg" alt=""></p>
+]]></content></item><item><title>Zero Trust Development Environment</title><link>/posts/zero-trust-development-environment/</link><pubDate>Thu, 30 Sep 2021 23:48:46 +0000</pubDate><guid>/posts/zero-trust-development-environment/</guid><description>Photo by novia wu on Unsplash
 I am paranoid about running unknown code on my machine. I have been using a MacBook for some years now, but the way I used to install any software was brew like most developers.
 Later I asked the question, &amp;ldquo;How do I trust my brew installs?&amp;rdquo; But like most of us, I had to try new packages and deploy software to do my work.</description><content type="html"><![CDATA[<p><img src="https://i.imgur.com/eHwmG9V.jpg" alt="">
 <em><a href="https://unsplash.com/photos/JyepCoDqics?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink">Photo by novia wu on Unsplash</a></em></p>
@@ -42,7 +46,7 @@ Thank you Google and Abhishek!</description><content type="html"><![CDATA[<p>I�
 <p><img src="https://i.imgur.com/sKUifM9.png" alt=""></p>
 <p>Thank you Google and Abhishek!</p>
 ]]></content></item><item><title>How to debug the CrashLoopBackOff in Kubernetes when pod is not starting</title><link>/?p=3163/</link><pubDate>Thu, 26 May 2016 02:01:16 +0000</pubDate><guid>/?p=3163/</guid><description>Here is my learning of how I debugged the CrashLoopBackOff in kubernetes when the pod wasn’t starting.
-I wanted to deploy the jenkins dockerimage in the cluster. As mentioned in the jenkins docker repo I wanted to mount an external drive which is an AWS EBS volume. Here is my deployment yaml.
+I wanted to deploy the jenkins docker image in the cluster. As mentioned in the jenkins docker repo I wanted to mount an external drive which is an AWS EBS volume. Here is my deployment yaml.
 [gist id = “98aa6da98ebb9b7e3d7f996c8ef2cb38”]
 After starting the deployment the pod never came up and this the output of kubectl get pod</description><content type="html"><![CDATA[<p>Here is my learning of how I debugged the CrashLoopBackOff in kubernetes when the pod wasn’t starting.</p>
 <p>I wanted to deploy the <!-- raw HTML omitted -->jenkins docker<!-- raw HTML omitted --> image in the cluster. As mentioned in the jenkins docker  repo I wanted to mount an external drive which is an AWS EBS volume.  Here is my deployment yaml.</p>
@@ -62,7 +66,7 @@ After starting the deployment the pod never came up and this the output of kubec
 <p><em>Can not write to /var/jenkins_home/copy_reference_file.log. Wrong volume permissions?</em></p>
 <p>which identified the _/var/jenkins_home  _which was mounted with aws ebs voulme  didn’t have permission to write by the jenkins user <!-- raw HTML omitted --><a href="https://github.com/kubernetes/kubernetes/issues/2630">https://github.com/kubernetes/kubernetes/issues/2630</a><!-- raw HTML omitted -->.</p>
 <p>And after doing all of this I realized I could have done <em>kubectl logs jenkins-3317895845-x84u3</em> which would have given the same output without having to ssh into the box. But knowing this handy because when things go wrong we really need to debug the root cause.</p>
-]]></content></item><item><title>Enable Shortcat app in OSX</title><link>/?p=3141/</link><pubDate>Mon, 25 Apr 2016 14:13:47 +0000</pubDate><guid>/?p=3141/</guid><description>Shortcatapp is a software that I use everyday to keep me productive and reduce my dependency on mouse.
+]]></content></item><item><title>Enable Shortcat app in OSX</title><link>/?p=3141/</link><pubDate>Mon, 25 Apr 2016 14:13:47 +0000</pubDate><guid>/?p=3141/</guid><description>Shortcat app is a software that I use everyday to keep me productive and reduce my dependency on mouse.
 But if you have OSX El Captain you get a message to enable the assistive devices,. But it has been changed from the previous versions of OSX.
 To enable the assistive devices navigate to System Preferences &amp;gt; Security &amp;amp; Privacy &amp;gt; Privacy &amp;gt; Accessibility and enable for shortcat app.</description><content type="html"><![CDATA[<p><!-- raw HTML omitted -->Shortcat<!-- raw HTML omitted --> app is a software that I use everyday to keep me productive and reduce my dependency on mouse.</p>
 <p>But if you have OSX El Captain you get a message to enable the assistive devices,. But it has been changed from the previous versions of OSX.</p>
@@ -70,7 +74,7 @@ To enable the assistive devices navigate to System Preferences &amp;gt; Security
 ]]></content></item><item><title>My Docker aliases</title><link>/?p=3061/</link><pubDate>Sat, 23 Apr 2016 14:35:57 +0000</pubDate><guid>/?p=3061/</guid><description>I have been using docker very often now and because I have been spending most of time in the terminal it made sense to use alias to reduce the typing.
 [gist id = “d6b41d000b93f3ecc3e7a1b900c7382c”]
 I have curated this from others and have also customized to what I want.
- All my aliases are stored in my github repo https://github.com/naveensrinivasan/dotvim/blob/master/zshrc  </description><content type="html"><![CDATA[<p>I  have been using docker very often now and because I have been spending most of time in the terminal it made sense to use alias to reduce the typing.</p>
+All my aliases are stored in my github repo https://github.com/naveensrinivasan/dotvim/blob/master/zshrc</description><content type="html"><![CDATA[<p>I  have been using docker very often now and because I have been spending most of time in the terminal it made sense to use alias to reduce the typing.</p>
 <p>[gist id = “d6b41d000b93f3ecc3e7a1b900c7382c”]</p>
 <p>I have curated this from others and have also customized to what I want.</p>
 <p> </p>
@@ -79,7 +83,7 @@ I have curated this from others and have also customized to what I want.
 <p> </p>
 ]]></content></item><item><title>How I try avoid using mouse</title><link>/?p=2901/</link><pubDate>Mon, 28 Mar 2016 00:57:41 +0000</pubDate><guid>/?p=2901/</guid><description>Like most of the Dev’s I love using my Keyboard more than mouse. I am big vim fan and have been using vim for over 7-8 years. I still consider myself novice.
 Here are the ways I manage to use keyboard over mouse
-Shortcat– Great app get rids of use mouse in OSX – This is a Paid App , which IMHO is the best investment for me. There is also a trial version.</description><content type="html"><![CDATA[<p>Like most of the Dev’s I love using my Keyboard more than mouse. I am big vim fan and have been using vim for over 7-8 years. I still consider myself novice.</p>
+Shortcat – Great app get rids of use mouse in OSX – This is a Paid App , which IMHO is the best investment for me. There is also a trial version.</description><content type="html"><![CDATA[<p>Like most of the Dev’s I love using my Keyboard more than mouse. I am big vim fan and have been using vim for over 7-8 years. I still consider myself novice.</p>
 <p>Here are the ways I manage to use keyboard over mouse</p>
 <ul>
 <li><!-- raw HTML omitted -->Shortcat<!-- raw HTML omitted --> – Great app get rids of use mouse in OSX – This is a Paid App , which IMHO is the best investment for me. There is also a trial version.</li>
@@ -124,8 +128,7 @@ The puzzle starts of with simple problem
 <li><code>456 -&gt; y</code>
 *``</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -142,8 +145,7 @@ The puzzle starts of with simple problem
 *``
 *```</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -159,8 +161,7 @@ The puzzle starts of with simple problem
 <li><code>456 -&gt; y</code>
 *``</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -178,8 +179,7 @@ The puzzle starts of with simple problem
 *```
 *````</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -195,8 +195,7 @@ The puzzle starts of with simple problem
 <li><code>456 -&gt; y</code>
 *``</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -213,8 +212,7 @@ The puzzle starts of with simple problem
 *``
 *```</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -230,8 +228,7 @@ The puzzle starts of with simple problem
 <li><code>456 -&gt; y</code>
 *``</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -250,8 +247,7 @@ The puzzle starts of with simple problem
 *````
 *`````</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -267,8 +263,7 @@ The puzzle starts of with simple problem
 <li><code>456 -&gt; y</code>
 *``</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -285,8 +280,7 @@ The puzzle starts of with simple problem
 *``
 *```</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -302,8 +296,7 @@ The puzzle starts of with simple problem
 <li><code>456 -&gt; y</code>
 *``</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -321,8 +314,7 @@ The puzzle starts of with simple problem
 *```
 *````</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -338,8 +330,7 @@ The puzzle starts of with simple problem
 <li><code>456 -&gt; y</code>
 *``</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -356,8 +347,7 @@ The puzzle starts of with simple problem
 *``
 *```</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -373,8 +363,7 @@ The puzzle starts of with simple problem
 <li><code>456 -&gt; y</code>
 *``</li>
 <li>
-<pre tabindex="0"><code class="language-Here" data-lang="Here">
-</code></pre></li>
+<pre tabindex="0"><code class="language-Here" data-lang="Here"></code></pre></li>
 </ul>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
@@ -403,8 +392,9 @@ The puzzle starts of with simple problem
 <p>[gist id = “6d162d9f631cd636d14b”] which would have made this problem simpler.</p>
 <p>Here is my solution.</p>
 <p>[gist id = “6165418036481bae3756”]</p>
-]]></content></item><item><title>Parsing GitHub API</title><link>/?p=2571/</link><pubDate>Wed, 09 Dec 2015 16:46:57 +0000</pubDate><guid>/?p=2571/</guid><description>I have been contributing to https://github.com/octokit/octokit.netproject. It is the API for accessing GitHub. One of the recent questions that came up was to get the list of https://github.com/octokit/octokit.net/issues/968.
-The API’s are published in HTML https://developer.github.com/v3/There are about 63 + categories that have API. Wanted to parse all of these with least manual intervention.
+]]></content></item><item><title>Parsing GitHub API</title><link>/?p=2571/</link><pubDate>Wed, 09 Dec 2015 16:46:57 +0000</pubDate><guid>/?p=2571/</guid><description>I have been contributing to https://github.com/octokit/octokit.net project. It is the API for accessing GitHub. One of the recent questions that came up was to get the list of https://github.com/octokit/octokit.net/issues/968.
+The API’s are published in HTML https://developer.github.com/v3/
+There are about 63 + categories that have API. Wanted to parse all of these with least manual intervention.
 [gist id = “58fa8eb57e61535f10db”]
 The above goes to the main URL looks for all sub-categories and download’s each of the web pages and extracts “GET“, “DELETE“, “PATCH“, “POST“</description><content type="html"><![CDATA[<p>I have been contributing to <!-- raw HTML omitted --><a href="https://github.com/octokit/octokit.net">https://github.com/octokit/octokit.net</a><!-- raw HTML omitted --> project. It is the API for accessing GitHub. One of the recent questions that came up was to get the list of <!-- raw HTML omitted --><a href="https://github.com/octokit/octokit.net/issues/968">https://github.com/octokit/octokit.net/issues/968</a><!-- raw HTML omitted -->.</p>
 <p>The API’s are published in HTML <!-- raw HTML omitted --><a href="https://developer.github.com/v3/">https://developer.github.com/v3/</a><!-- raw HTML omitted --></p>
@@ -416,7 +406,7 @@ The above goes to the main URL looks for all sub-categories and download’s eac
 <p><img src="https://camo.githubusercontent.com/03204325907aae77bb2f865117271bf28136d5ca/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f4356766c6b5878564141456d7454332e706e67" alt=""></p>
 <p> </p>
 <p> </p>
-]]></content></item><item><title>fsharp docker image</title><link>/?p=2481/</link><pubDate>Wed, 11 Nov 2015 02:41:14 +0000</pubDate><guid>/?p=2481/</guid><description>The fsharp project has a official docker image https://github.com/fsprojects/docker-fsharp. The one issue with that is it is based on mono 4.0.4 which is buggy and fsharp does not work very well. The latest alpha release of the mono with which fsharp works well is 4.2.0. The 4.2.0 isn’t available in stable channels.
+]]></content></item><item><title>fsharp docker image</title><link>/?p=2481/</link><pubDate>Wed, 11 Nov 2015 02:41:14 +0000</pubDate><guid>/?p=2481/</guid><description>The fsharp project has a official docker image https://github.com/fsprojects/docker-fsharp . The one issue with that is it is based on mono 4.0.4 which is buggy and fsharp does not work very well. The latest alpha release of the mono with which fsharp works well is 4.2.0. The 4.2.0 isn’t available in stable channels.
 So I created a docker image with the latest mono from their alpha repo and using the latest fsharp from the github.</description><content type="html"><![CDATA[<p>The fsharp project has a official docker image <!-- raw HTML omitted --><a href="https://github.com/fsprojects/docker-fsharp">https://github.com/fsprojects/docker-fsharp</a><!-- raw HTML omitted --> . The one issue with that is it is based on mono 4.0.4 which is buggy and fsharp does not work very well. The latest alpha release of the mono with which fsharp works well is 4.2.0. The 4.2.0 isn’t available in stable channels.</p>
 <p>So I created a docker image with the latest mono from their alpha repo and using the latest fsharp from the github.</p>
 <p><!-- raw HTML omitted --><a href="https://github.com/naveensrinivasan/fsharp-docker">https://github.com/naveensrinivasan/fsharp-docker</a><!-- raw HTML omitted --></p>
@@ -466,8 +456,8 @@ So I created a docker image with the latest mono from their alpha repo and using
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-]]></content></item><item><title>Use Eventsource to get the duration of a Start Stop of Custom ETW events</title><link>/?p=1493/</link><pubDate>Mon, 08 Jun 2015 19:53:29 +0000</pubDate><guid>/?p=1493/</guid><description>The EventSourcelibrary provides an option to get duration of Custom ETW start and stop events and when used with Perfview we could leverage this to stop tracing when the duration is more than what we expect.
-What it is for example ,there could an external API call the application makes that has to be traced with the start and when it finishes then the stop of the event is called. Ideally we would have a ability to view the duration of these events similar to ASP.</description><content type="html"><![CDATA[<p>The <!-- raw HTML omitted -->EventSource<!-- raw HTML omitted --> library provides an option to get duration of Custom ETW start and stop events and when used with Perfview we could leverage this to stop tracing when the duration is more than what we expect.</p>
+]]></content></item><item><title>Use Eventsource to get the duration of a Start Stop of Custom ETW events</title><link>/?p=1493/</link><pubDate>Mon, 08 Jun 2015 19:53:29 +0000</pubDate><guid>/?p=1493/</guid><description>The EventSource library provides an option to get duration of Custom ETW start and stop events and when used with Perfview we could leverage this to stop tracing when the duration is more than what we expect.
+What it is for example ,there could an external API call the application makes that has to be traced with the start and when it finishes then the stop of the event is called.</description><content type="html"><![CDATA[<p>The <!-- raw HTML omitted -->EventSource<!-- raw HTML omitted --> library provides an option to get duration of Custom ETW start and stop events and when used with Perfview we could leverage this to stop tracing when the duration is more than what we expect.</p>
 <p>What it is for example ,there could an external API call the application makes that has to be traced with the start and when it finishes then the stop of the event is called. Ideally we would have a ability to view the duration of these events similar to ASP.NET calls.  The EventSource Library along with Perfview provides this ability to view the duration between the start and stop events.</p>
 <p>Here is a code sample with CustomEvent</p>
 <p>[gist https://gist.github.com/naveensrinivasan/7e54c72dc628ae7da69e]</p>
@@ -482,7 +472,7 @@ What it is for example ,there could an external API call the application makes t
 <p>There is a bug in perfview that would not record Stop triggered events. I have reported this and I hope this would be fixed in the next public release.</p>
 <p>The source code for these samples are here</p>
 <p><!-- raw HTML omitted --><a href="https://github.com/naveensrinivasan/ETWSamples">https://github.com/naveensrinivasan/ETWSamples</a><!-- raw HTML omitted --></p>
-]]></content></item><item><title>Log dynamic Custom objects in ETW using EventSource</title><link>/?p=1489/</link><pubDate>Fri, 29 May 2015 03:35:50 +0000</pubDate><guid>/?p=1489/</guid><description>With the latest release of EventSourcewe could create dynamic events without having to create class that inherits from EventSource. This is will be not be good for Performance.
+]]></content></item><item><title>Log dynamic Custom objects in ETW using EventSource</title><link>/?p=1489/</link><pubDate>Fri, 29 May 2015 03:35:50 +0000</pubDate><guid>/?p=1489/</guid><description>With the latest release of EventSource we could create dynamic events without having to create class that inherits from EventSource. This is will be not be good for Performance.
 Using these methods we could either log Anonymous objects or Classes that have the EventData Attribute applied to it. The caveat is that these objects public properties alone will be serialized. These properties have to be of native types like string,int,datetime, guid , IEnumerable.</description><content type="html"><![CDATA[<p>With the latest release of <!-- raw HTML omitted -->EventSource<!-- raw HTML omitted --> we could create dynamic events without having to create class that inherits from EventSource. This is will be not be good for Performance.</p>
 <p>Using these methods we could either log Anonymous objects or Classes that have the EventData Attribute applied to it. The caveat is that these objects public properties alone will be serialized. These properties have to be of native types like string,int,datetime, guid , IEnumerable. If you don’t want a property to be serialized you could apply the attribute EventIgnore.</p>
 <p>The source code for this repository is in <!-- raw HTML omitted --><a href="https://github.com/naveensrinivasan/ETWSamples">https://github.com/naveensrinivasan/ETWSamples</a><!-- raw HTML omitted --></p>
@@ -517,12 +507,11 @@ Managed Stack Explorer provides call stack for .NET applications using managed c
 <p>The debug shim works specific to processor and would not be able to get call-stacks if it is not. So x86 exe cannot get call-stacks of x64. That’s reason for x86 and x64 specific exe’s. There is no difference in code other than how it is compiled.</p>
 <p>It is work in progress and I would love some feedback and code contributions.</p>
 <p>The github site also has link to download the pre-complied executables.</p>
-]]></content></item><item><title>Measure GC Allocations and Collections using TraceEvent</title><link>/?p=1437/</link><pubDate>Tue, 12 May 2015 01:14:34 +0000</pubDate><guid>/?p=1437/</guid><description>In this post I will explore how we could use TraceEventto measure our code (even at function level) for GC Allocations and Collections.
+]]></content></item><item><title>Measure GC Allocations and Collections using TraceEvent</title><link>/?p=1437/</link><pubDate>Tue, 12 May 2015 01:14:34 +0000</pubDate><guid>/?p=1437/</guid><description>In this post I will explore how we could use TraceEvent to measure our code (even at function level) for GC Allocations and Collections.
 Save this with “.linq” extension and then open in linqpad.
 [gist https://gist.github.com/naveensrinivasan/b72fd80876eb67557ae8]
 Here is the TL;DR
-Why would I want to know GC events on a function level? Doesn’t the PerfMon counter provide that information on an application level? Isn’t Premature optimization root of all evil?
-Yes, for most of the part Premature optimization is not necessary.</description><content type="html"><![CDATA[<p>In this post I will explore  how we could use <!-- raw HTML omitted -->TraceEvent<!-- raw HTML omitted --> to measure our code (even at function level) for GC Allocations and Collections.</p>
+Why would I want to know GC events on a function level? Doesn’t the PerfMon counter provide that information on an application level? Isn’t Premature optimization root of all evil?</description><content type="html"><![CDATA[<p>In this post I will explore  how we could use <!-- raw HTML omitted -->TraceEvent<!-- raw HTML omitted --> to measure our code (even at function level) for GC Allocations and Collections.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Save this with “.linq” extension and then open in  linqpad.</p>
@@ -1287,7 +1276,7 @@ var command = new SqlCommand(@&amp;ldquo;update [tbl_AccessMapping] set [Display
 <p>}</p>
 <p>ad /q Contains</p>
 <p>[/sourcecode]</p>
-]]></content></item><item><title>Saving Dynamic Assembly in .NET 4.0 using Windbg</title><link>/?p=1298/</link><pubDate>Thu, 23 Dec 2010 23:37:45 +0000</pubDate><guid>/?p=1298/</guid><description>I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the AppDomain.AssemblyResolveevent. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the AppDomain.</description><content type="html"><![CDATA[<p>I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the <!-- raw HTML omitted -->AppDomain.AssemblyResolve<!-- raw HTML omitted --> event. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for <a href="http://stackoverflow.com/questions/1872502/how-to-save-a-dynamically-generated-assembly-that-is-stored-in-memory/1872588#1872588">I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the <!-- raw HTML omitted -->AppDomain.AssemblyResolve<!-- raw HTML omitted --> event. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for</a> read the comments especially from Evian. Unlike psscor2.dll the sos for .NET 4.0 does not have a !dumpdynamicassembly with a save option.</p>
+]]></content></item><item><title>Saving Dynamic Assembly in .NET 4.0 using Windbg</title><link>/?p=1298/</link><pubDate>Thu, 23 Dec 2010 23:37:45 +0000</pubDate><guid>/?p=1298/</guid><description>I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the AppDomain.AssemblyResolve event. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the AppDomain.</description><content type="html"><![CDATA[<p>I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the <!-- raw HTML omitted -->AppDomain.AssemblyResolve<!-- raw HTML omitted --> event. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for <a href="http://stackoverflow.com/questions/1872502/how-to-save-a-dynamically-generated-assembly-that-is-stored-in-memory/1872588#1872588">I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the <!-- raw HTML omitted -->AppDomain.AssemblyResolve<!-- raw HTML omitted --> event. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for</a> read the comments especially from Evian. Unlike psscor2.dll the sos for .NET 4.0 does not have a !dumpdynamicassembly with a save option.</p>
 <p>Here is the sample code to demonstrate this.</p>
 <p>[sourcecode language=”csharp”]</p>
 <p>using System;</p>
@@ -1381,12 +1370,13 @@ var command = new SqlCommand(@&amp;ldquo;update [tbl_AccessMapping] set [Display
 <p>)).ToArray())</p>
 <p>.FullName.Dump();</p>
 <p>[/sourcecode]</p>
-]]></content></item><item><title>Dumping Generic List in .NET within Windbg</title><link>/?p=1281/</link><pubDate>Fri, 10 Dec 2010 03:15:43 +0000</pubDate><guid>/?p=1281/</guid><description>Most of the code uses Listfor storing items. The present solutions don’ t have a way to dump Listwithin windbg. Even though sosex has an option to dump the Listusing !mdt it still doesn’t meet the scripting requirements. For example here is an output using sosex “!mdt -e 029a91c0”
+]]></content></item><item><title>Dumping Generic List in .NET within Windbg</title><link>/?p=1281/</link><pubDate>Fri, 10 Dec 2010 03:15:43 +0000</pubDate><guid>/?p=1281/</guid><description>Most of the code uses List for storing items. The present solutions don’ t have a way to dump List within windbg. Even though sosex has an option to dump the List using !mdt it still doesn’t meet the scripting requirements. For example here is an output using sosex “!mdt -e 029a91c0”
 0:000&amp;gt; !mdt -e 029a91c0
 029a91c0 (System.Collections.Generic.List`1[[Test.Foo, Test]])
 Count = 2
 [0] 029a9200 (Test.Foo)
-[1] 029a9210 (Test.</description><content type="html"><![CDATA[<p>Most of the code uses List<!-- raw HTML omitted --> for storing items.  The present solutions don’ t have a way to dump List<!-- raw HTML omitted --> within windbg. Even though sosex has an option to dump the List<!-- raw HTML omitted --> using !mdt it still doesn’t meet the scripting requirements. For example here is an output using sosex “!mdt -e 029a91c0”</p>
+[1] 029a9210 (Test.Foo)
+I would have preferred to get the contents of the “Foo” object instead of just the address of Foo.</description><content type="html"><![CDATA[<p>Most of the code uses List<!-- raw HTML omitted --> for storing items.  The present solutions don’ t have a way to dump List<!-- raw HTML omitted --> within windbg. Even though sosex has an option to dump the List<!-- raw HTML omitted --> using !mdt it still doesn’t meet the scripting requirements. For example here is an output using sosex “!mdt -e 029a91c0”</p>
 <blockquote>
 <p>0:000&gt; !mdt -e 029a91c0</p>
 </blockquote>
@@ -1491,7 +1481,8 @@ From my previous post you can understand how CLR is using clrn/CLRNotificationEx
 ]]></content></item><item><title>Using sosex within windbg to understand IL and Assembly code</title><link>/?p=1261/</link><pubDate>Tue, 30 Nov 2010 01:33:25 +0000</pubDate><guid>/?p=1261/</guid><description>Sometimes when debugging managed code within the debugger I would like to see the C# code ,the IL translation for the managed code and the Assembly code for the IL. For example I recently learned that callvirt MSIL instruction must do the null-check before invoking method.
 C:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication13Program.cs @ 18:
 00bc26d8 8b4dec mov ecx,dword ptr [ebp-14h]
-00bc26db 3909 cmp dword ptr [ecx],ecx //NULL Check</description><content type="html"><![CDATA[<p>Sometimes when debugging managed code within the debugger I would like to see the C# code ,the IL translation for the managed code and the Assembly code for the IL. For example I recently learned that callvirt MSIL instruction must do the null-check before invoking method.</p>
+00bc26db 3909 cmp dword ptr [ecx],ecx //NULL Check
+00bc26dd ff1508a82900 call dword ptr ds:[29A808h] (System.</description><content type="html"><![CDATA[<p>Sometimes when debugging managed code within the debugger I would like to see the C# code ,the IL translation for the managed code and the Assembly code for the IL. For example I recently learned that callvirt MSIL instruction must do the null-check before invoking method.</p>
 <blockquote>
 <p>C:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication13Program.cs @ 18:</p>
 </blockquote>
@@ -1571,7 +1562,10 @@ aS i “@$t0”</description><content type="html"><![CDATA[<p>There are 20 <a hr
 Fault bucket , type 0
 Event Name: CLR20r3
 Response: Not available
-Cab Id: 0</description><content type="html"><![CDATA[<p>I have often seen Devs trying to figure out the cause of the app crash without a memory dump. The only information that is available to analyze is the Windows Error Reporting message in the event viewer which would have “Event Name: CLR20r3” along with <a href="http://naveensrinivasan.com/2010/04/24/exploring-unhandledexception-in-net-and-watson-buckets/">Watson bucket</a> information like this.</p>
+Cab Id: 0
+Problem signature:
+P1: unhandledexception.exe
+P2: 1.0.0.0</description><content type="html"><![CDATA[<p>I have often seen Devs trying to figure out the cause of the app crash without a memory dump. The only information that is available to analyze is the Windows Error Reporting message in the event viewer which would have “Event Name: CLR20r3” along with <a href="http://naveensrinivasan.com/2010/04/24/exploring-unhandledexception-in-net-and-watson-buckets/">Watson bucket</a> information like this.</p>
 <blockquote>
 <p>Fault bucket , type 0</p>
 </blockquote>
@@ -1784,7 +1778,7 @@ Parallel GC Roots :- Getting GC Roots from memory dump is the most time consumin
 <p>}</p>
 <p>public static double ReadDouble(this DbgObj dbg, string address, string offset) {</p>
 <p>return (double)Int32.Parse(</p>
-<p>dbg.Execute(string.Format(&ldquo;dd {0}+{1} L1&rdquo;, address, offset)).Replace(&ldquo;n&rdquo;, &ldquo;&quot;)</p>
+<p>dbg.Execute(string.Format(&ldquo;dd {0}+{1} L1&rdquo;, address, offset)).Replace(&ldquo;n&rdquo;, &ldquo;&rdquo;)</p>
 <p>.Split(new[] { &quot; &quot; }, StringSplitOptions.RemoveEmptyEntries)</p>
 <p>.ElementAt(1),</p>
 <p>NumberStyles.AllowHexSpecifier);</p>
@@ -1816,7 +1810,7 @@ Parallel GC Roots :- Getting GC Roots from memory dump is the most time consumin
 <p>}</p>
 <p>static class DbgExtensions {</p>
 <p>public static DbgObj OpenDump(this DbgControlClass dbg, string dumpPath) {</p>
-<p>var path = Environment.GetEnvironmentVariable(&quot;_NT_SYMBOL_PATH&rdquo;);</p>
+<p>var path = Environment.GetEnvironmentVariable(&rdquo;_NT_SYMBOL_PATH&rdquo;);</p>
 <p>return dbg.OpenDump(dumpPath, path, path, null);</p>
 <p>}</p>
 <p>public static DbgObj LoadSOS(this DbgObj dbg){</p>
@@ -1838,7 +1832,7 @@ Parallel GC Roots :- Getting GC Roots from memory dump is the most time consumin
 <p>}</p>
 <p>public static double ReadDouble(this DbgObj dbg, string address, string offset) {</p>
 <p>return (double)Int32.Parse(</p>
-<p>dbg.Execute(string.Format(&ldquo;dd {0}+{1} L1&rdquo;, address, offset)).Replace(&ldquo;n&rdquo;, &ldquo;&quot;)</p>
+<p>dbg.Execute(string.Format(&ldquo;dd {0}+{1} L1&rdquo;, address, offset)).Replace(&ldquo;n&rdquo;, &ldquo;&rdquo;)</p>
 <p>.Split(new[] { &quot; &quot; }, StringSplitOptions.RemoveEmptyEntries)</p>
 <p>.ElementAt(1),</p>
 <p>NumberStyles.AllowHexSpecifier);</p>
@@ -2511,7 +2505,7 @@ $$ Dumps the managed strings to a file</description><content type="html"><![CDAT
 <p>{</p>
 <p>$$ The !dumpheap -short option has last result as ————— and</p>
 <p>$$ this .if is to avoid this</p>
-<p>.if ($spat (&quot;${$obj}&rdquo;,&quot;——————————&quot;))</p>
+<p>.if ($spat (&quot;${$obj}&rdquo;,&rdquo;——————————&rdquo;))</p>
 <p>{}</p>
 <p>.else</p>
 <p>{</p>
@@ -2971,7 +2965,7 @@ $$ Dumps the managed strings to a file</description><content type="html"><![CDAT
 <p>{</p>
 <p>$$ The !dumpheap -short option has last result as ————— and</p>
 <p>$$ this .if is to avoid this</p>
-<p>.if ($spat (&quot;${$obj}&rdquo;,&quot;——————————&quot;))</p>
+<p>.if ($spat (&quot;${$obj}&rdquo;,&rdquo;——————————&rdquo;))</p>
 <p>{}</p>
 <p>.else</p>
 <p>{</p>
@@ -3069,7 +3063,7 @@ The goal is set to a break-point only when the collection count is 2.</descripti
 <p>[/sourcecode]</p>
 <p>You can take it up a notch by setting a break-point within clr based on the .NET Framework version</p>
 <p>[sourcecode]</p>
-<p>!for_each_module .if(($sicmp( &ldquo;@#ModuleName&rdquo; , &ldquo;mscorwks&rdquo;) = 0) ) {bp mscorwks!WKS::GCHeap::SuspendEE &ldquo;.if (dwo(mscorwks!WKS::GCHeap::GcCondemnedGeneration)==2) {.echo start of gen 2}&quot;} .elsif ($sicmp( &ldquo;@#ModuleName&rdquo; , &ldquo;clr&rdquo;) = 0) {bp clr!WKS::GCHeap::SuspendEE &ldquo;.if (dwo(clr!WKS::GCHeap::GcCondemnedGeneration)==2) {.echo start of gen 2}&quot;}</p>
+<p>!for_each_module .if(($sicmp( &ldquo;@#ModuleName&rdquo; , &ldquo;mscorwks&rdquo;) = 0) ) {bp mscorwks!WKS::GCHeap::SuspendEE &ldquo;.if (dwo(mscorwks!WKS::GCHeap::GcCondemnedGeneration)==2) {.echo start of gen 2}&rdquo;} .elsif ($sicmp( &ldquo;@#ModuleName&rdquo; , &ldquo;clr&rdquo;) = 0) {bp clr!WKS::GCHeap::SuspendEE &ldquo;.if (dwo(clr!WKS::GCHeap::GcCondemnedGeneration)==2) {.echo start of gen 2}&rdquo;}</p>
 <p>[/sourcecode]</p>
 ]]></content></item><item><title>Debugging .NET – mystery between DEBUG versus RELEASE within windbg</title><link>/?p=1015/</link><pubDate>Thu, 22 Jul 2010 02:48:17 +0000</pubDate><guid>/?p=1015/</guid><description>I am sure most of us have debugged applications that are build with debug turned on, which is obviously much easier compared to debugging release build (optimized code). In this post I am going to share one of my experiences of debugging release build code. I will demonstrate this with a simple Console Application.
 Here is the code
@@ -3549,7 +3543,7 @@ I subscribe to RSS feeds for new questions on a particular topic. Example, here 
 <p>var length = &ldquo;<a href="http://stackoverflow.com/questions/%22.Length;">http://stackoverflow.com/questions/&quot;.Length;</a></p>
 <p>var client = new StackyClient(&ldquo;1.0&rdquo;, File.ReadAllText(@&ldquo;c:tempso.txt&rdquo;),HostSite.StackOverflow,new UrlClient(), new JsonProtocol());</p>
 <p>var feedItems = from item in feed.Items</p>
-<p>let nextOccurence = item.Id.ToString().IndexOf(&quot;/&quot;,length)</p>
+<p>let nextOccurence = item.Id.ToString().IndexOf(&rdquo;/&quot;,length)</p>
 <p>let getId = new Func<!-- raw HTML omitted -->(() =&gt; Convert.ToInt32( item.Id.Substring(length,nextOccurence – length)))</p>
 <p>select new {Id = getId(), Title = item.Title.Text, Body = item.Summary.Text.StripHTML()};</p>
 <p>var answers = client.GetQuestionAnswers(feedItems.Select (y =&gt; y.Id),new AnswerOptions() { IncludeBody = true});</p>
@@ -3683,7 +3677,7 @@ namespace ClassLibrary2
 <p>This is not something that I would ever do. This was merely an exercise to bypass the loader.</p>
 <p>FYI when the assembly is uninstalled from GAC, the gacutil.exe creates a temp copy and stores the assembly in the temp directory because it is being used by a process. And the temp copy of the assembly is deleted when the process ends. Here is the screen shot of Procmon creating an temp copy of the GACed assembly which I uninstalled.</p>
 <p><a href="http://104.197.135.42/wp-content/uploads/2010/07/gacutil1.jpg"><!-- raw HTML omitted --></a></p>
-]]></content></item><item><title>Debugging Generic System.Nullable within Windbg</title><link>/?p=947/</link><pubDate>Thu, 08 Jul 2010 03:58:51 +0000</pubDate><guid>/?p=947/</guid><description>In this post I am going to unravel the mystery of debugging the Nullablewithin Windbg in .NET 3.5 and also compare it with .NET 4.0. Here is the sample code and it is compiled in .NET 3.5
+]]></content></item><item><title>Debugging Generic System.Nullable within Windbg</title><link>/?p=947/</link><pubDate>Thu, 08 Jul 2010 03:58:51 +0000</pubDate><guid>/?p=947/</guid><description>In this post I am going to unravel the mystery of debugging the Nullable within Windbg in .NET 3.5 and also compare it with .NET 4.0. Here is the sample code and it is compiled in .NET 3.5
 [sourcecode language=”csharp”]
 using System;
 namespace ConsoleApplication
@@ -3694,7 +3688,8 @@ Int32? test;
 int i = 10;
 static void Main(string[] args)
 {
-NullableInt32? i = 10;
+Nullable
+Int32? i = 10;
 Object o = 10;
 var p = new Program() { test = 20 };</description><content type="html"><![CDATA[<p>In this post I am going to unravel the mystery of debugging the Nullable<!-- raw HTML omitted --> within Windbg in .NET 3.5 and also compare it with .NET 4.0. Here is the sample code and it is compiled in .NET 3.5</p>
 <p>[sourcecode language=”csharp”]</p>
@@ -4315,9 +4310,12 @@ Name: System.String
 MethodTable: 000007fef6e26960
 EEClass: 000007fef69aeec8
 Size: 32(0x20) bytes
-String: Foo Fields:
+String: Foo
+Fields:
 MT Field Offset Type VT Attr Value Name
-000007fef6e2c848 40000ed 8 System.Int32 1 instance 3 m_stringLength</description><content type="html"><![CDATA[<p>Viewing strings inside the debugger has never been pretty, especially if you are using sos extension.  Here is a sample !dumpobj on a string</p>
+000007fef6e2c848 40000ed 8 System.Int32 1 instance 3 m_stringLength
+000007fef6e2b388 40000ee c System.Char 1 instance 46 m_firstChar
+000007fef6e26960 40000ef 10 System.String 0 shared static Empty</description><content type="html"><![CDATA[<p>Viewing strings inside the debugger has never been pretty, especially if you are using sos extension.  Here is a sample !dumpobj on a string</p>
 <blockquote>
 <p>0:000&gt; !do 00000000025f2280</p>
 </blockquote>
@@ -5396,7 +5394,7 @@ Most of the developers assume just because the code is obfuscated nobody can byp
 <p>[/sourcecode]</p>
 <p>In the above code ,I am using this within a windows form to create a memory dump when an exception is thrown. The GetWatson bucket and the clr hosting interface is just to get the watson bucket information from clr. This can even be extended to attach a custom log file. How cool is this. Here is the call-stack for the above exception</p>
 <p><a href="http://104.197.135.42/wp-content/uploads/2010/06/wer12.jpg"><!-- raw HTML omitted --></a></p>
-]]></content></item><item><title>Identifying High CPU in GC (.NET) because of LOH – using Windbg</title><link>/?p=40/</link><pubDate>Mon, 15 Feb 2010 04:57:22 +0000</pubDate><guid>/?p=40/</guid><description>I am sure most of us are aware that one of the common reasons for High CPU usage .NET is because of, percentage time spent on GC is high. There are lot of write up about this. Tesshas amazing blog post on this specifically, which explains in detail how to identify the symptoms. But one thing that I want share was the experience I had ,where in i could identify the real call stack which was causing allocation on LOH by have a break-point on the CLR Garbage collector itself.</description><content type="html"><![CDATA[<p>I am sure most of us are aware that one of the common reasons for High CPU usage .NET is because of, percentage time spent on GC is high. There are lot of write up about this. <!-- raw HTML omitted -->Tess<!-- raw HTML omitted --> has amazing blog post  on this specifically, which explains in detail how to identify the symptoms. But one thing that I want share was the experience I had ,where in i could identify the real call stack which was causing allocation on LOH by have a break-point on the CLR Garbage collector itself. I am going to assume that you are aware of CLR GC and LOH and basic debugging using windbg.</p>
+]]></content></item><item><title>Identifying High CPU in GC (.NET) because of LOH – using Windbg</title><link>/?p=40/</link><pubDate>Mon, 15 Feb 2010 04:57:22 +0000</pubDate><guid>/?p=40/</guid><description>I am sure most of us are aware that one of the common reasons for High CPU usage .NET is because of, percentage time spent on GC is high. There are lot of write up about this. Tess has amazing blog post on this specifically, which explains in detail how to identify the symptoms. But one thing that I want share was the experience I had ,where in i could identify the real call stack which was causing allocation on LOH by have a break-point on the CLR Garbage collector itself.</description><content type="html"><![CDATA[<p>I am sure most of us are aware that one of the common reasons for High CPU usage .NET is because of, percentage time spent on GC is high. There are lot of write up about this. <!-- raw HTML omitted -->Tess<!-- raw HTML omitted --> has amazing blog post  on this specifically, which explains in detail how to identify the symptoms. But one thing that I want share was the experience I had ,where in i could identify the real call stack which was causing allocation on LOH by have a break-point on the CLR Garbage collector itself. I am going to assume that you are aware of CLR GC and LOH and basic debugging using windbg.</p>
 <p>FYI the Perfmon counter like “% Time spent in GC”, “Large Object Heap size” can identify we have an issue with allocation in LOH. But this only indicates there is a problem in High allocations that’s causing  GC to work hard and in turn causing high CPU usage . But does not point where the exact problem is .If there is a large code base and all of sudden if there is an issue like this it is hard to pinpoint where the root cause of the problem.</p>
 <p>I am going to walk through an example on a button click the code allocates objects on LOH and identify it using windbg.</p>
 <p><!-- raw HTML omitted -->using <!-- raw HTML omitted -->System;</p>
@@ -5523,7 +5521,7 @@ Most of the developers assume just because the code is obfuscated nobody can byp
 <p>Bingo now at the bottom of the stack we can see the “allocate_large_object” and on the top of the stack it is the managed code that we wrote “AllocateinLOH”.  Now we have solved the reason behind the High CPU usage in GC because of LOH.</p>
 <p>The “allocate_large_object” is not documented by Microsoft as a public API and I don’t know whether the name would be same going forward from .NET framework 4.0.  This holds good until .NET framework 3.5. The idea behind this is just digging in to the framework can give us some information which has saved us valuable time and effort.</p>
 ]]></content></item><item><title>Function hit count using Pseudo-Register in Windbg</title><link>/?p=30/</link><pubDate>Sat, 13 Feb 2010 01:41:01 +0000</pubDate><guid>/?p=30/</guid><description>What if we want to know the number of times a function was invoked. We can have “.echo” or “.printf” on break-point of a function and count the output manually. The better way to do this is using pseudo-registers.
-In my previouspost I had mentioned about alias inside the debugger. The debugger also provides User defined Pseudo-Registers for scripting inside the debugger. We can use them to manipulate values within our scripts.</description><content type="html"><![CDATA[<p>What if we want to know the number of times a function was invoked. We can have “.echo” or “.printf” on break-point of a function and count the output manually. The better way to do this is using pseudo-registers.</p>
+In my previous post I had mentioned about alias inside the debugger. The debugger also provides User defined Pseudo-Registers for scripting inside the debugger. We can use them to manipulate values within our scripts.</description><content type="html"><![CDATA[<p>What if we want to know the number of times a function was invoked. We can have “.echo” or “.printf” on break-point of a function and count the output manually. The better way to do this is using pseudo-registers.</p>
 <p>In my <!-- raw HTML omitted -->previous<!-- raw HTML omitted --> post I had mentioned about alias inside the debugger. The debugger also provides User defined Pseudo-Registers for scripting inside the debugger. We can use them to manipulate values within our scripts. There are 20 of them from $t0,$t1.. $t19. These are pre-defined names that we cannot change.</p>
 <p>The syntax to assign value to the register is “r”</p>
 <blockquote>
@@ -5652,7 +5650,7 @@ total 1 objects</p>
 <p>Voila here is the output of !dumpobj after updating the memory</p>
 <p><strong>000007ff002683d8  4000005      1d0         System.Int32  1 instance              100 Foo</strong></p>
 <p>Now we could make an emergency patch and be certain the patch would work with the fix already tested in production using the debugger. Having windbg in your toolbox is always saves a lot of time.  </p>
-]]></content></item><item><title>Home cooked web monitoring use Rx</title><link>/?p=14/</link><pubDate>Wed, 03 Feb 2010 03:07:22 +0000</pubDate><guid>/?p=14/</guid><description>One of the key things in software is to write succinct , declarative and asynchronous code. The answer to that is Reactive Extensions for .NETI have been digging into Rx for sometime now. Though there isn’t much of documentation I have been kind of successful in getting certain things done with it.
+]]></content></item><item><title>Home cooked web monitoring use Rx</title><link>/?p=14/</link><pubDate>Wed, 03 Feb 2010 03:07:22 +0000</pubDate><guid>/?p=14/</guid><description>One of the key things in software is to write succinct , declarative and asynchronous code. The answer to that is Reactive Extensions for .NET I have been digging into Rx for sometime now. Though there isn’t much of documentation I have been kind of successful in getting certain things done with it.
 One of requirement that came up from our Operations was to monitor some websites and notify someone if the site was not accessible.</description><content type="html"><![CDATA[<p>One of the key things in software is to write succinct , declarative and asynchronous code. The answer to that is <!-- raw HTML omitted -->Reactive Extensions for .NET<!-- raw HTML omitted --> </p>
 <p>I have been digging into Rx for sometime now. Though there isn’t much of documentation I have been kind of successful in getting certain things done with it.</p>
 <p>One of requirement that came up from our Operations was to monitor some websites and notify someone if the site was not accessible. But the added constraints to this were check for the site status only at a certain interval and report failure only if it was more than certain percentage within a certain duration.</p>

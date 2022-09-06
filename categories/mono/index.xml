@@ -2,5 +2,8 @@
 Fault bucket , type 0
 Event Name: CLR20r3
 Response: Not available
-Cab Id: 0</description></item><item><title>Customizing Witty Twitter Client Part 1- using C# as Compiler Service</title><link>/?p=840/</link><pubDate>Sun, 20 Jun 2010 03:28:46 +0000</pubDate><guid>/?p=840/</guid><description>This is going to be a multipart blog post where I am going to be demonstrating how I have customized This is going to be a multipart blog post where I am going to be demonstrating how I have customized twitter client for my need. I chose Witty because it is the only OSS .NET twitter client I know of.
+Cab Id: 0
+Problem signature:
+P1: unhandledexception.exe
+P2: 1.0.0.0</description></item><item><title>Customizing Witty Twitter Client Part 1- using C# as Compiler Service</title><link>/?p=840/</link><pubDate>Sun, 20 Jun 2010 03:28:46 +0000</pubDate><guid>/?p=840/</guid><description>This is going to be a multipart blog post where I am going to be demonstrating how I have customized This is going to be a multipart blog post where I am going to be demonstrating how I have customized twitter client for my need. I chose Witty because it is the only OSS .NET twitter client I know of.
 One of the reasons for customizing is primarily using C# as compiler service to extend it for my needs dynamically.</description></item></channel></rss>

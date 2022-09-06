@@ -1,124 +1,17 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="ie=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=author content="admin">
-<meta name=description content="In this post I will explore how we could use TraceEventto measure our code (even at function level) for GC Allocations and Collections.
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=author content="admin"><meta name=description content="In this post I will explore how we could use TraceEvent to measure our code (even at function level) for GC Allocations and Collections.
 Save this with “.linq” extension and then open in linqpad.
 [gist https://gist.github.com/naveensrinivasan/b72fd80876eb67557ae8]
 Here is the TL;DR
-Why would I want to know GC events on a function level? Doesn’t the PerfMon counter provide that information on an application level? Isn’t Premature optimization root of all evil?
-Yes, for most of the part Premature optimization is not necessary.">
-<meta name=keywords content=",ETW,TraceEvent">
-<meta name=robots content="noodp">
-<meta name=theme-color content>
-<link rel=canonical href="/?p=1437/">
-<title>
-Measure GC Allocations and Collections using TraceEvent :: naveen srinivasan — Write code.Loves to read
-</title>
-<link href=https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css rel=stylesheet type=text/css>
-<link rel=stylesheet href=/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css>
-<meta itemprop=name content="Measure GC Allocations and Collections using TraceEvent">
-<meta itemprop=description content="In this post I will explore how we could use TraceEventto measure our code (even at function level) for GC Allocations and Collections.
+Why would I want to know GC events on a function level? Doesn’t the PerfMon counter provide that information on an application level? Isn’t Premature optimization root of all evil?"><meta name=keywords content=",ETW,TraceEvent"><meta name=robots content="noodp"><meta name=theme-color content><link rel=canonical href="/?p=1437/"><title>Measure GC Allocations and Collections using TraceEvent :: naveen srinivasan — Write code.Loves to read</title><link href=https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css rel=stylesheet type=text/css><link rel=stylesheet href=/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css><meta itemprop=name content="Measure GC Allocations and Collections using TraceEvent"><meta itemprop=description content="In this post I will explore how we could use TraceEvent to measure our code (even at function level) for GC Allocations and Collections.
 Save this with “.linq” extension and then open in linqpad.
 [gist https://gist.github.com/naveensrinivasan/b72fd80876eb67557ae8]
 Here is the TL;DR
-Why would I want to know GC events on a function level? Doesn’t the PerfMon counter provide that information on an application level? Isn’t Premature optimization root of all evil?
-Yes, for most of the part Premature optimization is not necessary."><meta itemprop=datePublished content="2015-05-12T01:14:34+00:00">
-<meta itemprop=dateModified content="2015-05-12T01:14:34+00:00">
-<meta itemprop=wordCount content="531"><meta itemprop=image content="/">
-<meta itemprop=keywords content="ETW,TraceEvent,">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="/">
-<meta name=twitter:title content="Measure GC Allocations and Collections using TraceEvent">
-<meta name=twitter:description content="In this post I will explore how we could use TraceEventto measure our code (even at function level) for GC Allocations and Collections.
+Why would I want to know GC events on a function level? Doesn’t the PerfMon counter provide that information on an application level? Isn’t Premature optimization root of all evil?"><meta itemprop=datePublished content="2015-05-12T01:14:34+00:00"><meta itemprop=dateModified content="2015-05-12T01:14:34+00:00"><meta itemprop=wordCount content="535"><meta itemprop=image content="/"><meta itemprop=keywords content="ETW,TraceEvent,"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/"><meta name=twitter:title content="Measure GC Allocations and Collections using TraceEvent"><meta name=twitter:description content="In this post I will explore how we could use TraceEvent to measure our code (even at function level) for GC Allocations and Collections.
 Save this with “.linq” extension and then open in linqpad.
 [gist https://gist.github.com/naveensrinivasan/b72fd80876eb67557ae8]
 Here is the TL;DR
-Why would I want to know GC events on a function level? Doesn’t the PerfMon counter provide that information on an application level? Isn’t Premature optimization root of all evil?
-Yes, for most of the part Premature optimization is not necessary.">
-<meta property="article:section" content=".NET">
-<meta property="article:section" content="ETW">
-<meta property="article:published_time" content="2015-05-12 01:14:34 +0000 UTC">
-</head>
-<body>
-<div class=container>
-<header class=header>
-<span class=header__inner>
-<a href=/ style=text-decoration:none>
-<div class=logo>
-<span class=logo__mark>></span>
+Why would I want to know GC events on a function level? Doesn’t the PerfMon counter provide that information on an application level? Isn’t Premature optimization root of all evil?"><meta property="article:section" content=".NET"><meta property="article:section" content="ETW"><meta property="article:published_time" content="2015-05-12 01:14:34 +0000 UTC"></head><body><div class=container><header class=header><span class=header__inner><a href=/ style=text-decoration:none><div class=logo><span class=logo__mark>></span>
 <span class=logo__text>cd /home</span>
-<span class=logo__cursor>
-</span>
-</div>
-</a>
-<span class=header__right>
-<nav class=menu>
-<ul class=menu__inner><li><a href=/posts>posts</a></li><li><a href=/resume>resume</a></li>
-</ul>
-</nav>
-<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-</span>
-</span>
-</span>
-</header>
-<div class=content>
-<main class=post>
-<div class=post-info>
-</p>
-</div>
-<article>
-<h2 class=post-title><a href="/?p=1437/">Measure GC Allocations and Collections using TraceEvent</a></h2>
-<div class=post-content>
-<p>In this post I will explore  how we could use TraceEvent to measure our code (even at function level) for GC Allocations and Collections.</p>
-<p>Save this with “.linq” extension and then open in  linqpad.</p>
-<p>[gist https://gist.github.com/naveensrinivasan/b72fd80876eb67557ae8]</p>
-<p>Here is the TL;DR</p>
-<p>Why would I want to know GC events on a function level? Doesn’t the PerfMon counter  provide that information on an application level? Isn’t Premature optimization root of all evil?</p>
-<p>Yes, for most of the part Premature optimization is not necessary. And PerfMon GC counter’s would give answers for the whole application. But it is usually after we build the application and when we start running into performance issues we start looking at them.</p>
-<p>The motivation behind this are two things Measure Early and Often for Performance and Essential Truths Everyone Should Know about Performance in a Large Managed Codebase</p>
-<p>If you haven’t read or watched the above video please do it. It let’s us know why and how to do it.</p>
-<p>In the above video Dustin talks about Roslyn code base and how they used Perfview to measure Roslyn code base and identify potential bottlenecks early to avoid Perf issues.</p>
-<p>One of the key differences between managed code and native code with respect to performance is GC. If GC is working hard then your application might not be able to get the performance that you are expecting. GC is good but if we don’t know which calls allocate what amount of data then it is an issue. Especially if you have a section code that is hit very often and which requires a lot of Perf, it is good know where the allocations are coming from. It is not explicit always.</p>
-<p>In the above video Dustin shows few examples of Roslyn code where they were able to identify subtle issues that could allocate a lot when you are trying to get the most out of the code.There is also Roslyn Heap Allocation Analyzer which looks at the code help us identify allocations which isn’t necessary. It is a cool project.</p>
-<p>I took one of the examples from the video as a motivation to check if  I could measure and make it a utility in my toolbox to help me when I need one.</p>
-<p>[gist https://gist.github.com/naveensrinivasan/9153a580b7f4bda55a38]</p>
-<p>In the above example I am trying look for a word “pede” in the lorem ipsum text. The code could get it using “foreach” or using the “Any” operator. I would like to run this few times to check what are the allocations and how long does it take. I used LINQPad as a scratch pad.</p>
-<p>Here is the result of GC Allocations of using “Any” for 500 iterations and NOT the foreach</p>
-<p><a href=https://naveensrinivasan.files.wordpress.com/2015/05/gcallocations.jpg></a></p>
-<p>The were 118 allocations of Enumerator and 146 allocations Func. GC usually allocates 100K each time it allocates that’s what is shown in the allocation amount column.</p>
-<p>And here is GC Allocations when using “foreach”</p>
-<p><a href=https://naveensrinivasan.files.wordpress.com/2015/05/gcallocationwithforeach.jpg></a></p>
-<p>There are hardly any new allocations compared to the previous one.</p>
-<p>Here is the GC Collections when using  “Any”</p>
-<p><a href=https://naveensrinivasan.files.wordpress.com/2015/05/gccollection.jpg></a></p>
-<p>There were 18 GC Collections using Any.</p>
-<p>Here it is using foreach  and there were 0 collections.</p>
-<p><a href=https://naveensrinivasan.files.wordpress.com/2015/05/zeorcollections.jpg></a></p>
-<p>Here is measure it time duration results using Any</p>
-<p><a href=https://naveensrinivasan.files.wordpress.com/2015/05/measurewithany.jpg></a></p>
-<p>And here it is using Foreach</p>
-<p><a href=https://naveensrinivasan.files.wordpress.com/2015/05/measurewithforeach.jpg></a></p>
-</div>
-</article>
-<hr>
-<div class=post-info>
-<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83.0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7" y2="7"/></svg>
-<span class=tag><a href=/tags/etw/>ETW</a></span>
-<span class=tag><a href=/tags/traceevent/>TraceEvent</a></span>
-</p>
-<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
-<span class=tag><a href=/categories/.net/>.NET</a></span>
-<span class=tag><a href=/categories/etw/>ETW</a></span>
-</p>
-</div>
-</main>
-</div>
-<footer class=footer>
-</footer>
-</div>
-<script type=text/javascript src=/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
-</body>
-</html>
+<span class=logo__cursor></span></div></a><span class=header__right><nav class=menu><ul class=menu__inner><li><a href=/posts>posts</a></li><li><a href=/resume>resume</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span></span></span></header><div class=content><main class=post><div class=post-info></p></div><article><h2 class=post-title><a href="/?p=1437/">Measure GC Allocations and Collections using TraceEvent</a></h2><div class=post-content><p>In this post I will explore  how we could use TraceEvent to measure our code (even at function level) for GC Allocations and Collections.</p><p>Save this with “.linq” extension and then open in  linqpad.</p><p>[gist https://gist.github.com/naveensrinivasan/b72fd80876eb67557ae8]</p><p>Here is the TL;DR</p><p>Why would I want to know GC events on a function level? Doesn’t the PerfMon counter  provide that information on an application level? Isn’t Premature optimization root of all evil?</p><p>Yes, for most of the part Premature optimization is not necessary. And PerfMon GC counter’s would give answers for the whole application. But it is usually after we build the application and when we start running into performance issues we start looking at them.</p><p>The motivation behind this are two things Measure Early and Often for Performance and Essential Truths Everyone Should Know about Performance in a Large Managed Codebase</p><p>If you haven’t read or watched the above video please do it. It let’s us know why and how to do it.</p><p>In the above video Dustin talks about Roslyn code base and how they used Perfview to measure Roslyn code base and identify potential bottlenecks early to avoid Perf issues.</p><p>One of the key differences between managed code and native code with respect to performance is GC. If GC is working hard then your application might not be able to get the performance that you are expecting. GC is good but if we don’t know which calls allocate what amount of data then it is an issue. Especially if you have a section code that is hit very often and which requires a lot of Perf, it is good know where the allocations are coming from. It is not explicit always.</p><p>In the above video Dustin shows few examples of Roslyn code where they were able to identify subtle issues that could allocate a lot when you are trying to get the most out of the code.There is also Roslyn Heap Allocation Analyzer which looks at the code help us identify allocations which isn’t necessary. It is a cool project.</p><p>I took one of the examples from the video as a motivation to check if  I could measure and make it a utility in my toolbox to help me when I need one.</p><p>[gist https://gist.github.com/naveensrinivasan/9153a580b7f4bda55a38]</p><p>In the above example I am trying look for a word “pede” in the lorem ipsum text. The code could get it using “foreach” or using the “Any” operator. I would like to run this few times to check what are the allocations and how long does it take. I used LINQPad as a scratch pad.</p><p>Here is the result of GC Allocations of using “Any” for 500 iterations and NOT the foreach</p><p><a href=https://naveensrinivasan.files.wordpress.com/2015/05/gcallocations.jpg></a></p><p>The were 118 allocations of Enumerator and 146 allocations Func. GC usually allocates 100K each time it allocates that’s what is shown in the allocation amount column.</p><p>And here is GC Allocations when using “foreach”</p><p><a href=https://naveensrinivasan.files.wordpress.com/2015/05/gcallocationwithforeach.jpg></a></p><p>There are hardly any new allocations compared to the previous one.</p><p>Here is the GC Collections when using  “Any”</p><p><a href=https://naveensrinivasan.files.wordpress.com/2015/05/gccollection.jpg></a></p><p>There were 18 GC Collections using Any.</p><p>Here it is using foreach  and there were 0 collections.</p><p><a href=https://naveensrinivasan.files.wordpress.com/2015/05/zeorcollections.jpg></a></p><p>Here is measure it time duration results using Any</p><p><a href=https://naveensrinivasan.files.wordpress.com/2015/05/measurewithany.jpg></a></p><p>And here it is using Foreach</p><p><a href=https://naveensrinivasan.files.wordpress.com/2015/05/measurewithforeach.jpg></a></p></div></article><hr><div class=post-info><p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83.0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7" y2="7"/></svg><span class=tag><a href=/tags/etw/>ETW</a></span>
+<span class=tag><a href=/tags/traceevent/>TraceEvent</a></span></p><p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg><span class=tag><a href=/categories/.net/>.NET</a></span>
+<span class=tag><a href=/categories/etw/>ETW</a></span></p></div></main></div><footer class=footer></footer></div><script type=text/javascript src=/bundle.min.cf7fb2a9e24608a783e05e4472da2fdf008293289de1ad88d1cba5c143e7e414496dd33b6a228e92f8461ce0c8cbad3c9f9847e73e46dfbce0463393ddd1733a.js integrity="sha512-z3+yqeJGCKeD4F5Ectov3wCCkyid4a2I0culwUPn5BRJbdM7aiKOkvhGHODIy608n5hH5z5G37zgRjOT3dFzOg=="></script></body></html>
