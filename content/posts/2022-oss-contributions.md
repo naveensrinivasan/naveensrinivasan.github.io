@@ -7,7 +7,7 @@ date: 2022-12-24T16:12:15-08:00
 ![](https://i.imgur.com/wCVTIe9.png)
 
 ***2021***
-![](https://i.imgur.com/jMT34xe.png)
+![](https://i.imgur.com/v9Ihe8x.png)
 
 
 *TLDR*: I have consistently contributed to open source projects on GitHub for the past two years, making 4,155 contributions in the past year alone. As a result of my dedication, I have become a member of several organizations and received a Google Peer Bonus award. I have also had the opportunity to speak at Linux Foundation conferences about supply chain security. My contributions to the open source community and supply chain security have been rewarding and fulfilling, and I look forward to continuing my work in this field.
