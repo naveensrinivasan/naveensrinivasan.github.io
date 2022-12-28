@@ -12,6 +12,7 @@ date: 2022-12-24T16:12:15-08:00
 
 *TLDR*: I have consistently contributed to open source projects on GitHub for the past two years, making 4,155 contributions in the past year alone. As a result of my dedication, I have become a member of several organizations and received a Google Peer Bonus award. I have also had the opportunity to speak at Linux Foundation conferences about supply chain security. My contributions to the open source community and supply chain security have been rewarding and fulfilling, and I look forward to continuing my work in this field.
 
+---
 
 As an OSS contributor who is passionate about open source software and supply chain security, I am thrilled to share that I have made [4,155 contributions on GitHub](https://github.com/naveensrinivasan?tab=overview&from=2022-12-01&to=2022-12-24) in the past year. I am proud to say that I have not missed a single day of contribution in the past 2 years, starting on December 30, 2020.
 
