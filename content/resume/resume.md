@@ -25,15 +25,17 @@ Naveen is also a respected speaker at conferences, where he shares his knowledge
 * Deployed and managed Prometheus for monitoring Kubernetes clusters.
 * Designed and architected a highly critical 911 dispatch application that is being used in locations like London Ambulance and Philadelphia City.
 
+
+
 Experience
 ----------
 **Software Engineer - Endor Labs - April 2022 - Till now**
-- Work with OSS Ecosystems
+- Work with Supply Chain Security OSS Ecosystems
 - Build and manage infrastructure in GCP, GKE, and Monitoring.
 
 **Principal Engineer - Tech Strategy - Freddie Mac July 2020 - Mar 2022**
 
-Driving Cloud-native, kubeflow, build k8s controllers, and supply chain security across the organization. 
+- Driving Cloud-native, kubeflow, build k8s controllers, and supply chain security across the organization. 
 
 
 **Cloud Architect - Mindbodyonline - Sep 2018 - May 2020**
@@ -45,10 +47,10 @@ Cloud Architect for the Platform Engineering team focused on building and mainta
 
 **Principal Engineer – Upskill.io Feb 2017 – August 2018**
 
-*Upskill is a series-B funded start-up that makes leading-edge AR using google glass and other glasses https://blog.x.company/a-new-chapter-for-glass-c7875d40bf24  for the industrial workers in bringing the knowledge to the workers.*
+- Upskill is a series-B funded start-up that makes leading-edge AR using google glass and other glasses https://blog.x.company/a-new-chapter-for-glass-c7875d40bf24  for the industrial workers in bringing the knowledge to the workers.*
 
-* Designed the container infrastructure using Kubernetes in SaaS and on-prem
-* Manage dev, QA, prod, and ENV of the k8s cluster.
+- Designed the container infrastructure using Kubernetes in SaaS and on-prem
+- Manage dev, QA, prod, and ENV of the k8s cluster.
 
 **Software Consultant – Architect – College Board (Nov 2009 – Feb 2016)**
 
@@ -56,11 +58,14 @@ Cloud Architect for the Platform Engineering team focused on building and mainta
 
 **Computer-Aided Dispatch – 911 Dispatch (CAD) - Northrop Grumman (02/2005 – 10/2009) Senior Software Developer /Architect**
 
-## Talks and Interviews:
+
+Talks and Interviews:
+--------------------
 
 - Assessing the Risk of Open-source Components Using OpenSSF's Scorecard - https://www.youtube.com/watch?v=x4bOTqdSRH8
 - How Do You Trust Your Open Source Software? - https://www.youtube.com/watch?v=0b9avFup0LY&t=4s
 - Interview about contributions to OSS and Supply Chain Security - https://www.youtube.com/watch?v=0b9avFup0LY&t=4s
+
 
 
 **Computer-Aided Dispatch – 911 Dispatch (CAD) - Northrop Grumman (02/2005 – 10/2009) Senior Software Developer /Architect**
