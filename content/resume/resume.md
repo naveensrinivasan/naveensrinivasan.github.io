@@ -1,15 +1,5 @@
----
-title: "Naveen Srinivasan"
-date: 2021-12-09T23:17:39Z
-
----
-
-
-_https://github.com/naveensrinivasan_
-
-_https://twitter.com/snaveen_ 
-
-_https://www.linkedin.com/in/naveensrinivasan/_
+# Naveen Srinivasan
+_https://github.com/naveensrinivasan_ _https://twitter.com/snaveen_  _https://www.linkedin.com/in/naveensrinivasan/_
 
 Naveen Srinivasan is an accomplished open-source contributor and maintainer, actively involved in various projects and organizations. He is a member of the Open Source Security Foundation (https://github.com/ossf) and Sigstore (http://github.com/sigstore), among others.
 
@@ -25,48 +15,36 @@ Naveen is also a respected speaker at conferences, where he shares his knowledge
 * Deployed and managed Prometheus for monitoring Kubernetes clusters.
 * Designed and architected a highly critical 911 dispatch application that is being used in locations like London Ambulance and Philadelphia City.
 
-
-
 Experience
 ----------
-**Software Engineer - Endor Labs - April 2022 - Till now**
-- Work with Supply Chain Security OSS Ecosystems
+**Software Engineer - Endor Labs**
+- Work with OSS Ecosystems
 - Build and manage infrastructure in GCP, GKE, and Monitoring.
 
-**Principal Engineer - Tech Strategy - Freddie Mac July 2020 - Mar 2022**
+**Principal Engineer - Tech Strategy - Freddie Mac**
+Driving Cloud-native, kubeflow, build k8s controllers, and supply chain security across the organization. 
 
-- Driving Cloud-native, kubeflow, build k8s controllers, and supply chain security across the organization. 
-
-
-**Cloud Architect - Mindbodyonline - Sep 2018 - May 2020**
-
+**Cloud Architect - Mindbodyonline**
 Cloud Architect for the Platform Engineering team focused on building and maintaining Cloud-based infrastructure for all new software development for the MINDBODY SaaS platform.
 
 - Drove the adoption of Kubernetes, open-source software, and Infrastructure as Code as the future of systems and software development at MINDBODY.
 - Designed and built a prototype of a new microservices platform using Pulumi t, Google Kubernetes Engine, AWS, Istio, and a fully implemented CI/CD pipeline.
 
-**Principal Engineer – Upskill.io Feb 2017 – August 2018**
+**Principal Engineer – Upskill.io**
+*Upskill is a series-B funded start-up that makes leading-edge AR using google glass and other glasses https://blog.x.company/a-new-chapter-for-glass-c7875d40bf24  for the industrial workers in bringing the knowledge to the workers.*
+* Designed the container infrastructure using Kubernetes in SaaS and on-prem
+* Manage dev, QA, prod, and ENV of the k8s cluster.
 
-- Upskill is a series-B funded start-up that makes leading-edge AR using google glass and other glasses https://blog.x.company/a-new-chapter-for-glass-c7875d40bf24  for the industrial workers in bringing the knowledge to the workers.*
+**Principal Engineer - Revature**
+- Helped build the CI/CD and k8s platform
 
-- Designed the container infrastructure using Kubernetes in SaaS and on-prem
-- Manage dev, QA, prod, and ENV of the k8s cluster.
-
-**Software Consultant – Architect – College Board (Nov 2009 – Feb 2016)**
-
+**Software Consultant – Architect**
 *College Board is a non-profit that helps k12 students go to college. One of the key things the college board does is SAT testing.*
 
-**Computer-Aided Dispatch – 911 Dispatch (CAD) - Northrop Grumman (02/2005 – 10/2009) Senior Software Developer /Architect**
+**Computer-Aided Dispatch – 911 Dispatch (CAD) - Northrop Grumman Senior Software Developer /Architect**
 
-
-Talks and Interviews:
---------------------
+## Talks and Interviews:
 
 - Assessing the Risk of Open-source Components Using OpenSSF's Scorecard - https://www.youtube.com/watch?v=x4bOTqdSRH8
 - How Do You Trust Your Open Source Software? - https://www.youtube.com/watch?v=0b9avFup0LY&t=4s
 - Interview about contributions to OSS and Supply Chain Security - https://www.youtube.com/watch?v=0b9avFup0LY&t=4s
-
-
-
-**Computer-Aided Dispatch – 911 Dispatch (CAD) - Northrop Grumman (02/2005 – 10/2009) Senior Software Developer /Architect**
-
