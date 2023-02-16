@@ -1,3 +1,9 @@
+---
+title: "Naveen Srinivasan"
+date: 2021-12-09T23:17:39Z
+
+---
+
 # Naveen Srinivasan
 _https://github.com/naveensrinivasan_ _https://twitter.com/snaveen_  _https://www.linkedin.com/in/naveensrinivasan/_
 
@@ -48,3 +54,7 @@ Cloud Architect for the Platform Engineering team focused on building and mainta
 - Assessing the Risk of Open-source Components Using OpenSSF's Scorecard - https://www.youtube.com/watch?v=x4bOTqdSRH8
 - How Do You Trust Your Open Source Software? - https://www.youtube.com/watch?v=0b9avFup0LY&t=4s
 - Interview about contributions to OSS and Supply Chain Security - https://www.youtube.com/watch?v=0b9avFup0LY&t=4s
+
+## Publications:
+
+- Wrote a blog post on software supply chain security for GitHub's Readme Guides (https://github.com/readme/guides/software-supply-chain-security)
