@@ -4,7 +4,6 @@ date: 2021-12-09T23:17:39Z
 
 ---
 
-# Naveen Srinivasan
 _https://github.com/naveensrinivasan_ _https://twitter.com/snaveen_  _https://www.linkedin.com/in/naveensrinivasan/_
 
 Naveen Srinivasan is an accomplished open-source contributor and maintainer, actively involved in various projects and organizations. He is a member of the Open Source Security Foundation (https://github.com/ossf) and Sigstore (http://github.com/sigstore), among others.
