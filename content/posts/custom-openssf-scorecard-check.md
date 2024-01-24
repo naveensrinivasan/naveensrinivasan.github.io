@@ -18,6 +18,8 @@ D --> E[Execute Checks]
 E --> F{End}
 ```
 
+[![](https://mermaid.ink/img/pako:eNpVz8FugzAMBuBXiXwGlEBoIYdKKzBp0k7tbaSHCNyCuiQoBKkd4t3HuFS72f4sy_8MjW0RBNycGjryeZLmrT575fyFhOGBHOsPPVjnybmxDhvl2os0x42KusRrb5AU0-itJkWHzX1cudi4rE9460eP7iXlJlVdPbCZPL6g2uB9rky7QAAanVZ9u741S0OIBN-hRgliLVvl7hKk-dtTk7fnp2lAeDdhANPQKo9lr9Y0GsRVfY_rdFDmy9p_PYgZHiDCOIuTiMWM7_M45XnGsgCeIFLKIprvdzSjPOG7OOFLAD_bDRbljHNGk5xlNE3SnC-_wcNjjQ?type=png)](https://mermaid.live/edit#pako:eNpVz8FugzAMBuBXiXwGlEBoIYdKKzBp0k7tbaSHCNyCuiQoBKkd4t3HuFS72f4sy_8MjW0RBNycGjryeZLmrT575fyFhOGBHOsPPVjnybmxDhvl2os0x42KusRrb5AU0-itJkWHzX1cudi4rE9460eP7iXlJlVdPbCZPL6g2uB9rky7QAAanVZ9u741S0OIBN-hRgliLVvl7hKk-dtTk7fnp2lAeDdhANPQKo9lr9Y0GsRVfY_rdFDmy9p_PYgZHiDCOIuTiMWM7_M45XnGsgCeIFLKIprvdzSjPOG7OOFLAD_bDRbljHNGk5xlNE3SnC-_wcNjjQ)
+
 
 ## Example: Custom Check for Gradle Wrapper Integrity
 
