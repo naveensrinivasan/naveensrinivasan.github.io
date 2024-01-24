@@ -32,6 +32,8 @@ theme = "hugo-theme-hello-friend-ng"
 [languages]
   [languages.en]
     title = "naveen srinivasan"
+
+    [languages.en.params]
     subtitle = "Write code.Loves to read"
     keywords = ""
     copyright = ""
