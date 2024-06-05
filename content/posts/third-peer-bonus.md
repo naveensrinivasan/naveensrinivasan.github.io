@@ -11,8 +11,9 @@ I have been fortunate to receive this award in the past, in both 2021 and 2022. 
 
 This year, my work on the [https://github.com/guacsec/guac](https://github.com/guacsec/guac) project has been particularly rewarding. Being part of such an impactful initiative makes this recognition even more special.
 
-![](https://imgur.com/a/5JLjDs3)
-
+![](https://imgur.com/MNCyiaR.png)
+![](https://i.imgur.com/HknykHT.jpg)
+![](https://i.imgur.com/sKUifM9.png)
 Thank you, Google, for acknowledging the passion and dedication of open-source contributors worldwide. This award is a reminder of the impact and value of our collaborative efforts.
 
 
