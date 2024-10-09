@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tips on naveen srinivasan</title><link>/categories/tips/</link><description>Recent content in Tips on naveen srinivasan</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 23 Apr 2016 14:35:57 +0000</lastBuildDate><atom:link href="/categories/tips/index.xml" rel="self" type="application/rss+xml"/><item><title>My Docker aliases</title><link>/?p=3061/</link><pubDate>Sat, 23 Apr 2016 14:35:57 +0000</pubDate><guid>/?p=3061/</guid><description>I have been using docker very often now and because I have been spending most of time in the terminal it made sense to use alias to reduce the typing.
-[gist id = “d6b41d000b93f3ecc3e7a1b900c7382c”]
-I have curated this from others and have also customized to what I want.
-All my aliases are stored in my github repo https://github.com/naveensrinivasan/dotvim/blob/master/zshrc</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tips on naveen srinivasan</title><link>/categories/tips/</link><description>Recent content in Tips on naveen srinivasan</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 23 Apr 2016 14:35:57 +0000</lastBuildDate><atom:link href="/categories/tips/index.xml" rel="self" type="application/rss+xml"/><item><title>My Docker aliases</title><link>/?p=3061/</link><pubDate>Sat, 23 Apr 2016 14:35:57 +0000</pubDate><guid>/?p=3061/</guid><description>&lt;p>I  have been using docker very often now and because I have been spending most of time in the terminal it made sense to use alias to reduce the typing.&lt;/p>
+&lt;p>[gist id = “d6b41d000b93f3ecc3e7a1b900c7382c”]&lt;/p>
+&lt;p>I have curated this from others and have also customized to what I want.&lt;/p>
+&lt;p> &lt;/p>
+&lt;p>All my aliases are stored in my github repo &lt;!-- raw HTML omitted -->&lt;a href="https://github.com/naveensrinivasan/dotvim/blob/master/zshrc">https://github.com/naveensrinivasan/dotvim/blob/master/zshrc&lt;/a>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p> &lt;/p>
+&lt;p> &lt;/p></description></item></channel></rss>

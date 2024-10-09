@@ -1,13 +1,14 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on naveen srinivasan</title><link>/posts/</link><description>Recent content in Posts on naveen srinivasan</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 23 May 2024 02:01:16 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>google peer bonus</title><link>/posts/third-peer-bonus/</link><pubDate>Thu, 23 May 2024 02:01:16 +0000</pubDate><guid>/posts/third-peer-bonus/</guid><description>I am deeply honored to once again receive the Google Peer Bonus award for my contributions to the open-source community in 2024. This recognition feels incredibly rewarding. Thank you, Google!
-I have been fortunate to receive this award in the past, in both 2021 and 2022. The Google Peer Bonus is a small yet significant token of appreciation from Google to open-source contributors. It serves as a “thank you” for the time and effort invested in the open-source community.</description><content type="html"><![CDATA[<p>I am deeply honored to once again receive the Google Peer Bonus award for my contributions to the open-source community in 2024. This recognition feels incredibly rewarding. Thank you, Google!</p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on naveen srinivasan</title><link>/posts/</link><description>Recent content in Posts on naveen srinivasan</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 23 May 2024 02:01:16 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>google peer bonus</title><link>/posts/third-peer-bonus/</link><pubDate>Thu, 23 May 2024 02:01:16 +0000</pubDate><guid>/posts/third-peer-bonus/</guid><description>&lt;p>I am deeply honored to once again receive the Google Peer Bonus award for my contributions to the open-source community in 2024. This recognition feels incredibly rewarding. Thank you, Google!&lt;/p>
+&lt;p>I have been fortunate to receive this award in the past, in both 2021 and 2022. The Google Peer Bonus is a small yet significant token of appreciation from Google to open-source contributors. It serves as a “thank you” for the time and effort invested in the open-source community.&lt;/p></description><content type="html"><![CDATA[<p>I am deeply honored to once again receive the Google Peer Bonus award for my contributions to the open-source community in 2024. This recognition feels incredibly rewarding. Thank you, Google!</p>
 <p>I have been fortunate to receive this award in the past, in both 2021 and 2022. The Google Peer Bonus is a small yet significant token of appreciation from Google to open-source contributors. It serves as a “thank you” for the time and effort invested in the open-source community.</p>
 <p>This year, my work on the <a href="https://github.com/guacsec/guac">https://github.com/guacsec/guac</a> project has been particularly rewarding. Being part of such an impactful initiative makes this recognition even more special.</p>
 <p><img src="https://imgur.com/MNCyiaR.png">
 <img src="https://i.imgur.com/HknykHT.jpg">
 <img src="https://i.imgur.com/sKUifM9.png">
 Thank you, Google, for acknowledging the passion and dedication of open-source contributors worldwide. This award is a reminder of the impact and value of our collaborative efforts.</p>
-]]></content></item><item><title>Enhancing Security with Custom OpenSSF Scorecard Checks</title><link>/posts/custom-openssf-scorecard-check/</link><pubDate>Wed, 24 Jan 2024 12:51:58 -0600</pubDate><guid>/posts/custom-openssf-scorecard-check/</guid><description>The Open Source Security Foundation (OpenSSF) Scorecard is essential for performing automated security checks in open-source projects. However, its standard checks might not address all organizations&amp;rsquo; specific security policies and compliance requirements. To overcome this limitation, developers can extend the Scorecard with custom checks by integrating it as a dependency in a Go binary. This method enables organizations to apply their distinctive security standards directly within their development workflows.
-Integrating Scorecard as a Dependency Organizations looking to create custom checks can incorporate the Scorecard as a dependency in their Go projects.</description><content type="html"><![CDATA[<p>The <a href="https://github.com/ossf/scorecard">Open Source Security Foundation (OpenSSF) Scorecard</a> is essential for performing automated security checks in open-source projects. However, its standard checks might not address all organizations&rsquo; specific security policies and compliance requirements. To overcome this limitation, developers can extend the Scorecard with custom checks by integrating it as a dependency in a Go binary. This method enables organizations to apply their distinctive security standards directly within their development workflows.</p>
+]]></content></item><item><title>Enhancing Security with Custom OpenSSF Scorecard Checks</title><link>/posts/custom-openssf-scorecard-check/</link><pubDate>Wed, 24 Jan 2024 12:51:58 -0600</pubDate><guid>/posts/custom-openssf-scorecard-check/</guid><description>&lt;p>The &lt;a href="https://github.com/ossf/scorecard">Open Source Security Foundation (OpenSSF) Scorecard&lt;/a> is essential for performing automated security checks in open-source projects. However, its standard checks might not address all organizations&amp;rsquo; specific security policies and compliance requirements. To overcome this limitation, developers can extend the Scorecard with custom checks by integrating it as a dependency in a Go binary. This method enables organizations to apply their distinctive security standards directly within their development workflows.&lt;/p>
+&lt;h2 id="integrating-scorecard-as-a-dependency">Integrating Scorecard as a Dependency&lt;/h2>
+&lt;p>Organizations looking to create custom checks can incorporate the Scorecard as a dependency in their Go projects. They achieve this by importing the Scorecard modules into their Go binary, enabling them to utilize Scorecard&amp;rsquo;s libraries and functions to craft and execute custom checks.&lt;/p></description><content type="html"><![CDATA[<p>The <a href="https://github.com/ossf/scorecard">Open Source Security Foundation (OpenSSF) Scorecard</a> is essential for performing automated security checks in open-source projects. However, its standard checks might not address all organizations&rsquo; specific security policies and compliance requirements. To overcome this limitation, developers can extend the Scorecard with custom checks by integrating it as a dependency in a Go binary. This method enables organizations to apply their distinctive security standards directly within their development workflows.</p>
 <h2 id="integrating-scorecard-as-a-dependency">Integrating Scorecard as a Dependency</h2>
 <p>Organizations looking to create custom checks can incorporate the Scorecard as a dependency in their Go projects. They achieve this by importing the Scorecard modules into their Go binary, enabling them to utilize Scorecard&rsquo;s libraries and functions to craft and execute custom checks.</p>
 <pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph LR
@@ -54,12 +55,17 @@ By using Scorecard as a dependency, you can seamlessly integrate custom checks i
 <p>The example of the Gradle wrapper integrity check illustrates just one of the many possibilities that custom checks offer, empowering organizations to maintain a robust security posture tailored to their unique requirements. As the digital landscape continues to evolve, the ability to adapt and address specific security challenges becomes paramount. Thus, custom checks with OpenSSF Scorecard represent a proactive and efficient solution, ensuring that organizations can keep pace with the ever-changing security demands of open-source software development.</p>
 <h2 id="engage-with-us">Engage with Us</h2>
 <p>We would love to hear from you! If you&rsquo;ve implemented custom checks in your projects, please share your experiences and insights in the comments below. Your contributions will help enrich our collective understanding and effectiveness in open-source security. Also, if you have any questions or specific challenges you&rsquo;d like to discuss regarding integrating custom checks with the OpenSSF Scorecard, feel free to start a conversation. Let&rsquo;s collaborate to foster a more secure and robust open-source community.</p>
-]]></content></item><item><title>Hackers and Painters</title><link>/posts/hackers-and-painters/</link><pubDate>Fri, 24 Feb 2023 14:23:23 -0600</pubDate><guid>/posts/hackers-and-painters/</guid><description>Hackers and Painters&amp;quot; https://www.amazon.com/Hackers-Painters-Big-Ideas-Computer/dp/1449389554 by Paul Graham is a book that celebrates the lives of nerds who challenge the status quo and create new things. Graham points out that school is nothing but a glorified babysitter and that being a nerd is the ultimate rebellion. He discusses the history of wealth creation and the importance of making the right language choices in programming.
-In &amp;ldquo;Beating the Averages,&amp;rdquo; Graham talks about how Lisp was a crucial language choice that allowed his team to create a more robust and flexible web application than its competitors.</description><content type="html"><![CDATA[<p><img src="https://i.imgur.com/ejtEz5P.jpg">
+]]></content></item><item><title>Hackers and Painters</title><link>/posts/hackers-and-painters/</link><pubDate>Fri, 24 Feb 2023 14:23:23 -0600</pubDate><guid>/posts/hackers-and-painters/</guid><description>&lt;p>&lt;img src="https://i.imgur.com/ejtEz5P.jpg">
+Hackers and Painters&amp;quot; &lt;a href="https://www.amazon.com/Hackers-Painters-Big-Ideas-Computer/dp/1449389554">https://www.amazon.com/Hackers-Painters-Big-Ideas-Computer/dp/1449389554&lt;/a> by Paul Graham is a book that celebrates the lives of nerds who challenge the status quo and create new things. Graham points out that school is nothing but a glorified babysitter and that being a nerd is the ultimate rebellion. He discusses the history of wealth creation and the importance of making the right language choices in programming.&lt;/p>
+&lt;p>In &amp;ldquo;Beating the Averages,&amp;rdquo; Graham talks about how Lisp was a crucial language choice that allowed his team to create a more robust and flexible web application than its competitors. Throughout the book, Graham emphasizes the importance of creativity and innovation and argues that society should encourage and celebrate those who think outside the box.&lt;/p></description><content type="html"><![CDATA[<p><img src="https://i.imgur.com/ejtEz5P.jpg">
 Hackers and Painters&quot; <a href="https://www.amazon.com/Hackers-Painters-Big-Ideas-Computer/dp/1449389554">https://www.amazon.com/Hackers-Painters-Big-Ideas-Computer/dp/1449389554</a> by Paul Graham is a book that celebrates the lives of nerds who challenge the status quo and create new things. Graham points out that school is nothing but a glorified babysitter and that being a nerd is the ultimate rebellion. He discusses the history of wealth creation and the importance of making the right language choices in programming.</p>
 <p>In &ldquo;Beating the Averages,&rdquo; Graham talks about how Lisp was a crucial language choice that allowed his team to create a more robust and flexible web application than its competitors. Throughout the book, Graham emphasizes the importance of creativity and innovation and argues that society should encourage and celebrate those who think outside the box.</p>
 <p>In one of his most memorable quotes, Graham writes, &ldquo;Kids are smarter than they&rsquo;re allowed to be. They&rsquo;re all geniuses, but society, especially schools, beat it out of them.&rdquo; This quote is a poignant reminder of the importance of nurturing children&rsquo;s potential and creativity rather than stifling it through traditional educational systems.&quot;</p>
-]]></content></item><item><title>OSS Trailblazer: My Journey of 4,155 Contributions and Membership in Prominent Open Source Organizations</title><link>/posts/2022-oss-contributions/</link><pubDate>Sat, 24 Dec 2022 16:12:15 -0800</pubDate><guid>/posts/2022-oss-contributions/</guid><description>2022 2021 TLDR: I have consistently contributed to open source projects on GitHub for the past two years, making 4,155 contributions in the past year alone. As a result of my dedication, I have become a member of several organizations and received a Google Peer Bonus award. I have also had the opportunity to speak at Linux Foundation conferences about supply chain security. My contributions to the open source community and supply chain security have been rewarding and fulfilling, and I look forward to continuing my work in this field.</description><content type="html"><![CDATA[<p><em><strong>2022</strong></em>
+]]></content></item><item><title>OSS Trailblazer: My Journey of 4,155 Contributions and Membership in Prominent Open Source Organizations</title><link>/posts/2022-oss-contributions/</link><pubDate>Sat, 24 Dec 2022 16:12:15 -0800</pubDate><guid>/posts/2022-oss-contributions/</guid><description>&lt;p>&lt;em>&lt;strong>2022&lt;/strong>&lt;/em>
+&lt;img src="https://i.imgur.com/wCVTIe9.png">&lt;/p>
+&lt;p>&lt;em>&lt;strong>2021&lt;/strong>&lt;/em>
+&lt;img src="https://i.imgur.com/v9Ihe8x.png">&lt;/p>
+&lt;p>&lt;em>TLDR&lt;/em>: I have consistently contributed to open source projects on GitHub for the past two years, making 4,155 contributions in the past year alone. As a result of my dedication, I have become a member of several organizations and received a Google Peer Bonus award. I have also had the opportunity to speak at Linux Foundation conferences about supply chain security. My contributions to the open source community and supply chain security have been rewarding and fulfilling, and I look forward to continuing my work in this field.&lt;/p></description><content type="html"><![CDATA[<p><em><strong>2022</strong></em>
 <img src="https://i.imgur.com/wCVTIe9.png"></p>
 <p><em><strong>2021</strong></em>
 <img src="https://i.imgur.com/v9Ihe8x.png"></p>
@@ -72,13 +78,15 @@ Hackers and Painters&quot; <a href="https://www.amazon.com/Hackers-Painters-Big-
 <p>In addition to my contributions to these organizations, I was also recognized for my efforts with a <a href="https://naveensrinivasan.com/posts/2022-09-06-google-peer-bonus/">Google Peer Bonus award in 2022 second year in a row</a>. This award is given to exceptional contributors who have contributed significantly to open source projects, and I am honored to have received it.</p>
 <p>I have also had the privilege of speaking at <a href="https://events.linuxfoundation.org/">Linux Foundation conferences</a> about supply chain security and sharing my knowledge and experience with others in the industry. These conferences have allowed me to engage in meaningful discussions about the future of open source software and learn about new developments in the field.</p>
 <p>Overall, my contributions to open source development and supply chain security have been a rewarding and fulfilling experience. I am grateful for the opportunities I have had to positively impact the community and improve the security and reliability of supply chains. I look forward to continuing my work in this field and contributing even more.</p>
-]]></content></item><item><title>google peer bonus</title><link>/posts/2022-09-06-google-peer-bonus/</link><pubDate>Fri, 26 Aug 2022 02:01:16 +0000</pubDate><guid>/posts/2022-09-06-google-peer-bonus/</guid><description>I am honored to – once again – be a recipient of this award Google hands out to open source contributors annually. Getting this token of appreciation feels incredible. Thank you, Google! I have been a recipient of this award before, in 2021.
-The award is a small token of appreciation from Google to open-source contributors. It is a way for Google to say “thank you” for the time and effort you have put into the open source community.</description><content type="html"><![CDATA[<p>I am honored to – once again – be a recipient of this award Google hands out to open source contributors annually. Getting this token of appreciation feels incredible. Thank you, Google! I have been a recipient of this award before, in 2021.</p>
+]]></content></item><item><title>google peer bonus</title><link>/posts/2022-09-06-google-peer-bonus/</link><pubDate>Fri, 26 Aug 2022 02:01:16 +0000</pubDate><guid>/posts/2022-09-06-google-peer-bonus/</guid><description>&lt;p>I am honored to – once again – be a recipient of this award Google hands out to open source contributors annually. Getting this token of appreciation feels incredible. Thank you, Google! I have been a recipient of this award before, in 2021.&lt;/p>
+&lt;p>The award is a small token of appreciation from Google to open-source contributors. It is a way for Google to say “thank you” for the time and effort you have put into the open source community.
+&lt;img src="https://i.imgur.com/HknykHT.jpg">&lt;/p></description><content type="html"><![CDATA[<p>I am honored to – once again – be a recipient of this award Google hands out to open source contributors annually. Getting this token of appreciation feels incredible. Thank you, Google! I have been a recipient of this award before, in 2021.</p>
 <p>The award is a small token of appreciation from Google to open-source contributors. It is a way for Google to say “thank you” for the time and effort you have put into the open source community.
 <img src="https://i.imgur.com/HknykHT.jpg"></p>
-]]></content></item><item><title>Zero Trust Development Environment</title><link>/posts/zero-trust-development-environment/</link><pubDate>Thu, 30 Sep 2021 23:48:46 +0000</pubDate><guid>/posts/zero-trust-development-environment/</guid><description>Photo by novia wu on Unsplash
-I am paranoid about running unknown code on my machine. I have been using a MacBook for some years now, but the way I used to install any software was brew like most developers.
-Later I asked the question, &amp;ldquo;How do I trust my brew installs?&amp;rdquo; But like most of us, I had to try new packages and deploy software to do my work.</description><content type="html"><![CDATA[<p><img src="https://i.imgur.com/eHwmG9V.jpg">
+]]></content></item><item><title>Zero Trust Development Environment</title><link>/posts/zero-trust-development-environment/</link><pubDate>Thu, 30 Sep 2021 23:48:46 +0000</pubDate><guid>/posts/zero-trust-development-environment/</guid><description>&lt;p>&lt;img src="https://i.imgur.com/eHwmG9V.jpg">
+&lt;em>&lt;a href="https://unsplash.com/photos/JyepCoDqics?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink">Photo by novia wu on Unsplash&lt;/a>&lt;/em>&lt;/p>
+&lt;p>I am paranoid about running unknown code on my machine. I have been using a MacBook for some years now, but the way I used to install any software was &lt;code>brew&lt;/code> like most developers.&lt;/p>
+&lt;p>Later I asked the question, &amp;ldquo;How do I trust my &lt;code>brew installs&lt;/code>?&amp;rdquo; But like most of us, I had to try new packages and deploy software to do my work.&lt;/p></description><content type="html"><![CDATA[<p><img src="https://i.imgur.com/eHwmG9V.jpg">
 <em><a href="https://unsplash.com/photos/JyepCoDqics?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink">Photo by novia wu on Unsplash</a></em></p>
 <p>I am paranoid about running unknown code on my machine. I have been using a MacBook for some years now, but the way I used to install any software was <code>brew</code> like most developers.</p>
 <p>Later I asked the question, &ldquo;How do I trust my <code>brew installs</code>?&rdquo; But like most of us, I had to try new packages and deploy software to do my work.</p>
@@ -103,9 +111,10 @@ NixOS has a high learning curve like anything else, but I think it is worth the 
 </ul>
 <p>I have tmux sessions for each ENV, which are still running on a single cloud instance VM. I can update packages and don&rsquo;t have to worry about messing with the ENV&rsquo;s or compromising my machine security.</p>
 <p>It would be best if you were comfortable using CLI-based ENV. I have been using vim for a while now, and I don&rsquo;t miss my UI for writing code.</p>
-]]></content></item><item><title>Stunning Tribble</title><link>/posts/stunning-tribble/</link><pubDate>Mon, 27 Sep 2021 00:37:38 +0000</pubDate><guid>/posts/stunning-tribble/</guid><description>Defending from including OSV/CVE in go dependencies tldr: If you want to avoid including OSV/CVE in your go.mod/go.sum you can utilize this https://github.com/naveensrinivasan/stunning-tribble tool do that. Here is an example of how this is being used in scorecard https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72
-I contribute to a project that is primarily focused on supply chain security https://github.com/ossf/scorecard which is part of Open Source Security Foundation, which is also part of Linux Foundation.
-We happened to realize that between version 1.</description><content type="html"><![CDATA[<h2 id="defending-from-including-osvcve-in-go-dependencies">Defending from including OSV/CVE in go dependencies</h2>
+]]></content></item><item><title>Stunning Tribble</title><link>/posts/stunning-tribble/</link><pubDate>Mon, 27 Sep 2021 00:37:38 +0000</pubDate><guid>/posts/stunning-tribble/</guid><description>&lt;h2 id="defending-from-including-osvcve-in-go-dependencies">Defending from including OSV/CVE in go dependencies&lt;/h2>
+&lt;p>tldr: If you want to avoid including OSV/CVE in your &lt;code>go.mod/go.sum&lt;/code> you can utilize this &lt;a href="https://github.com/naveensrinivasan/stunning-tribble">https://github.com/naveensrinivasan/stunning-tribble&lt;/a> tool do that. Here is an example of how this is being used in scorecard &lt;a href="https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72">https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72&lt;/a>&lt;/p>
+&lt;p>I contribute to a project that is primarily focused on supply chain security &lt;a href="https://github.com/ossf/scorecard">https://github.com/ossf/scorecard&lt;/a> which is part of Open Source Security Foundation, which is also part of Linux Foundation.&lt;/p>
+&lt;p>We happened to realize that between version 1.2.0 and 2.0.0 we have included a library that happens to have OSV(&lt;a href="https://osv.dev">https://osv.dev&lt;/a>) &lt;a href="https://deps.dev/go/github.com%2Fossf%2Fscorecard/v1.2.0/comparev2=v2.0.0%2Bincompatible">https://deps.dev/go/github.com%2Fossf%2Fscorecard/v1.2.0/comparev2=v2.0.0%2Bincompatible&lt;/a>. This was accidental, and we wanted to check how to avoid this in the future.&lt;/p></description><content type="html"><![CDATA[<h2 id="defending-from-including-osvcve-in-go-dependencies">Defending from including OSV/CVE in go dependencies</h2>
 <p>tldr: If you want to avoid including OSV/CVE in your <code>go.mod/go.sum</code> you can utilize this <a href="https://github.com/naveensrinivasan/stunning-tribble">https://github.com/naveensrinivasan/stunning-tribble</a> tool do that. Here is an example of how this is being used in scorecard <a href="https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72">https://github.com/ossf/scorecard/blob/9df865c4f83cfb36bae487125e5ccbc6aef448c6/Makefile#L64-L72</a></p>
 <p>I contribute to a project that is primarily focused on supply chain security <a href="https://github.com/ossf/scorecard">https://github.com/ossf/scorecard</a> which is part of Open Source Security Foundation, which is also part of Linux Foundation.</p>
 <p>We happened to realize that between version 1.2.0 and 2.0.0 we have included a library that happens to have OSV(<a href="https://osv.dev">https://osv.dev</a>) <a href="https://deps.dev/go/github.com%2Fossf%2Fscorecard/v1.2.0/comparev2=v2.0.0%2Bincompatible">https://deps.dev/go/github.com%2Fossf%2Fscorecard/v1.2.0/comparev2=v2.0.0%2Bincompatible</a>. This was accidental, and we wanted to check how to avoid this in the future.</p>
@@ -115,14 +124,15 @@ The stream is based on the format <code>go list -m -f '{{if not (or .Main)}}{{.P
 <p>The tool is specifically built with the idea of not having any external dependency to avoid it having any OSV.</p>
 <p>To ignore existing OSV pass them as CSV <code>stunning-tribble GO-2020-0018,GO-2020-0016</code></p>
 <p>Supply chain security is one of the new ways in which lots of attacks are happening <a href="https://github.com/cncf/tag-security/tree/main/supply-chain-security/compromises">https://github.com/cncf/tag-security/tree/main/supply-chain-security/compromises</a></p>
-]]></content></item><item><title>Google Peer Bonus Award</title><link>/posts/google-peer-bonus-award/</link><pubDate>Wed, 04 Aug 2021 13:34:31 +0000</pubDate><guid>/posts/google-peer-bonus-award/</guid><description>I’m honored to receive this award Google hands out to open source contributors annually. Getting this token of appreciation feels fantastic, and I’m humbled and grateful I was nominated and selected as a recipient. Thank you, Google!
-Thank you Google and Abhishek!</description><content type="html"><![CDATA[<p>I’m honored to receive this award Google hands out to open source contributors annually. Getting this token of appreciation feels fantastic, and I’m humbled and grateful I was nominated and selected as a recipient. Thank you, Google!</p>
+]]></content></item><item><title>Google Peer Bonus Award</title><link>/posts/google-peer-bonus-award/</link><pubDate>Wed, 04 Aug 2021 13:34:31 +0000</pubDate><guid>/posts/google-peer-bonus-award/</guid><description>&lt;p>I’m honored to receive this award Google hands out to open source contributors annually. Getting this token of appreciation feels fantastic, and I’m humbled and grateful I was nominated and selected as a recipient. Thank you, Google!&lt;/p>
+&lt;p>&lt;img src="https://i.imgur.com/sKUifM9.png">&lt;/p>
+&lt;p>Thank you Google and Abhishek!&lt;/p></description><content type="html"><![CDATA[<p>I’m honored to receive this award Google hands out to open source contributors annually. Getting this token of appreciation feels fantastic, and I’m humbled and grateful I was nominated and selected as a recipient. Thank you, Google!</p>
 <p><img src="https://i.imgur.com/sKUifM9.png"></p>
 <p>Thank you Google and Abhishek!</p>
-]]></content></item><item><title>How to debug the CrashLoopBackOff in Kubernetes when pod is not starting</title><link>/?p=3163/</link><pubDate>Thu, 26 May 2016 02:01:16 +0000</pubDate><guid>/?p=3163/</guid><description>Here is my learning of how I debugged the CrashLoopBackOff in kubernetes when the pod wasn’t starting.
-I wanted to deploy the jenkins docker image in the cluster. As mentioned in the jenkins docker repo I wanted to mount an external drive which is an AWS EBS volume. Here is my deployment yaml.
-[gist id = “98aa6da98ebb9b7e3d7f996c8ef2cb38”]
-After starting the deployment the pod never came up and this the output of kubectl get pod</description><content type="html"><![CDATA[<p>Here is my learning of how I debugged the CrashLoopBackOff in kubernetes when the pod wasn’t starting.</p>
+]]></content></item><item><title>How to debug the CrashLoopBackOff in Kubernetes when pod is not starting</title><link>/?p=3163/</link><pubDate>Thu, 26 May 2016 02:01:16 +0000</pubDate><guid>/?p=3163/</guid><description>&lt;p>Here is my learning of how I debugged the CrashLoopBackOff in kubernetes when the pod wasn’t starting.&lt;/p>
+&lt;p>I wanted to deploy the &lt;!-- raw HTML omitted -->jenkins docker&lt;!-- raw HTML omitted --> image in the cluster. As mentioned in the jenkins docker  repo I wanted to mount an external drive which is an AWS EBS volume.  Here is my deployment yaml.&lt;/p>
+&lt;p>[gist id = “98aa6da98ebb9b7e3d7f996c8ef2cb38”]&lt;/p>
+&lt;p>After starting the deployment the pod never came up and this the output of  &lt;em>kubectl get pod&lt;/em>&lt;/p></description><content type="html"><![CDATA[<p>Here is my learning of how I debugged the CrashLoopBackOff in kubernetes when the pod wasn’t starting.</p>
 <p>I wanted to deploy the <!-- raw HTML omitted -->jenkins docker<!-- raw HTML omitted --> image in the cluster. As mentioned in the jenkins docker  repo I wanted to mount an external drive which is an AWS EBS volume.  Here is my deployment yaml.</p>
 <p>[gist id = “98aa6da98ebb9b7e3d7f996c8ef2cb38”]</p>
 <p>After starting the deployment the pod never came up and this the output of  <em>kubectl get pod</em></p>
@@ -140,24 +150,36 @@ After starting the deployment the pod never came up and this the output of kubec
 <p><em>Can not write to /var/jenkins_home/copy_reference_file.log. Wrong volume permissions?</em></p>
 <p>which identified the _/var/jenkins_home  _which was mounted with aws ebs voulme  didn’t have permission to write by the jenkins user <!-- raw HTML omitted --><a href="https://github.com/kubernetes/kubernetes/issues/2630">https://github.com/kubernetes/kubernetes/issues/2630</a><!-- raw HTML omitted -->.</p>
 <p>And after doing all of this I realized I could have done <em>kubectl logs jenkins-3317895845-x84u3</em> which would have given the same output without having to ssh into the box. But knowing this handy because when things go wrong we really need to debug the root cause.</p>
-]]></content></item><item><title>Enable Shortcat app in OSX</title><link>/?p=3141/</link><pubDate>Mon, 25 Apr 2016 14:13:47 +0000</pubDate><guid>/?p=3141/</guid><description>Shortcat app is a software that I use everyday to keep me productive and reduce my dependency on mouse.
-But if you have OSX El Captain you get a message to enable the assistive devices,. But it has been changed from the previous versions of OSX.
-To enable the assistive devices navigate to System Preferences &amp;gt; Security &amp;amp; Privacy &amp;gt; Privacy &amp;gt; Accessibility and enable for shortcat app.</description><content type="html"><![CDATA[<p><!-- raw HTML omitted -->Shortcat<!-- raw HTML omitted --> app is a software that I use everyday to keep me productive and reduce my dependency on mouse.</p>
+]]></content></item><item><title>Enable Shortcat app in OSX</title><link>/?p=3141/</link><pubDate>Mon, 25 Apr 2016 14:13:47 +0000</pubDate><guid>/?p=3141/</guid><description>&lt;p>&lt;!-- raw HTML omitted -->Shortcat&lt;!-- raw HTML omitted --> app is a software that I use everyday to keep me productive and reduce my dependency on mouse.&lt;/p>
+&lt;p>But if you have OSX El Captain you get a message to enable the assistive devices,. But it has been changed from the previous versions of OSX.&lt;/p>
+&lt;p>To enable the assistive devices navigate to  &lt;strong>System Preferences &amp;gt; Security &amp;amp; Privacy &amp;gt; Privacy &amp;gt; Accessibility&lt;/strong> and enable for shortcat app.&lt;/p></description><content type="html"><![CDATA[<p><!-- raw HTML omitted -->Shortcat<!-- raw HTML omitted --> app is a software that I use everyday to keep me productive and reduce my dependency on mouse.</p>
 <p>But if you have OSX El Captain you get a message to enable the assistive devices,. But it has been changed from the previous versions of OSX.</p>
 <p>To enable the assistive devices navigate to  <strong>System Preferences &gt; Security &amp; Privacy &gt; Privacy &gt; Accessibility</strong> and enable for shortcat app.</p>
-]]></content></item><item><title>My Docker aliases</title><link>/?p=3061/</link><pubDate>Sat, 23 Apr 2016 14:35:57 +0000</pubDate><guid>/?p=3061/</guid><description>I have been using docker very often now and because I have been spending most of time in the terminal it made sense to use alias to reduce the typing.
-[gist id = “d6b41d000b93f3ecc3e7a1b900c7382c”]
-I have curated this from others and have also customized to what I want.
-All my aliases are stored in my github repo https://github.com/naveensrinivasan/dotvim/blob/master/zshrc</description><content type="html"><![CDATA[<p>I  have been using docker very often now and because I have been spending most of time in the terminal it made sense to use alias to reduce the typing.</p>
+]]></content></item><item><title>My Docker aliases</title><link>/?p=3061/</link><pubDate>Sat, 23 Apr 2016 14:35:57 +0000</pubDate><guid>/?p=3061/</guid><description>&lt;p>I  have been using docker very often now and because I have been spending most of time in the terminal it made sense to use alias to reduce the typing.&lt;/p>
+&lt;p>[gist id = “d6b41d000b93f3ecc3e7a1b900c7382c”]&lt;/p>
+&lt;p>I have curated this from others and have also customized to what I want.&lt;/p>
+&lt;p> &lt;/p>
+&lt;p>All my aliases are stored in my github repo &lt;!-- raw HTML omitted -->&lt;a href="https://github.com/naveensrinivasan/dotvim/blob/master/zshrc">https://github.com/naveensrinivasan/dotvim/blob/master/zshrc&lt;/a>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p> &lt;/p>
+&lt;p> &lt;/p></description><content type="html"><![CDATA[<p>I  have been using docker very often now and because I have been spending most of time in the terminal it made sense to use alias to reduce the typing.</p>
 <p>[gist id = “d6b41d000b93f3ecc3e7a1b900c7382c”]</p>
 <p>I have curated this from others and have also customized to what I want.</p>
 <p> </p>
 <p>All my aliases are stored in my github repo <!-- raw HTML omitted --><a href="https://github.com/naveensrinivasan/dotvim/blob/master/zshrc">https://github.com/naveensrinivasan/dotvim/blob/master/zshrc</a><!-- raw HTML omitted --></p>
 <p> </p>
 <p> </p>
-]]></content></item><item><title>How I try avoid using mouse</title><link>/?p=2901/</link><pubDate>Mon, 28 Mar 2016 00:57:41 +0000</pubDate><guid>/?p=2901/</guid><description>Like most of the Dev’s I love using my Keyboard more than mouse. I am big vim fan and have been using vim for over 7-8 years. I still consider myself novice.
-Here are the ways I manage to use keyboard over mouse
-Shortcat – Great app get rids of use mouse in OSX – This is a Paid App , which IMHO is the best investment for me. There is also a trial version.</description><content type="html"><![CDATA[<p>Like most of the Dev’s I love using my Keyboard more than mouse. I am big vim fan and have been using vim for over 7-8 years. I still consider myself novice.</p>
+]]></content></item><item><title>How I try avoid using mouse</title><link>/?p=2901/</link><pubDate>Mon, 28 Mar 2016 00:57:41 +0000</pubDate><guid>/?p=2901/</guid><description>&lt;p>Like most of the Dev’s I love using my Keyboard more than mouse. I am big vim fan and have been using vim for over 7-8 years. I still consider myself novice.&lt;/p>
+&lt;p>Here are the ways I manage to use keyboard over mouse&lt;/p>
+&lt;ul>
+&lt;li>&lt;!-- raw HTML omitted -->Shortcat&lt;!-- raw HTML omitted --> – Great app get rids of use mouse in OSX – This is a Paid App , which IMHO is the best investment for me. There is also a trial version.&lt;/li>
+&lt;li>MacVim – I have been using MacVim as my primary text editor.&lt;/li>
+&lt;li>&lt;!-- raw HTML omitted -->cVim&lt;!-- raw HTML omitted --> – Vim features within chrome. The best part is it allows custom vimrc.&lt;/li>
+&lt;li>IntelliJ Vim Plugin – &lt;!-- raw HTML omitted -->&lt;a href="https://github.com/JetBrains/ideavim">https://github.com/JetBrains/ideavim&lt;/a>&lt;!-- raw HTML omitted --> also allow vimrc&lt;/li>
+&lt;li>Here is a plugin &lt;!-- raw HTML omitted -->&lt;a href="https://github.com/athiele/key-promoter-fork">https://github.com/athiele/key-promoter-fork&lt;/a>&lt;!-- raw HTML omitted --> for IntelliJ – show hints when using the mouse for something which could be done with the keyboard.&lt;/li>
+&lt;li>&lt;!-- raw HTML omitted -->Spectacle&lt;!-- raw HTML omitted --> – For window management in OSX with keyboard.&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;p> &lt;/p></description><content type="html"><![CDATA[<p>Like most of the Dev’s I love using my Keyboard more than mouse. I am big vim fan and have been using vim for over 7-8 years. I still consider myself novice.</p>
 <p>Here are the ways I manage to use keyboard over mouse</p>
 <ul>
 <li><!-- raw HTML omitted -->Shortcat<!-- raw HTML omitted --> – Great app get rids of use mouse in OSX – This is a Paid App , which IMHO is the best investment for me. There is also a trial version.</li>
@@ -179,15 +201,20 @@ Shortcat – Great app get rids of use mouse in OSX – This is a Paid App , wh
 <p>And  I have ordered myself <!-- raw HTML omitted -->Ultimate hacking Keyboard<!-- raw HTML omitted --> . The one of the reasons I am excited about this is ,you could use home row keys as mouse which would really replace mouse with this keyboard.</p>
 <p> </p>
 <p> </p>
-]]></content></item><item><title>Taking it up a notch with my standing desk with fluidstance</title><link>/?p=2781/</link><pubDate>Fri, 11 Mar 2016 01:09:50 +0000</pubDate><guid>/?p=2781/</guid><description>I have been standing at work for the past 2 years. And I have seen significant improvement with respect to my productivity and non-drowsiness with standing desk. The one draw back with that I have seen was standing in a position where I put a lot of stress on one of the legs. And I wanted ti try something different.
-That’s when I saw fluidstance. Bought myself one which brings in a new challenge.</description><content type="html"><![CDATA[<p>I have been standing at work for the past 2  years. And I have seen significant improvement with respect to my productivity and non-drowsiness with standing desk. The one draw back with that I have seen was standing in a position where I put a lot of stress on one of the legs. And I wanted ti try something different.</p>
+]]></content></item><item><title>Taking it up a notch with my standing desk with fluidstance</title><link>/?p=2781/</link><pubDate>Fri, 11 Mar 2016 01:09:50 +0000</pubDate><guid>/?p=2781/</guid><description>&lt;p>I have been standing at work for the past 2  years. And I have seen significant improvement with respect to my productivity and non-drowsiness with standing desk. The one draw back with that I have seen was standing in a position where I put a lot of stress on one of the legs. And I wanted ti try something different.&lt;/p>
+&lt;p>That’s when I saw &lt;!-- raw HTML omitted -->fluidstance&lt;!-- raw HTML omitted -->. Bought myself one which brings in a new challenge. I have been using it for a week and it is great  has made me sore in the places which I didn’t when I was standing without it.&lt;/p></description><content type="html"><![CDATA[<p>I have been standing at work for the past 2  years. And I have seen significant improvement with respect to my productivity and non-drowsiness with standing desk. The one draw back with that I have seen was standing in a position where I put a lot of stress on one of the legs. And I wanted ti try something different.</p>
 <p>That’s when I saw <!-- raw HTML omitted -->fluidstance<!-- raw HTML omitted -->. Bought myself one which brings in a new challenge. I have been using it for a week and it is great  has made me sore in the places which I didn’t when I was standing without it.</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>It is also a fun toy!</p>
-]]></content></item><item><title>Solution to Adventcode Day 7 in FSharp</title><link>/?p=2641/</link><pubDate>Tue, 12 Jan 2016 22:33:14 +0000</pubDate><guid>/?p=2641/</guid><description>Here is my solution to adventcode problem 7 using F#.
-I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s and these depend on other gates.
-The puzzle starts of with simple problem
-123 -&amp;gt; x 456 -&amp;gt; y ``Here is my solution to adventcode problem 7 using F#. I am using the adventofcode to improve my functional programming skills.</description><content type="html"><![CDATA[<p>Here is my solution to <!-- raw HTML omitted -->adventcode problem 7 <!-- raw HTML omitted --> using F#.</p>
+]]></content></item><item><title>Solution to Adventcode Day 7 in FSharp</title><link>/?p=2641/</link><pubDate>Tue, 12 Jan 2016 22:33:14 +0000</pubDate><guid>/?p=2641/</guid><description>&lt;p>Here is my solution to &lt;!-- raw HTML omitted -->adventcode problem 7 &lt;!-- raw HTML omitted --> using F#.&lt;/p>
+&lt;p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.&lt;/p>
+&lt;p>The puzzle starts of with simple problem&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>123 -&amp;gt; x&lt;/code>&lt;/li>
+&lt;li>&lt;code>456 -&amp;gt; y&lt;/code>&lt;/li>
+&lt;li>``Here is my solution to &lt;!-- raw HTML omitted -->adventcode problem 7 &lt;!-- raw HTML omitted --> using F#.&lt;/li>
+&lt;/ul>
+&lt;p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.&lt;/p></description><content type="html"><![CDATA[<p>Here is my solution to <!-- raw HTML omitted -->adventcode problem 7 <!-- raw HTML omitted --> using F#.</p>
 <p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.</p>
 <p>The puzzle starts of with simple problem</p>
 <ul>
@@ -466,11 +493,9 @@ The puzzle starts of with simple problem
 <p>[gist id = “6d162d9f631cd636d14b”] which would have made this problem simpler.</p>
 <p>Here is my solution.</p>
 <p>[gist id = “6165418036481bae3756”]</p>
-]]></content></item><item><title>Parsing GitHub API</title><link>/?p=2571/</link><pubDate>Wed, 09 Dec 2015 16:46:57 +0000</pubDate><guid>/?p=2571/</guid><description>I have been contributing to https://github.com/octokit/octokit.net project. It is the API for accessing GitHub. One of the recent questions that came up was to get the list of https://github.com/octokit/octokit.net/issues/968.
-The API’s are published in HTML https://developer.github.com/v3/
-There are about 63 + categories that have API. Wanted to parse all of these with least manual intervention.
-[gist id = “58fa8eb57e61535f10db”]
-The above goes to the main URL looks for all sub-categories and download’s each of the web pages and extracts “GET“, “DELETE“, “PATCH“, “POST“</description><content type="html"><![CDATA[<p>I have been contributing to <!-- raw HTML omitted --><a href="https://github.com/octokit/octokit.net">https://github.com/octokit/octokit.net</a><!-- raw HTML omitted --> project. It is the API for accessing GitHub. One of the recent questions that came up was to get the list of <!-- raw HTML omitted --><a href="https://github.com/octokit/octokit.net/issues/968">https://github.com/octokit/octokit.net/issues/968</a><!-- raw HTML omitted -->.</p>
+]]></content></item><item><title>Parsing GitHub API</title><link>/?p=2571/</link><pubDate>Wed, 09 Dec 2015 16:46:57 +0000</pubDate><guid>/?p=2571/</guid><description>&lt;p>I have been contributing to &lt;!-- raw HTML omitted -->&lt;a href="https://github.com/octokit/octokit.net">https://github.com/octokit/octokit.net&lt;/a>&lt;!-- raw HTML omitted --> project. It is the API for accessing GitHub. One of the recent questions that came up was to get the list of &lt;!-- raw HTML omitted -->&lt;a href="https://github.com/octokit/octokit.net/issues/968">https://github.com/octokit/octokit.net/issues/968&lt;/a>&lt;!-- raw HTML omitted -->.&lt;/p>
+&lt;p>The API’s are published in HTML &lt;!-- raw HTML omitted -->&lt;a href="https://developer.github.com/v3/">https://developer.github.com/v3/&lt;/a>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>There are about 63 + categories that have API. Wanted to parse all of these with least manual intervention.&lt;/p></description><content type="html"><![CDATA[<p>I have been contributing to <!-- raw HTML omitted --><a href="https://github.com/octokit/octokit.net">https://github.com/octokit/octokit.net</a><!-- raw HTML omitted --> project. It is the API for accessing GitHub. One of the recent questions that came up was to get the list of <!-- raw HTML omitted --><a href="https://github.com/octokit/octokit.net/issues/968">https://github.com/octokit/octokit.net/issues/968</a><!-- raw HTML omitted -->.</p>
 <p>The API’s are published in HTML <!-- raw HTML omitted --><a href="https://developer.github.com/v3/">https://developer.github.com/v3/</a><!-- raw HTML omitted --></p>
 <p>There are about 63 + categories that have API. Wanted to parse all of these with least manual intervention.</p>
 <p>[gist id = “58fa8eb57e61535f10db”]</p>
@@ -480,14 +505,14 @@ The above goes to the main URL looks for all sub-categories and download’s eac
 <p><img src="https://camo.githubusercontent.com/03204325907aae77bb2f865117271bf28136d5ca/68747470733a2f2f7062732e7477696d672e636f6d2f6d656469612f4356766c6b5878564141456d7454332e706e67"></p>
 <p> </p>
 <p> </p>
-]]></content></item><item><title>fsharp docker image</title><link>/?p=2481/</link><pubDate>Wed, 11 Nov 2015 02:41:14 +0000</pubDate><guid>/?p=2481/</guid><description>The fsharp project has a official docker image https://github.com/fsprojects/docker-fsharp . The one issue with that is it is based on mono 4.0.4 which is buggy and fsharp does not work very well. The latest alpha release of the mono with which fsharp works well is 4.2.0. The 4.2.0 isn’t available in stable channels.
-So I created a docker image with the latest mono from their alpha repo and using the latest fsharp from the github.</description><content type="html"><![CDATA[<p>The fsharp project has a official docker image <!-- raw HTML omitted --><a href="https://github.com/fsprojects/docker-fsharp">https://github.com/fsprojects/docker-fsharp</a><!-- raw HTML omitted --> . The one issue with that is it is based on mono 4.0.4 which is buggy and fsharp does not work very well. The latest alpha release of the mono with which fsharp works well is 4.2.0. The 4.2.0 isn’t available in stable channels.</p>
+]]></content></item><item><title>fsharp docker image</title><link>/?p=2481/</link><pubDate>Wed, 11 Nov 2015 02:41:14 +0000</pubDate><guid>/?p=2481/</guid><description>&lt;p>The fsharp project has a official docker image &lt;!-- raw HTML omitted -->&lt;a href="https://github.com/fsprojects/docker-fsharp">https://github.com/fsprojects/docker-fsharp&lt;/a>&lt;!-- raw HTML omitted --> . The one issue with that is it is based on mono 4.0.4 which is buggy and fsharp does not work very well. The latest alpha release of the mono with which fsharp works well is 4.2.0. The 4.2.0 isn’t available in stable channels.&lt;/p>
+&lt;p>So I created a docker image with the latest mono from their alpha repo and using the latest fsharp from the github.&lt;/p></description><content type="html"><![CDATA[<p>The fsharp project has a official docker image <!-- raw HTML omitted --><a href="https://github.com/fsprojects/docker-fsharp">https://github.com/fsprojects/docker-fsharp</a><!-- raw HTML omitted --> . The one issue with that is it is based on mono 4.0.4 which is buggy and fsharp does not work very well. The latest alpha release of the mono with which fsharp works well is 4.2.0. The 4.2.0 isn’t available in stable channels.</p>
 <p>So I created a docker image with the latest mono from their alpha repo and using the latest fsharp from the github.</p>
 <p><!-- raw HTML omitted --><a href="https://github.com/naveensrinivasan/fsharp-docker">https://github.com/naveensrinivasan/fsharp-docker</a><!-- raw HTML omitted --></p>
 <p>[github file = “/naveensrinivasan/fsharp-docker/blob/master/Dockerfile”]</p>
 <p>It is also available in the docker hub. You could get it by</p>
 <p>docker pull naveensrinivasan/fsharp</p>
-]]></content></item><item><title>View the http redirect and response message from an external authentication provider using ETW</title><link>/?p=1510/</link><pubDate>Mon, 29 Jun 2015 02:57:26 +0000</pubDate><guid>/?p=1510/</guid><description>Recently I had to troubleshoot messages that were being sent from an web application hosted on IIS to an external authentication provider. The logs from the application wasn’t something closer to the metal and wasn’t really providing all the details. I really wanted something like fiddler for the webserver. I could have a ran network traces to troubleshoot the issue but the problem was it wasn’t happening consistently. It was sporadic.</description><content type="html"><![CDATA[<p>Recently I had to troubleshoot messages that were being sent from an web application hosted on IIS to an external authentication provider. The logs from the application wasn’t something closer to the metal and wasn’t really providing all the details. I really wanted something like fiddler for the webserver. I could have a ran network traces to troubleshoot the issue but the problem was it wasn’t happening consistently. It was sporadic. I knew there would be ETW traces that would have this information. The IIS web logs don’t capture this information.</p>
+]]></content></item><item><title>View the http redirect and response message from an external authentication provider using ETW</title><link>/?p=1510/</link><pubDate>Mon, 29 Jun 2015 02:57:26 +0000</pubDate><guid>/?p=1510/</guid><description>&lt;p>Recently I had to troubleshoot messages that were being sent from an web application hosted on IIS to an external authentication provider. The logs from the application wasn’t something closer to the metal and wasn’t really providing all the details. I really wanted something like fiddler for the webserver. I could have a ran network traces to troubleshoot the issue but the problem was it wasn’t happening consistently. It was sporadic. I knew there would be ETW traces that would have this information. The IIS web logs don’t capture this information.&lt;/p></description><content type="html"><![CDATA[<p>Recently I had to troubleshoot messages that were being sent from an web application hosted on IIS to an external authentication provider. The logs from the application wasn’t something closer to the metal and wasn’t really providing all the details. I really wanted something like fiddler for the webserver. I could have a ran network traces to troubleshoot the issue but the problem was it wasn’t happening consistently. It was sporadic. I knew there would be ETW traces that would have this information. The IIS web logs don’t capture this information.</p>
 <p>Here is a example of the SAML authentication process</p>
 <p><a href="https://naveensrinivasan.files.wordpress.com/2015/06/500px-saml.jpg"><!-- raw HTML omitted --></a></p>
 <p>In the application I was working with, IIS was the relying party and the user was to be authenticated with Identity Provider.</p>
@@ -516,7 +541,20 @@ So I created a docker image with the latest mono from their alpha repo and using
 <p><a href="https://naveensrinivasan.files.wordpress.com/2015/06/samlresponse.jpg"><!-- raw HTML omitted --></a></p>
 <p>With this I was able to troubleshoot message that was being sent and received to the IIS.</p>
 <p> </p>
-]]></content></item><item><title>Getting my Yoga stats from Yogaglo</title><link>/?p=1499/</link><pubDate>Wed, 17 Jun 2015 19:16:33 +0000</pubDate><guid>/?p=1499/</guid><description/><content type="html"><![CDATA[<!-- raw HTML omitted -->
+]]></content></item><item><title>Getting my Yoga stats from Yogaglo</title><link>/?p=1499/</link><pubDate>Wed, 17 Jun 2015 19:16:33 +0000</pubDate><guid>/?p=1499/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted --></description><content type="html"><![CDATA[<!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -530,8 +568,8 @@ So I created a docker image with the latest mono from their alpha repo and using
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-]]></content></item><item><title>Use Eventsource to get the duration of a Start Stop of Custom ETW events</title><link>/?p=1493/</link><pubDate>Mon, 08 Jun 2015 19:53:29 +0000</pubDate><guid>/?p=1493/</guid><description>The EventSource library provides an option to get duration of Custom ETW start and stop events and when used with Perfview we could leverage this to stop tracing when the duration is more than what we expect.
-What it is for example ,there could an external API call the application makes that has to be traced with the start and when it finishes then the stop of the event is called.</description><content type="html"><![CDATA[<p>The <!-- raw HTML omitted -->EventSource<!-- raw HTML omitted --> library provides an option to get duration of Custom ETW start and stop events and when used with Perfview we could leverage this to stop tracing when the duration is more than what we expect.</p>
+]]></content></item><item><title>Use Eventsource to get the duration of a Start Stop of Custom ETW events</title><link>/?p=1493/</link><pubDate>Mon, 08 Jun 2015 19:53:29 +0000</pubDate><guid>/?p=1493/</guid><description>&lt;p>The &lt;!-- raw HTML omitted -->EventSource&lt;!-- raw HTML omitted --> library provides an option to get duration of Custom ETW start and stop events and when used with Perfview we could leverage this to stop tracing when the duration is more than what we expect.&lt;/p>
+&lt;p>What it is for example ,there could an external API call the application makes that has to be traced with the start and when it finishes then the stop of the event is called. Ideally we would have a ability to view the duration of these events similar to ASP.NET calls.  The EventSource Library along with Perfview provides this ability to view the duration between the start and stop events.&lt;/p></description><content type="html"><![CDATA[<p>The <!-- raw HTML omitted -->EventSource<!-- raw HTML omitted --> library provides an option to get duration of Custom ETW start and stop events and when used with Perfview we could leverage this to stop tracing when the duration is more than what we expect.</p>
 <p>What it is for example ,there could an external API call the application makes that has to be traced with the start and when it finishes then the stop of the event is called. Ideally we would have a ability to view the duration of these events similar to ASP.NET calls.  The EventSource Library along with Perfview provides this ability to view the duration between the start and stop events.</p>
 <p>Here is a code sample with CustomEvent</p>
 <p>[gist https://gist.github.com/naveensrinivasan/7e54c72dc628ae7da69e]</p>
@@ -546,8 +584,8 @@ What it is for example ,there could an external API call the application makes t
 <p>There is a bug in perfview that would not record Stop triggered events. I have reported this and I hope this would be fixed in the next public release.</p>
 <p>The source code for these samples are here</p>
 <p><!-- raw HTML omitted --><a href="https://github.com/naveensrinivasan/ETWSamples">https://github.com/naveensrinivasan/ETWSamples</a><!-- raw HTML omitted --></p>
-]]></content></item><item><title>Log dynamic Custom objects in ETW using EventSource</title><link>/?p=1489/</link><pubDate>Fri, 29 May 2015 03:35:50 +0000</pubDate><guid>/?p=1489/</guid><description>With the latest release of EventSource we could create dynamic events without having to create class that inherits from EventSource. This is will be not be good for Performance.
-Using these methods we could either log Anonymous objects or Classes that have the EventData Attribute applied to it. The caveat is that these objects public properties alone will be serialized. These properties have to be of native types like string,int,datetime, guid , IEnumerable.</description><content type="html"><![CDATA[<p>With the latest release of <!-- raw HTML omitted -->EventSource<!-- raw HTML omitted --> we could create dynamic events without having to create class that inherits from EventSource. This is will be not be good for Performance.</p>
+]]></content></item><item><title>Log dynamic Custom objects in ETW using EventSource</title><link>/?p=1489/</link><pubDate>Fri, 29 May 2015 03:35:50 +0000</pubDate><guid>/?p=1489/</guid><description>&lt;p>With the latest release of &lt;!-- raw HTML omitted -->EventSource&lt;!-- raw HTML omitted --> we could create dynamic events without having to create class that inherits from EventSource. This is will be not be good for Performance.&lt;/p>
+&lt;p>Using these methods we could either log Anonymous objects or Classes that have the EventData Attribute applied to it. The caveat is that these objects public properties alone will be serialized. These properties have to be of native types like string,int,datetime, guid , IEnumerable. If you don’t want a property to be serialized you could apply the attribute EventIgnore.&lt;/p></description><content type="html"><![CDATA[<p>With the latest release of <!-- raw HTML omitted -->EventSource<!-- raw HTML omitted --> we could create dynamic events without having to create class that inherits from EventSource. This is will be not be good for Performance.</p>
 <p>Using these methods we could either log Anonymous objects or Classes that have the EventData Attribute applied to it. The caveat is that these objects public properties alone will be serialized. These properties have to be of native types like string,int,datetime, guid , IEnumerable. If you don’t want a property to be serialized you could apply the attribute EventIgnore.</p>
 <p>The source code for this repository is in <!-- raw HTML omitted --><a href="https://github.com/naveensrinivasan/ETWSamples">https://github.com/naveensrinivasan/ETWSamples</a><!-- raw HTML omitted --></p>
 <p>Here is the sample code of using  Dynamic eventsource to generate ETW traces</p>
@@ -555,11 +593,11 @@ Using these methods we could either log Anonymous objects or Classes that have t
 <p>Here is the trace from Perfview generated using</p>
 <p>[gist https://gist.github.com/naveensrinivasan/11a793b35a18fc9546dd]</p>
 <p><a href="https://naveensrinivasan.files.wordpress.com/2015/05/dynamicetw.jpg"><!-- raw HTML omitted --></a></p>
-]]></content></item><item><title>The case of slow Visual Studio startup</title><link>/?p=1469/</link><pubDate>Wed, 20 May 2015 01:23:35 +0000</pubDate><guid>/?p=1469/</guid><description>In this post I would use Perfview /ETW to diagnose the delayed start-up of visual studio.
-To analyze the problem start-up VS within Perfview as a run command
-[gist https://gist.github.com/naveensrinivasan/5eb6406d6d38f2143acb]
-This would launch visual studio and collect etw traces. I have also enabled CodeMarkers , which is ETW traces for Visual Studio in case if you want to trace any extensions performance.
-After it completes I choose the CPU Stacks and filtered with devenv.</description><content type="html"><![CDATA[<p>In this post I would use Perfview /ETW to diagnose the delayed start-up of visual studio.</p>
+]]></content></item><item><title>The case of slow Visual Studio startup</title><link>/?p=1469/</link><pubDate>Wed, 20 May 2015 01:23:35 +0000</pubDate><guid>/?p=1469/</guid><description>&lt;p>In this post I would use Perfview /ETW to diagnose the delayed start-up of visual studio.&lt;/p>
+&lt;p>To analyze the problem start-up VS within Perfview as a run command&lt;/p>
+&lt;p>[gist https://gist.github.com/naveensrinivasan/5eb6406d6d38f2143acb]&lt;/p>
+&lt;p>This would launch visual studio and collect etw traces. I have also enabled CodeMarkers , which is ETW traces for Visual Studio in case if you want to trace any extensions performance.&lt;/p>
+&lt;p>&lt;a href="https://naveensrinivasan.files.wordpress.com/2015/05/perfview-main.jpg">&lt;!-- raw HTML omitted -->&lt;/a>After it completes I choose the CPU Stacks and filtered with devenv.exe process.&lt;/p></description><content type="html"><![CDATA[<p>In this post I would use Perfview /ETW to diagnose the delayed start-up of visual studio.</p>
 <p>To analyze the problem start-up VS within Perfview as a run command</p>
 <p>[gist https://gist.github.com/naveensrinivasan/5eb6406d6d38f2143acb]</p>
 <p>This would launch visual studio and collect etw traces. I have also enabled CodeMarkers , which is ETW traces for Visual Studio in case if you want to trace any extensions performance.</p>
@@ -569,10 +607,11 @@ After it completes I choose the CPU Stacks and filtered with devenv.</descriptio
 <p>The reason for that is perfview groups call-stacks for better viewing. I cleared the “groupparts” textbox and then expanded the start-up thread.</p>
 <p><a href="https://naveensrinivasan.files.wordpress.com/2015/05/actualcallstacks.jpg"><!-- raw HTML omitted --></a>From the call-stacks I could make almost 42% of time is spent on Xamarin and DevExpress extensions within VS. Now I could turn them off and have a better performance.</p>
 <p>Perfview is great tool for identifying where the time is being spent!</p>
-]]></content></item><item><title>Managed Stack Explorer using ClrMD</title><link>/?p=1457/</link><pubDate>Thu, 14 May 2015 23:14:45 +0000</pubDate><guid>/?p=1457/</guid><description>How often we run into an issue in the field where we just want to see the managed call-stack where the exception is or where the thread is hung. One of the options is debugger or something like ETW.
-So I built a managed stack explorer
-http://naveensrinivasan.github.io/ManagedStackExplorer/
-Managed Stack Explorer provides call stack for .NET applications using managed code with thread local variables. The API as of now does not provide values for the local variables.</description><content type="html"><![CDATA[<p>How often we run into an issue in the field where we just want to see the managed call-stack where the exception is or where the thread is hung. One of the options is debugger or something like ETW.</p>
+]]></content></item><item><title>Managed Stack Explorer using ClrMD</title><link>/?p=1457/</link><pubDate>Thu, 14 May 2015 23:14:45 +0000</pubDate><guid>/?p=1457/</guid><description>&lt;p>How often we run into an issue in the field where we just want to see the managed call-stack where the exception is or where the thread is hung. One of the options is debugger or something like ETW.&lt;/p>
+&lt;p>So I built a managed stack explorer&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->&lt;a href="http://naveensrinivasan.github.io/ManagedStackExplorer/">http://naveensrinivasan.github.io/ManagedStackExplorer/&lt;/a>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>&lt;a href="https://raw.githubusercontent.com/naveensrinivasan/ManagedStackExplorer/master/screenshot.jpg">&lt;!-- raw HTML omitted -->&lt;/a>&lt;/p>
+&lt;p>Managed Stack Explorer provides call stack for .NET applications using managed code with thread local variables. The API as of now does not provide values for the local variables. When it is available we can update it.&lt;/p></description><content type="html"><![CDATA[<p>How often we run into an issue in the field where we just want to see the managed call-stack where the exception is or where the thread is hung. One of the options is debugger or something like ETW.</p>
 <p>So I built a managed stack explorer</p>
 <p><!-- raw HTML omitted --><a href="http://naveensrinivasan.github.io/ManagedStackExplorer/">http://naveensrinivasan.github.io/ManagedStackExplorer/</a><!-- raw HTML omitted --></p>
 <p><a href="https://raw.githubusercontent.com/naveensrinivasan/ManagedStackExplorer/master/screenshot.jpg"><!-- raw HTML omitted --></a></p>
@@ -581,11 +620,13 @@ Managed Stack Explorer provides call stack for .NET applications using managed c
 <p>The debug shim works specific to processor and would not be able to get call-stacks if it is not. So x86 exe cannot get call-stacks of x64. That’s reason for x86 and x64 specific exe’s. There is no difference in code other than how it is compiled.</p>
 <p>It is work in progress and I would love some feedback and code contributions.</p>
 <p>The github site also has link to download the pre-complied executables.</p>
-]]></content></item><item><title>Measure GC Allocations and Collections using TraceEvent</title><link>/?p=1437/</link><pubDate>Tue, 12 May 2015 01:14:34 +0000</pubDate><guid>/?p=1437/</guid><description>In this post I will explore how we could use TraceEvent to measure our code (even at function level) for GC Allocations and Collections.
-Save this with “.linq” extension and then open in linqpad.
-[gist https://gist.github.com/naveensrinivasan/b72fd80876eb67557ae8]
-Here is the TL;DR
-Why would I want to know GC events on a function level? Doesn’t the PerfMon counter provide that information on an application level? Isn’t Premature optimization root of all evil?</description><content type="html"><![CDATA[<p>In this post I will explore  how we could use <!-- raw HTML omitted -->TraceEvent<!-- raw HTML omitted --> to measure our code (even at function level) for GC Allocations and Collections.</p>
+]]></content></item><item><title>Measure GC Allocations and Collections using TraceEvent</title><link>/?p=1437/</link><pubDate>Tue, 12 May 2015 01:14:34 +0000</pubDate><guid>/?p=1437/</guid><description>&lt;p>In this post I will explore  how we could use &lt;!-- raw HTML omitted -->TraceEvent&lt;!-- raw HTML omitted --> to measure our code (even at function level) for GC Allocations and Collections.&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;p>Save this with “.linq” extension and then open in  linqpad.&lt;/p>
+&lt;p>[gist https://gist.github.com/naveensrinivasan/b72fd80876eb67557ae8]&lt;/p>
+&lt;p>Here is the TL;DR&lt;/p>
+&lt;p>Why would I want to know GC events on a function level? Doesn’t the PerfMon counter  provide that information on an application level? Isn’t Premature optimization root of all evil?&lt;/p></description><content type="html"><![CDATA[<p>In this post I will explore  how we could use <!-- raw HTML omitted -->TraceEvent<!-- raw HTML omitted --> to measure our code (even at function level) for GC Allocations and Collections.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Save this with “.linq” extension and then open in  linqpad.</p>
@@ -616,11 +657,9 @@ Why would I want to know GC events on a function level? Doesn’t the PerfMon c
 <p><a href="https://naveensrinivasan.files.wordpress.com/2015/05/measurewithany.jpg"><!-- raw HTML omitted --></a></p>
 <p>And here it is using Foreach</p>
 <p><a href="https://naveensrinivasan.files.wordpress.com/2015/05/measurewithforeach.jpg"><!-- raw HTML omitted --></a></p>
-]]></content></item><item><title>Look ma I figured out why my ETW EventSource isn’t tracing</title><link>/?p=1414/</link><pubDate>Tue, 05 May 2015 13:47:39 +0000</pubDate><guid>/?p=1414/</guid><description>The EventSource class in the framework 4.5 helps in writing custom ETW tracing.
-When using EventSource class built within the framework, if the order of the methods don’t match ordinal number position in the class it would fail generating ETW traces. The EventSource has dependency on the order of the methods in the class.
-This code would produce a valid ETW traces
-[gist https://gist.github.com/naveensrinivasan/a1fcd0ec78d2473499d5]
-This one would fail producing any ETW Traces.</description><content type="html"><![CDATA[<p>The <!-- raw HTML omitted -->EventSource <!-- raw HTML omitted -->class in the framework 4.5 helps in writing custom ETW tracing.</p>
+]]></content></item><item><title>Look ma I figured out why my ETW EventSource isn’t tracing</title><link>/?p=1414/</link><pubDate>Tue, 05 May 2015 13:47:39 +0000</pubDate><guid>/?p=1414/</guid><description>&lt;p>The &lt;!-- raw HTML omitted -->EventSource &lt;!-- raw HTML omitted -->class in the framework 4.5 helps in writing custom ETW tracing.&lt;/p>
+&lt;p>When using EventSource class built within the framework, if the order of the methods don’t match ordinal number position in the class it would fail generating ETW traces. The EventSource has dependency on the order of the methods in the class.&lt;/p>
+&lt;p>This code would produce a valid ETW traces&lt;/p></description><content type="html"><![CDATA[<p>The <!-- raw HTML omitted -->EventSource <!-- raw HTML omitted -->class in the framework 4.5 helps in writing custom ETW tracing.</p>
 <p>When using EventSource class built within the framework, if the order of the methods don’t match ordinal number position in the class it would fail generating ETW traces. The EventSource has dependency on the order of the methods in the class.</p>
 <p>This code would produce a valid ETW traces</p>
 <p>[gist https://gist.github.com/naveensrinivasan/a1fcd0ec78d2473499d5]</p>
@@ -638,12 +677,12 @@ This one would fail producing any ETW Traces.</description><content type="html"
 <p>Within Perfview in the Events Window I enter <strong>Test|Ex</strong> in the filter text box which is shown in the above picture. FYI filter text box supports Regular expression. So by entering Test|Ex, I am filtering events with Test or Ex which for exceptions. With that information I could filter all the TestEvent’s and any exceptions that have been raised which shows ArgumentException.</p>
 <p>The call-stack of the ArgumentException shows on the static contructor <strong>.cctor</strong> of  FailedEvent.</p>
 <p><a href="https://naveensrinivasan.files.wordpress.com/2015/05/may-3-2015-exception-callstack.jpg"><!-- raw HTML omitted --></a></p>
-]]></content></item><item><title>Making an Image Easier to Debug</title><link>/?p=1368/</link><pubDate>Mon, 20 Jun 2011 17:45:24 +0000</pubDate><guid>/?p=1368/</guid><description>I am doing security review for a managed application which is obfuscated. So I am doing a lot of disassembling code at runtime using Windbg. One of the issues is that code gets JIT optimized because of the retail build. This makes it harder for me debug when mapping it back. Realized that I could turnoff JIT Optimization’s using the ini file.
-[sourcecode]
-[.NET Framework Debugging Control]
-GenerateTrackingInfo=1
-AllowOptimize=0
-[/sourcecode]</description><content type="html"><![CDATA[<p>I am doing security review for a managed application which is obfuscated. So I am doing a lot of   disassembling code at runtime using Windbg. One of the issues is that code gets JIT optimized because of the retail build. This makes it harder for me debug when mapping it back. Realized  that I could turnoff  JIT Optimization’s using the ini file.</p>
+]]></content></item><item><title>Making an Image Easier to Debug</title><link>/?p=1368/</link><pubDate>Mon, 20 Jun 2011 17:45:24 +0000</pubDate><guid>/?p=1368/</guid><description>&lt;p>I am doing security review for a managed application which is obfuscated. So I am doing a lot of   disassembling code at runtime using Windbg. One of the issues is that code gets JIT optimized because of the retail build. This makes it harder for me debug when mapping it back. Realized  that I could turnoff  JIT Optimization’s using the ini file.&lt;/p>
+&lt;p>[sourcecode]&lt;/p>
+&lt;p>[.NET Framework Debugging Control]&lt;/p>
+&lt;p>GenerateTrackingInfo=1&lt;/p>
+&lt;p>AllowOptimize=0&lt;/p>
+&lt;p>[/sourcecode]&lt;/p></description><content type="html"><![CDATA[<p>I am doing security review for a managed application which is obfuscated. So I am doing a lot of   disassembling code at runtime using Windbg. One of the issues is that code gets JIT optimized because of the retail build. This makes it harder for me debug when mapping it back. Realized  that I could turnoff  JIT Optimization’s using the ini file.</p>
 <p>[sourcecode]</p>
 <p>[.NET Framework Debugging Control]</p>
 <p>GenerateTrackingInfo=1</p>
@@ -651,11 +690,10 @@ AllowOptimize=0
 <p>[/sourcecode]</p>
 <p>Another use of <!-- raw HTML omitted -->feature <!-- raw HTML omitted -->which I guess wasn’t really intended for.</p>
 <!-- raw HTML omitted -->
-]]></content></item><item><title>Updating .NET String in memory with Windbg</title><link>/?p=1353/</link><pubDate>Tue, 14 Jun 2011 16:42:24 +0000</pubDate><guid>/?p=1353/</guid><description>In this post I would show a simple trick to update .NET strings in memory with Windbg. The caveat is make sure the string that you’re updating is long enough to fit into the string buffer. If not there would be a memory corruption.
-Here is a simple windows form application with title “Good”
-The goal is to update the title from “Good” to “Bad”.
-[sourcecode language=”csharp”]
-button1.Click += (s,b) =&amp;gt; Text = _caption;</description><content type="html"><![CDATA[<p>In this post I would show a simple trick to update .NET strings in memory with Windbg. The caveat is make sure the string that you’re updating is long enough to fit into the string buffer. If not there would be a memory corruption.</p>
+]]></content></item><item><title>Updating .NET String in memory with Windbg</title><link>/?p=1353/</link><pubDate>Tue, 14 Jun 2011 16:42:24 +0000</pubDate><guid>/?p=1353/</guid><description>&lt;p>In this post I would show a simple trick to update .NET strings in memory with Windbg. The caveat is make sure the string that you’re updating is long enough to fit into the string buffer. If not there would be a memory corruption.&lt;/p>
+&lt;p>Here is a simple windows form application with title “Good”&lt;/p>
+&lt;p>&lt;a href="http://104.197.135.42/wp-content/uploads/2011/06/updatestring13.jpg">&lt;!-- raw HTML omitted -->&lt;/a>&lt;/p>
+&lt;p>The goal is to update the title from “Good” to “Bad”.&lt;/p></description><content type="html"><![CDATA[<p>In this post I would show a simple trick to update .NET strings in memory with Windbg. The caveat is make sure the string that you’re updating is long enough to fit into the string buffer. If not there would be a memory corruption.</p>
 <p>Here is a simple windows form application with title “Good”</p>
 <p><a href="http://104.197.135.42/wp-content/uploads/2011/06/updatestring13.jpg"><!-- raw HTML omitted --></a></p>
 <p>The goal is to update the title from “Good” to “Bad”.</p>
@@ -674,8 +712,8 @@ button1.Click += (s,b) =&amp;gt; Text = _caption;</description><content type="ht
 </blockquote>
 <p>And the updated form title.</p>
 <p><a href="http://104.197.135.42/wp-content/uploads/2011/06/bad2.jpg"><!-- raw HTML omitted --></a></p>
-]]></content></item><item><title>Who is is blocking my UI Thread? Diagnosing the cause using Windbg</title><link>/?p=1344/</link><pubDate>Fri, 01 Apr 2011 18:59:06 +0000</pubDate><guid>/?p=1344/</guid><description>It so happens most of the applications block the UI thread and do sync I/O, which is most common reason for “Not Responding” window. Here is a post http://blogs.msdn.com/b/nathannesbit/archive/2010/12/28/detecting-ui-thread-misuse.aspx that tries helping in detecting this. I like to handle this from bottom of the stack because we have a cool tool called debugger.
-The approach is simple as having a break-point on a function like “KERNEL32!WaitFor*” and checking if the current thread is a UI thread.</description><content type="html"><![CDATA[<p>It so happens most of the applications block the UI thread and do sync I/O, which is most common reason for “Not Responding” window. Here is a post <a href="http://blogs.msdn.com/b/nathannesbit/archive/2010/12/28/detecting-ui-thread-misuse.aspx">http://blogs.msdn.com/b/nathannesbit/archive/2010/12/28/detecting-ui-thread-misuse.aspx</a> that tries helping in detecting this. I like to handle this from bottom of the stack because we have a cool tool called debugger.</p>
+]]></content></item><item><title>Who is is blocking my UI Thread? Diagnosing the cause using Windbg</title><link>/?p=1344/</link><pubDate>Fri, 01 Apr 2011 18:59:06 +0000</pubDate><guid>/?p=1344/</guid><description>&lt;p>It so happens most of the applications block the UI thread and do sync I/O, which is most common reason for “Not Responding” window. Here is a post &lt;a href="http://blogs.msdn.com/b/nathannesbit/archive/2010/12/28/detecting-ui-thread-misuse.aspx">http://blogs.msdn.com/b/nathannesbit/archive/2010/12/28/detecting-ui-thread-misuse.aspx&lt;/a> that tries helping in detecting this. I like to handle this from bottom of the stack because we have a cool tool called debugger.&lt;/p>
+&lt;p>The approach is simple as having a break-point on a function like “KERNEL32!WaitFor*” and checking if the current thread is a UI thread. This could also be done for other functions like Sleep on UI thread by having a break-point on “KERNELBASE!SleepEx”.&lt;/p></description><content type="html"><![CDATA[<p>It so happens most of the applications block the UI thread and do sync I/O, which is most common reason for “Not Responding” window. Here is a post <a href="http://blogs.msdn.com/b/nathannesbit/archive/2010/12/28/detecting-ui-thread-misuse.aspx">http://blogs.msdn.com/b/nathannesbit/archive/2010/12/28/detecting-ui-thread-misuse.aspx</a> that tries helping in detecting this. I like to handle this from bottom of the stack because we have a cool tool called debugger.</p>
 <p>The approach is simple as having a break-point on a function like “KERNEL32!WaitFor*” and checking if the current thread is a UI thread. This could also be done for other functions like Sleep on UI thread by having a break-point on “KERNELBASE!SleepEx”.</p>
 <p>Here are steps to determine if a thread is a STA thread / UI Thread. This is information is stored in TEB structure (thread environment block). Here is the output of the teb on the UI Thread</p>
 <blockquote>
@@ -1271,23 +1309,24 @@ The approach is simple as having a break-point on a function like “KERNEL32!Wa
 <blockquote>
 <p>7ef2c000</p>
 </blockquote>
-<p>So with the above we could dump the teb structure using dt ntdll!_TEB command. In the next post I will demonstrate how this can be used to debug some cool stuff 🙂</p>]]></content></item><item><title>Conditional BreakPoint based on callstack within Windbg – .NET</title><link>/?p=1314/</link><pubDate>Wed, 29 Dec 2010 02:00:12 +0000</pubDate><guid>/?p=1314/</guid><description>Someone recently asked me “How to have a break-point on a method based on certain function in the call-stack?”
-Here is the sample code to demonstrate this
-[sourcecode language=”csharp”]
-using System;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-namespace Test
-{
-class Program
-{
-string connectionString = @&amp;ldquo;Data Source=.sqlexpress;Initial Catalog=Tfs_Configuration;Integrated Security=True&amp;rdquo;;
-public void Bar()
-{
-using (var c = new SqlConnection(connectionString))
-{
-c.Open();
-var command = new SqlCommand(@&amp;ldquo;update [tbl_AccessMapping] set [DisplayName] = @param&amp;rdquo;, c);</description><content type="html"><![CDATA[<p>Someone recently asked me “How to have a break-point on a method based on certain function in the call-stack?”</p>
+<p>So with the above we could dump the teb structure using dt ntdll!_TEB command. In the next post I will demonstrate how this can be used to debug some cool stuff 🙂</p>]]></content></item><item><title>Conditional BreakPoint based on callstack within Windbg – .NET</title><link>/?p=1314/</link><pubDate>Wed, 29 Dec 2010 02:00:12 +0000</pubDate><guid>/?p=1314/</guid><description>&lt;p>Someone recently asked me “How to have a break-point on a method based on certain function in the call-stack?”&lt;/p>
+&lt;p>Here is the sample code to demonstrate this&lt;/p>
+&lt;p>[sourcecode language=”csharp”]&lt;/p>
+&lt;p>using System;&lt;/p>
+&lt;p>using System.Threading.Tasks;&lt;/p>
+&lt;p>using System.Data.SqlClient;&lt;/p>
+&lt;p>namespace Test&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>class Program&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>string connectionString = @&amp;ldquo;Data Source=.sqlexpress;Initial Catalog=Tfs_Configuration;Integrated Security=True&amp;rdquo;;&lt;/p>
+&lt;p>public void Bar()&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>using (var c = new SqlConnection(connectionString))&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>c.Open();&lt;/p>
+&lt;p>var command = new SqlCommand(@&amp;ldquo;update [tbl_AccessMapping] set [DisplayName] = @param&amp;rdquo;, c);&lt;/p>
+&lt;p>command.Parameters.Add(new SqlParameter(&amp;ldquo;param&amp;rdquo;, &amp;ldquo;Bar&amp;rdquo;));&lt;/p></description><content type="html"><![CDATA[<p>Someone recently asked me “How to have a break-point on a method based on certain function in the call-stack?”</p>
 <p>Here is the sample code to demonstrate this</p>
 <p>[sourcecode language=”csharp”]</p>
 <p>using System;</p>
@@ -1350,7 +1389,7 @@ var command = new SqlCommand(@&amp;ldquo;update [tbl_AccessMapping] set [Display
 <p>}</p>
 <p>ad /q Contains</p>
 <p>[/sourcecode]</p>
-]]></content></item><item><title>Saving Dynamic Assembly in .NET 4.0 using Windbg</title><link>/?p=1298/</link><pubDate>Thu, 23 Dec 2010 23:37:45 +0000</pubDate><guid>/?p=1298/</guid><description>I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the AppDomain.AssemblyResolve event. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the AppDomain.</description><content type="html"><![CDATA[<p>I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the <!-- raw HTML omitted -->AppDomain.AssemblyResolve<!-- raw HTML omitted --> event. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for <a href="http://stackoverflow.com/questions/1872502/how-to-save-a-dynamically-generated-assembly-that-is-stored-in-memory/1872588#1872588">I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the <!-- raw HTML omitted -->AppDomain.AssemblyResolve<!-- raw HTML omitted --> event. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for</a> read the comments especially from Evian. Unlike psscor2.dll the sos for .NET 4.0 does not have a !dumpdynamicassembly with a save option.</p>
+]]></content></item><item><title>Saving Dynamic Assembly in .NET 4.0 using Windbg</title><link>/?p=1298/</link><pubDate>Thu, 23 Dec 2010 23:37:45 +0000</pubDate><guid>/?p=1298/</guid><description>&lt;p>I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the &lt;!-- raw HTML omitted -->AppDomain.AssemblyResolve&lt;!-- raw HTML omitted --> event. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for &lt;a href="http://stackoverflow.com/questions/1872502/how-to-save-a-dynamically-generated-assembly-that-is-stored-in-memory/1872588#1872588">I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the &lt;!-- raw HTML omitted -->AppDomain.AssemblyResolve&lt;!-- raw HTML omitted --> event. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for&lt;/a> read the comments especially from Evian. Unlike psscor2.dll the sos for .NET 4.0 does not have a !dumpdynamicassembly with a save option.&lt;/p></description><content type="html"><![CDATA[<p>I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the <!-- raw HTML omitted -->AppDomain.AssemblyResolve<!-- raw HTML omitted --> event. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for <a href="http://stackoverflow.com/questions/1872502/how-to-save-a-dynamically-generated-assembly-that-is-stored-in-memory/1872588#1872588">I recently had to debug a .NET 4.0 process which was loading the dependent assemblies using the <!-- raw HTML omitted -->AppDomain.AssemblyResolve<!-- raw HTML omitted --> event. The dependent assemblies were stored within the executable. I couldn’t disassemble the code to look for the dependent assembly because the exe was obfuscated. FYI the dynamic assembly cannot be saved using !SaveModule and here is the reason for</a> read the comments especially from Evian. Unlike psscor2.dll the sos for .NET 4.0 does not have a !dumpdynamicassembly with a save option.</p>
 <p>Here is the sample code to demonstrate this.</p>
 <p>[sourcecode language=”csharp”]</p>
 <p>using System;</p>
@@ -1444,13 +1483,12 @@ var command = new SqlCommand(@&amp;ldquo;update [tbl_AccessMapping] set [Display
 <p>)).ToArray())</p>
 <p>.FullName.Dump();</p>
 <p>[/sourcecode]</p>
-]]></content></item><item><title>Dumping Generic List in .NET within Windbg</title><link>/?p=1281/</link><pubDate>Fri, 10 Dec 2010 03:15:43 +0000</pubDate><guid>/?p=1281/</guid><description>Most of the code uses List for storing items. The present solutions don’ t have a way to dump List within windbg. Even though sosex has an option to dump the List using !mdt it still doesn’t meet the scripting requirements. For example here is an output using sosex “!mdt -e 029a91c0”
-0:000&amp;gt; !mdt -e 029a91c0
-029a91c0 (System.Collections.Generic.List`1[[Test.Foo, Test]])
-Count = 2
-[0] 029a9200 (Test.Foo)
-[1] 029a9210 (Test.Foo)
-I would have preferred to get the contents of the “Foo” object instead of just the address of Foo.</description><content type="html"><![CDATA[<p>Most of the code uses List<!-- raw HTML omitted --> for storing items.  The present solutions don’ t have a way to dump List<!-- raw HTML omitted --> within windbg. Even though sosex has an option to dump the List<!-- raw HTML omitted --> using !mdt it still doesn’t meet the scripting requirements. For example here is an output using sosex “!mdt -e 029a91c0”</p>
+]]></content></item><item><title>Dumping Generic List in .NET within Windbg</title><link>/?p=1281/</link><pubDate>Fri, 10 Dec 2010 03:15:43 +0000</pubDate><guid>/?p=1281/</guid><description>&lt;p>Most of the code uses List&lt;!-- raw HTML omitted --> for storing items.  The present solutions don’ t have a way to dump List&lt;!-- raw HTML omitted --> within windbg. Even though sosex has an option to dump the List&lt;!-- raw HTML omitted --> using !mdt it still doesn’t meet the scripting requirements. For example here is an output using sosex “!mdt -e 029a91c0”&lt;/p>
+&lt;blockquote>
+&lt;p>0:000&amp;gt; !mdt -e 029a91c0&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>029a91c0 (System.Collections.Generic.List`1[[Test.Foo, Test]])&lt;/p></description><content type="html"><![CDATA[<p>Most of the code uses List<!-- raw HTML omitted --> for storing items.  The present solutions don’ t have a way to dump List<!-- raw HTML omitted --> within windbg. Even though sosex has an option to dump the List<!-- raw HTML omitted --> using !mdt it still doesn’t meet the scripting requirements. For example here is an output using sosex “!mdt -e 029a91c0”</p>
 <blockquote>
 <p>0:000&gt; !mdt -e 029a91c0</p>
 </blockquote>
@@ -1541,8 +1579,8 @@ I would have preferred to get the contents of the “Foo” object instead of ju
 <p>Name:029a9198 (System.String: &ldquo;test2&rdquo;)</p>
 </blockquote>
 <p>This is one of the scripts that I would use often. Hope it is useful to others also.</p>
-]]></content></item><item><title>Why isn’t the !bpmd in sos / windbg not working?</title><link>/?p=1271/</link><pubDate>Mon, 06 Dec 2010 00:16:53 +0000</pubDate><guid>/?p=1271/</guid><description>I recently noticed another blog post refer to one of my post. The issue was, sos wasn’t enabling the break-points on non-jitted functions. The classic example being “Main”. Thanks to Steve I have been using sosex and not sos for setting break-points.
-From my previous post you can understand how CLR is using clrn/CLRNotificationException to notify sos/sosex on JIT. With this information when I looked at the rotor code, I noticed an interesting member variable “g_dacNotificationFlags”.</description><content type="html"><![CDATA[<p>I recently noticed another blog <!-- raw HTML omitted -->post <!-- raw HTML omitted -->refer to one of my <!-- raw HTML omitted -->post<!-- raw HTML omitted -->. The issue was, sos wasn’t enabling the break-points on non-jitted functions. The classic example being “Main”.  Thanks to <!-- raw HTML omitted -->Steve <!-- raw HTML omitted --> I have been using sosex and not sos for setting break-points.</p>
+]]></content></item><item><title>Why isn’t the !bpmd in sos / windbg not working?</title><link>/?p=1271/</link><pubDate>Mon, 06 Dec 2010 00:16:53 +0000</pubDate><guid>/?p=1271/</guid><description>&lt;p>I recently noticed another blog &lt;!-- raw HTML omitted -->post &lt;!-- raw HTML omitted -->refer to one of my &lt;!-- raw HTML omitted -->post&lt;!-- raw HTML omitted -->. The issue was, sos wasn’t enabling the break-points on non-jitted functions. The classic example being “Main”.  Thanks to &lt;!-- raw HTML omitted -->Steve &lt;!-- raw HTML omitted --> I have been using sosex and not sos for setting break-points.&lt;/p>
+&lt;p>From my previous &lt;!-- raw HTML omitted -->post &lt;!-- raw HTML omitted --> you can understand how CLR is using clrn/CLRNotificationException to notify sos/sosex on JIT. With this information when I looked at the rotor &lt;!-- raw HTML omitted -->code&lt;!-- raw HTML omitted -->, I noticed an interesting member variable “g_dacNotificationFlags”. So I decided to check the value of this variable when using !bpmd from sos and !mbm from sosex.&lt;/p></description><content type="html"><![CDATA[<p>I recently noticed another blog <!-- raw HTML omitted -->post <!-- raw HTML omitted -->refer to one of my <!-- raw HTML omitted -->post<!-- raw HTML omitted -->. The issue was, sos wasn’t enabling the break-points on non-jitted functions. The classic example being “Main”.  Thanks to <!-- raw HTML omitted -->Steve <!-- raw HTML omitted --> I have been using sosex and not sos for setting break-points.</p>
 <p>From my previous <!-- raw HTML omitted -->post <!-- raw HTML omitted --> you can understand how CLR is using clrn/CLRNotificationException to notify sos/sosex on JIT. With this information when I looked at the rotor <!-- raw HTML omitted -->code<!-- raw HTML omitted -->, I noticed an interesting member variable “g_dacNotificationFlags”. So I decided to check the value of this variable when using !bpmd from sos and !mbm from sosex.</p>
 <p>[sourcecode]</p>
 <p>.if (dwo(mscorwks!g_dacNotificationFlags) = 0) {.echo bp not set } .else {.echo bp set}</p>
@@ -1552,11 +1590,18 @@ From my previous post you can understand how CLR is using clrn/CLRNotificationEx
 <p>ed mscorwks!g_dacNotificationFlags 00000001</p>
 <p>[/sourcecode]</p>
 <p>And not to my surprise the !bpmd seems to work for non-jitted function with the above hack. FYI we don’t have to resort to this to get !bpmd to work. If the !bpmd is set after load of mscorjit/clrjit it would work as expected.</p>
-]]></content></item><item><title>Using sosex within windbg to understand IL and Assembly code</title><link>/?p=1261/</link><pubDate>Tue, 30 Nov 2010 01:33:25 +0000</pubDate><guid>/?p=1261/</guid><description>Sometimes when debugging managed code within the debugger I would like to see the C# code ,the IL translation for the managed code and the Assembly code for the IL. For example I recently learned that callvirt MSIL instruction must do the null-check before invoking method.
-C:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication13Program.cs @ 18:
-00bc26d8 8b4dec mov ecx,dword ptr [ebp-14h]
-00bc26db 3909 cmp dword ptr [ecx],ecx //NULL Check
-00bc26dd ff1508a82900 call dword ptr ds:[29A808h] (System.</description><content type="html"><![CDATA[<p>Sometimes when debugging managed code within the debugger I would like to see the C# code ,the IL translation for the managed code and the Assembly code for the IL. For example I recently learned that callvirt MSIL instruction must do the null-check before invoking method.</p>
+]]></content></item><item><title>Using sosex within windbg to understand IL and Assembly code</title><link>/?p=1261/</link><pubDate>Tue, 30 Nov 2010 01:33:25 +0000</pubDate><guid>/?p=1261/</guid><description>&lt;p>Sometimes when debugging managed code within the debugger I would like to see the C# code ,the IL translation for the managed code and the Assembly code for the IL. For example I recently learned that callvirt MSIL instruction must do the null-check before invoking method.&lt;/p>
+&lt;blockquote>
+&lt;p>C:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication13Program.cs @ 18:&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>00bc26d8 8b4dec          mov     ecx,dword ptr [ebp-14h]&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>00bc26db 3909            cmp     dword ptr [ecx],ecx //NULL Check&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>00bc26dd ff1508a82900    call    dword ptr ds:[29A808h] (System.String.ToLower(), mdToken: 0600031d)&lt;/p></description><content type="html"><![CDATA[<p>Sometimes when debugging managed code within the debugger I would like to see the C# code ,the IL translation for the managed code and the Assembly code for the IL. For example I recently learned that callvirt MSIL instruction must do the null-check before invoking method.</p>
 <blockquote>
 <p>C:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication13Program.cs @ 18:</p>
 </blockquote>
@@ -1617,9 +1662,10 @@ C:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication13Program.cs @
 <p>00bc26e9 8945ec          mov     dword ptr [ebp-14h],eax</p>
 </blockquote>
 <p>The above output has c#,IL and assembly.</p>
-]]></content></item><item><title>Windbg trick – Having custom name for user-defined pseudo-registers</title><link>/?p=1246/</link><pubDate>Tue, 23 Nov 2010 01:07:53 +0000</pubDate><guid>/?p=1246/</guid><description>There are 20 user-defined pseudo-registers ($t0, $t1, …, $t19) in windbg/cdb . To have scripts with variable names as @$t0 and @$t1 isn’t helpful for readability. The trick to avoid this is by using the “aS” command.
-Here is an example, for a loop variable I would like to use a variable name like “i” instead of “@$t0” and to use “i” as a variable here is the command
-aS i “@$t0”</description><content type="html"><![CDATA[<p>There are 20 <a href="http://msdn.microsoft.com/en-us/library/ff553485(VS.85).aspx">user-defined pseudo-registers</a> (<strong>$t0</strong>, <strong>$t1</strong>, …, <strong>$t19</strong>) in windbg/cdb . To have scripts with variable names as @$t0 and @$t1 isn’t helpful for readability. The trick to avoid this is by using the “aS” command.</p>
+]]></content></item><item><title>Windbg trick – Having custom name for user-defined pseudo-registers</title><link>/?p=1246/</link><pubDate>Tue, 23 Nov 2010 01:07:53 +0000</pubDate><guid>/?p=1246/</guid><description>&lt;p>There are 20 &lt;a href="http://msdn.microsoft.com/en-us/library/ff553485(VS.85).aspx">user-defined pseudo-registers&lt;/a> (&lt;strong>$t0&lt;/strong>, &lt;strong>$t1&lt;/strong>, …, &lt;strong>$t19&lt;/strong>) in windbg/cdb . To have scripts with variable names as @$t0 and @$t1 isn’t helpful for readability. The trick to avoid this is by using the “aS” command.&lt;/p>
+&lt;p>Here is an example, for a loop variable I would like to use a variable name like “i” instead of “@$t0” and to use “i”  as a variable  here is the command&lt;/p>
+&lt;blockquote>
+&lt;p>aS i “@$t0”&lt;/p></description><content type="html"><![CDATA[<p>There are 20 <a href="http://msdn.microsoft.com/en-us/library/ff553485(VS.85).aspx">user-defined pseudo-registers</a> (<strong>$t0</strong>, <strong>$t1</strong>, …, <strong>$t19</strong>) in windbg/cdb . To have scripts with variable names as @$t0 and @$t1 isn’t helpful for readability. The trick to avoid this is by using the “aS” command.</p>
 <p>Here is an example, for a loop variable I would like to use a variable name like “i” instead of “@$t0” and to use “i”  as a variable  here is the command</p>
 <blockquote>
 <p>aS i “@$t0”</p>
@@ -1632,14 +1678,31 @@ aS i “@$t0”</description><content type="html"><![CDATA[<p>There are 20 <a hr
 <blockquote>
 <p>ad ${/v:i}</p>
 </blockquote>
-]]></content></item><item><title>Decoding clr20r3 .NET exception – using mono cecil</title><link>/?p=1208/</link><pubDate>Wed, 17 Nov 2010 02:01:13 +0000</pubDate><guid>/?p=1208/</guid><description>I have often seen Devs trying to figure out the cause of the app crash without a memory dump. The only information that is available to analyze is the Windows Error Reporting message in the event viewer which would have “Event Name: CLR20r3” along with Watson bucket information like this.
-Fault bucket , type 0
-Event Name: CLR20r3
-Response: Not available
-Cab Id: 0
-Problem signature:
-P1: unhandledexception.exe
-P2: 1.0.0.0</description><content type="html"><![CDATA[<p>I have often seen Devs trying to figure out the cause of the app crash without a memory dump. The only information that is available to analyze is the Windows Error Reporting message in the event viewer which would have “Event Name: CLR20r3” along with <a href="http://naveensrinivasan.com/2010/04/24/exploring-unhandledexception-in-net-and-watson-buckets/">Watson bucket</a> information like this.</p>
+]]></content></item><item><title>Decoding clr20r3 .NET exception – using mono cecil</title><link>/?p=1208/</link><pubDate>Wed, 17 Nov 2010 02:01:13 +0000</pubDate><guid>/?p=1208/</guid><description>&lt;p>I have often seen Devs trying to figure out the cause of the app crash without a memory dump. The only information that is available to analyze is the Windows Error Reporting message in the event viewer which would have “Event Name: CLR20r3” along with &lt;a href="http://naveensrinivasan.com/2010/04/24/exploring-unhandledexception-in-net-and-watson-buckets/">Watson bucket&lt;/a> information like this.&lt;/p>
+&lt;blockquote>
+&lt;p>Fault bucket , type 0&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Event Name: CLR20r3&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Response: Not available&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Cab Id: 0&lt;/p>
+&lt;p>Problem signature:&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>P1: unhandledexception.exe&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>P2: 1.0.0.0&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>P3: 4ce1e0f1&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>P4: LibraryCode&lt;/p></description><content type="html"><![CDATA[<p>I have often seen Devs trying to figure out the cause of the app crash without a memory dump. The only information that is available to analyze is the Windows Error Reporting message in the event viewer which would have “Event Name: CLR20r3” along with <a href="http://naveensrinivasan.com/2010/04/24/exploring-unhandledexception-in-net-and-watson-buckets/">Watson bucket</a> information like this.</p>
 <blockquote>
 <p>Fault bucket , type 0</p>
 </blockquote>
@@ -1810,16 +1873,20 @@ P2: 1.0.0.0</description><content type="html"><![CDATA[<p>I have often seen Devs
 <p>And here is the output from above code.</p>
 <p><a href="http://104.197.135.42/wp-content/uploads/2010/11/monocecil2.png"><!-- raw HTML omitted --></a></p>
 <p>We cannot get the call-stack for the crash with just watson buckets.</p>
-]]></content></item><item><title>Script to !SaveAllModules in .NET 4.0 SOS within Windbg</title><link>/?p=1202/</link><pubDate>Fri, 12 Nov 2010 19:29:06 +0000</pubDate><guid>/?p=1202/</guid><description>The .NET 4.0 sos doesn’t have save all modules (!SaveAllModules) command. It only has !SaveModule. Recently I was debugging a .NET 4.0 process for which I had to save all the modules. Here is a script that does !SaveAllModules.
-[sourcecode]
-!for_each_module .if ($spat (&amp;quot;${@#ImageName}&amp;quot;,&amp;quot;*.exe&amp;quot;)) { !SaveModule ${@#Base} c:temp${@#ModuleName}.exe } .else { !SaveModule ${@#Base} c:temp${@#ModuleName}.dll }
-[/sourcecode]</description><content type="html"><![CDATA[<p>The .NET 4.0 sos doesn’t have save all modules (!SaveAllModules) command. It only has !SaveModule. Recently I was debugging a .NET 4.0 process for which I had to save all the modules. Here is a script that does !SaveAllModules.</p>
+]]></content></item><item><title>Script to !SaveAllModules in .NET 4.0 SOS within Windbg</title><link>/?p=1202/</link><pubDate>Fri, 12 Nov 2010 19:29:06 +0000</pubDate><guid>/?p=1202/</guid><description>&lt;p>The .NET 4.0 sos doesn’t have save all modules (!SaveAllModules) command. It only has !SaveModule. Recently I was debugging a .NET 4.0 process for which I had to save all the modules. Here is a script that does !SaveAllModules.&lt;/p>
+&lt;p>[sourcecode]&lt;/p>
+&lt;p>!for_each_module .if ($spat (&amp;quot;${@#ImageName}&amp;quot;,&amp;quot;*.exe&amp;quot;)) { !SaveModule ${@#Base} c:temp${@#ModuleName}.exe } .else { !SaveModule ${@#Base} c:temp${@#ModuleName}.dll }&lt;/p>
+&lt;p>[/sourcecode]&lt;/p></description><content type="html"><![CDATA[<p>The .NET 4.0 sos doesn’t have save all modules (!SaveAllModules) command. It only has !SaveModule. Recently I was debugging a .NET 4.0 process for which I had to save all the modules. Here is a script that does !SaveAllModules.</p>
 <p>[sourcecode]</p>
 <p>!for_each_module .if ($spat (&quot;${@#ImageName}&quot;,&quot;*.exe&quot;)) { !SaveModule ${@#Base} c:temp${@#ModuleName}.exe } .else { !SaveModule ${@#Base} c:temp${@#ModuleName}.dll }</p>
 <p>[/sourcecode]</p>
-]]></content></item><item><title>Using Managed Code to debug Memory Dumps</title><link>/?p=1168/</link><pubDate>Thu, 11 Nov 2010 22:21:02 +0000</pubDate><guid>/?p=1168/</guid><description>I happened to notice the new I happened to notice the new and it had COM based API for dbgeng. The sample code were in VB Script. I much comfortable writing managed code compared to VB script. So I decided to use COM based API in managed code.
-Here are couple of ways to solve certain problems using this
-Parallel GC Roots :- Getting GC Roots from memory dump is the most time consuming because SOS is single threaded.</description><content type="html"><![CDATA[<p>I happened to notice the new <a href="http://translate.google.com/translate?hl=en&sl=pt&u=http://blogs.technet.com/b/carnevale/archive/2010/10/04/debugdiag-1-2-beta1.aspx&ei=dwbcTOe4DIGglAfc6uWuCQ&sa=X&oi=translate&ct=result&resnum=5&ved=0CDkQ7gEwBA&prev=/search%3Fq%3Ddebugdiag%2B1.2%26hl%3Den%26client%3Dfirefox-a%26hs%3DNUZ%26rls%3Dorg.mozilla:en-US:official%26prmd%3Div">I happened to notice the new</a> and it had COM based API for dbgeng. The sample code were in VB Script. I much comfortable writing managed code compared to VB script. So I  decided to use COM based API in managed code.</p>
+]]></content></item><item><title>Using Managed Code to debug Memory Dumps</title><link>/?p=1168/</link><pubDate>Thu, 11 Nov 2010 22:21:02 +0000</pubDate><guid>/?p=1168/</guid><description>&lt;p>I happened to notice the new &lt;a href="http://translate.google.com/translate?hl=en&amp;sl=pt&amp;u=http://blogs.technet.com/b/carnevale/archive/2010/10/04/debugdiag-1-2-beta1.aspx&amp;ei=dwbcTOe4DIGglAfc6uWuCQ&amp;sa=X&amp;oi=translate&amp;ct=result&amp;resnum=5&amp;ved=0CDkQ7gEwBA&amp;prev=/search%3Fq%3Ddebugdiag%2B1.2%26hl%3Den%26client%3Dfirefox-a%26hs%3DNUZ%26rls%3Dorg.mozilla:en-US:official%26prmd%3Div">I happened to notice the new&lt;/a> and it had COM based API for dbgeng. The sample code were in VB Script. I much comfortable writing managed code compared to VB script. So I  decided to use COM based API in managed code.&lt;/p>
+&lt;p>Here are couple of ways to solve certain problems using this&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Parallel GC Roots&lt;/strong> :- Getting GC Roots from memory dump is the most time consuming because SOS is single threaded. I use PFX to do them in parallel.&lt;/li>
+&lt;li>&lt;strong>Reconstructing manged objects&lt;/strong> :- Creating an instance of an object by reading data from the memory dump.&lt;/li>
+&lt;/ol>
+&lt;p>Need to add reference to the COM Library&lt;/p></description><content type="html"><![CDATA[<p>I happened to notice the new <a href="http://translate.google.com/translate?hl=en&sl=pt&u=http://blogs.technet.com/b/carnevale/archive/2010/10/04/debugdiag-1-2-beta1.aspx&ei=dwbcTOe4DIGglAfc6uWuCQ&sa=X&oi=translate&ct=result&resnum=5&ved=0CDkQ7gEwBA&prev=/search%3Fq%3Ddebugdiag%2B1.2%26hl%3Den%26client%3Dfirefox-a%26hs%3DNUZ%26rls%3Dorg.mozilla:en-US:official%26prmd%3Div">I happened to notice the new</a> and it had COM based API for dbgeng. The sample code were in VB Script. I much comfortable writing managed code compared to VB script. So I  decided to use COM based API in managed code.</p>
 <p>Here are couple of ways to solve certain problems using this</p>
 <ol>
 <li><strong>Parallel GC Roots</strong> :- Getting GC Roots from memory dump is the most time consuming because SOS is single threaded. I use PFX to do them in parallel.</li>
@@ -2003,13 +2070,13 @@ Parallel GC Roots :- Getting GC Roots from memory dump is the most time consumin
 <p>Counter :- 4 , Name :-  Name 4</p>
 </blockquote>
 <p>There is lot more to explore than what I have shown above. Happy debugging  🙂</p>
-]]></content></item><item><title>Downloading PDC10 videos using the new async feature</title><link>/?p=1156/</link><pubDate>Wed, 03 Nov 2010 01:56:34 +0000</pubDate><guid>/?p=1156/</guid><description>I knew PDC10 has an OData endpoint which is http://odata.microsoftpdc.com/ODataSchedule.svc/ . The best part about OData is querying for specific data that we are looking for. And here is my OData url for filtering twitter hashtag #languages
-[sourcecode]
-http://odata.microsoftpdc.com/ODataSchedule.svc/Sessions()?$filter=startswith(TwitterHashtag,&amp;#8217;%23languages&amp;#8217;)&amp;$expand=DownloadableContent&amp;$select=DownloadableContent
-[/sourcecode]
-With the above OData feed I could get urls for low bandwidth mp4’s that I can download. And here is the sample code for filtering
-[sourcecode language=”csharp”]
-var x =XDocument.Load(@&amp;ldquo;c:tempsession.xml&amp;rdquo;).Descendants().AsParallel().Where(xd =&amp;gt; xd.</description><content type="html"><![CDATA[<p>I knew PDC10 has an OData endpoint which is <a href="http://odata.microsoftpdc.com/ODataSchedule.svc/">http://odata.microsoftpdc.com/ODataSchedule.svc/</a> . The best part about  OData is querying for specific data that we are looking for. And here is my OData url for filtering twitter hashtag #languages</p>
+]]></content></item><item><title>Downloading PDC10 videos using the new async feature</title><link>/?p=1156/</link><pubDate>Wed, 03 Nov 2010 01:56:34 +0000</pubDate><guid>/?p=1156/</guid><description>&lt;p>I knew PDC10 has an OData endpoint which is &lt;a href="http://odata.microsoftpdc.com/ODataSchedule.svc/">http://odata.microsoftpdc.com/ODataSchedule.svc/&lt;/a> . The best part about  OData is querying for specific data that we are looking for. And here is my OData url for filtering twitter hashtag #languages&lt;/p>
+&lt;p>[sourcecode]&lt;/p>
+&lt;p>&lt;a href="http://odata.microsoftpdc.com/ODataSchedule.svc/Sessions()?$filter=startswith(TwitterHashtag,&amp;#8217;%23languages&amp;%238217;)&amp;$expand=DownloadableContent&amp;$select=DownloadableContent">http://odata.microsoftpdc.com/ODataSchedule.svc/Sessions()?$filter=startswith(TwitterHashtag,&amp;#8217;%23languages&amp;#8217;)&amp;$expand=DownloadableContent&amp;$select=DownloadableContent&lt;/a>&lt;/p>
+&lt;p>[/sourcecode]&lt;/p>
+&lt;p>With the above OData feed I could get urls for low bandwidth mp4’s that I can download. And here is the sample code for filtering&lt;/p>
+&lt;p>[sourcecode language=”csharp”]&lt;/p>
+&lt;p>var x =XDocument.Load(@&amp;ldquo;c:tempsession.xml&amp;rdquo;).Descendants().AsParallel().Where(xd =&amp;gt; xd.Name.LocalName==&amp;ldquo;Url&amp;rdquo;&lt;/p></description><content type="html"><![CDATA[<p>I knew PDC10 has an OData endpoint which is <a href="http://odata.microsoftpdc.com/ODataSchedule.svc/">http://odata.microsoftpdc.com/ODataSchedule.svc/</a> . The best part about  OData is querying for specific data that we are looking for. And here is my OData url for filtering twitter hashtag #languages</p>
 <p>[sourcecode]</p>
 <p><a href="http://odata.microsoftpdc.com/ODataSchedule.svc/Sessions()?$filter=startswith(TwitterHashtag,&#8217;%23languages&%238217;)&$expand=DownloadableContent&$select=DownloadableContent">http://odata.microsoftpdc.com/ODataSchedule.svc/Sessions()?$filter=startswith(TwitterHashtag,&#8217;%23languages&#8217;)&$expand=DownloadableContent&$select=DownloadableContent</a></p>
 <p>[/sourcecode]</p>
@@ -2046,9 +2113,9 @@ var x =XDocument.Load(@&amp;ldquo;c:tempsession.xml&amp;rdquo;).Descendants().As
 <p>}</p>
 <p>}</p>
 <p>[/sourcecode]</p>
-]]></content></item><item><title>Dumping .NET strings to files using Windbg</title><link>/?p=1128/</link><pubDate>Mon, 01 Nov 2010 21:37:16 +0000</pubDate><guid>/?p=1128/</guid><description>In this post I would demonstrate how to dump strings from a memory dump /live process to a file. Recently I had to debug a process which had few big strings where I had to analyze its contents. The !dumpobj from sos would only dump partial strings. I had to dump few hundred XML strings that I had to analyze using some automation. And hence comes the script.
-[sourcecode]
-$$ Dumps the managed strings to a file</description><content type="html"><![CDATA[<p>In this post I would demonstrate how to dump strings from a memory dump /live process to a file. Recently I had to debug a process which had few big strings where I had to analyze its contents. The !dumpobj from sos would only dump partial strings.  I had to dump few hundred XML strings that I had to analyze using some automation. And hence comes the script.</p>
+]]></content></item><item><title>Dumping .NET strings to files using Windbg</title><link>/?p=1128/</link><pubDate>Mon, 01 Nov 2010 21:37:16 +0000</pubDate><guid>/?p=1128/</guid><description>&lt;p>In this post I would demonstrate how to dump strings from a memory dump /live process to a file. Recently I had to debug a process which had few big strings where I had to analyze its contents. The !dumpobj from sos would only dump partial strings.  I had to dump few hundred XML strings that I had to analyze using some automation. And hence comes the script.&lt;/p>
+&lt;p>[sourcecode]&lt;/p>
+&lt;p>$$ Dumps the managed strings to a file&lt;/p></description><content type="html"><![CDATA[<p>In this post I would demonstrate how to dump strings from a memory dump /live process to a file. Recently I had to debug a process which had few big strings where I had to analyze its contents. The !dumpobj from sos would only dump partial strings.  I had to dump few hundred XML strings that I had to analyze using some automation. And hence comes the script.</p>
 <p>[sourcecode]</p>
 <p>$$ Dumps the managed strings to a file</p>
 <p>$$ Platform x86</p>
@@ -2102,7 +2169,7 @@ $$ Dumps the managed strings to a file</description><content type="html"><![CDAT
 <p>}</p>
 <p>[/sourcecode]</p>
 <p>[twitter-follow screen_name=’snaveen’ show_count=’yes’ text_color=’00ccff’]<!-- raw HTML omitted --></p>
-]]></content></item><item><title>Dumping ASP.NET Session (x86 /x64) within Windbg</title><link>/?p=1071/</link><pubDate>Wed, 27 Oct 2010 01:18:21 +0000</pubDate><guid>/?p=1071/</guid><description>This post is going to be about dumping ASP.NET session objects using Windbg. I had recently answered a stackoverflow question in which someone wanted to dump ASP.NET session objects for 64-bit IIS (x64). I thought why not blog about the same which might be useful to others. The challenge is to write one script that should work in both x86/x64. FYI there is a script from Tess that does dump out the session contents, AFAIK it will not work on x64 and my script iterates through the array using the array length instead of using “.</description><content type="html"><![CDATA[<p>This post is going to be about dumping ASP.NET session objects using Windbg. I had recently answered a stackoverflow question in which someone wanted to dump ASP.NET session objects for 64-bit IIS (x64). I thought why not blog about the same which might be useful to others.  The challenge is to write one script that should work in both x86/x64.  FYI there is a script from <a href="http://blogs.msdn.com/b/tess/archive/2007/09/18/debugging-script-dumping-out-asp-net-session-contents.aspx">Tess</a> that does dump out the session contents, AFAIK it will not work on x64 and my script iterates through the array using the array length instead of using “.foreach /pS 2 /ps 99” which is somewhat cleaner.</p>
+]]></content></item><item><title>Dumping ASP.NET Session (x86 /x64) within Windbg</title><link>/?p=1071/</link><pubDate>Wed, 27 Oct 2010 01:18:21 +0000</pubDate><guid>/?p=1071/</guid><description>&lt;p>This post is going to be about dumping ASP.NET session objects using Windbg. I had recently answered a stackoverflow question in which someone wanted to dump ASP.NET session objects for 64-bit IIS (x64). I thought why not blog about the same which might be useful to others.  The challenge is to write one script that should work in both x86/x64.  FYI there is a script from &lt;a href="http://blogs.msdn.com/b/tess/archive/2007/09/18/debugging-script-dumping-out-asp-net-session-contents.aspx">Tess&lt;/a> that does dump out the session contents, AFAIK it will not work on x64 and my script iterates through the array using the array length instead of using “.foreach /pS 2 /ps 99” which is somewhat cleaner.&lt;/p></description><content type="html"><![CDATA[<p>This post is going to be about dumping ASP.NET session objects using Windbg. I had recently answered a stackoverflow question in which someone wanted to dump ASP.NET session objects for 64-bit IIS (x64). I thought why not blog about the same which might be useful to others.  The challenge is to write one script that should work in both x86/x64.  FYI there is a script from <a href="http://blogs.msdn.com/b/tess/archive/2007/09/18/debugging-script-dumping-out-asp-net-session-contents.aspx">Tess</a> that does dump out the session contents, AFAIK it will not work on x64 and my script iterates through the array using the array length instead of using “.foreach /pS 2 /ps 99” which is somewhat cleaner.</p>
 <p>Here is the script for dumping ASP.NET session objects within Windbg / CDB</p>
 <p>[sourcecode wraplines=”true”]</p>
 <p>$$$ Dump the ASP.NET Session objects within windbg/cdb</p>
@@ -3078,23 +3145,23 @@ $$ Dumps the managed strings to a file</description><content type="html"><![CDAT
 <p>}</p>
 <p>[/sourcecode]</p>
 <p>I had fun writing this script. Let me know if there is a better way to write this.</p>
-]]></content></item><item><title>GC Start and Stop events in .NET using Windbg</title><link>/?p=1064/</link><pubDate>Wed, 08 Sep 2010 01:55:27 +0000</pubDate><guid>/?p=1064/</guid><description>I was recently showing someone the new ETW features in .NET especially the GC Event notification and I was asked if we can get this using Windbg.
-So here is the sample code for the GC Collection
-[sourcecode language=”csharp”]
-namespace GCStartStop
-{
-public partial class Form1 : Form
-{
-public Form1()
-{
-InitializeComponent();
-button1.Click += (s, b) =&amp;gt; GC.Collect(2);
-button1.Click += (s, b) =&amp;gt; GC.Collect(1);
-}
-}
-}
-[/sourcecode]
-The goal is set to a break-point only when the collection count is 2.</description><content type="html"><![CDATA[<p>I was recently showing someone the new ETW features in .NET especially the <a href="http://msdn.microsoft.com/en-us/library/ff356162.aspx">GC Event notification</a> and I was asked if we can get this using Windbg.</p>
+]]></content></item><item><title>GC Start and Stop events in .NET using Windbg</title><link>/?p=1064/</link><pubDate>Wed, 08 Sep 2010 01:55:27 +0000</pubDate><guid>/?p=1064/</guid><description>&lt;p>I was recently showing someone the new ETW features in .NET especially the &lt;a href="http://msdn.microsoft.com/en-us/library/ff356162.aspx">GC Event notification&lt;/a> and I was asked if we can get this using Windbg.&lt;/p>
+&lt;p>So here is the sample code for the GC Collection&lt;/p>
+&lt;p>[sourcecode language=”csharp”]&lt;/p>
+&lt;p>namespace GCStartStop&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>public partial class Form1 : Form&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>public Form1()&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>InitializeComponent();&lt;/p>
+&lt;p>button1.Click += (s, b) =&amp;gt; GC.Collect(2);&lt;/p>
+&lt;p>button1.Click += (s, b) =&amp;gt; GC.Collect(1);&lt;/p>
+&lt;p>}&lt;/p>
+&lt;p>}&lt;/p>
+&lt;p>}&lt;/p>
+&lt;p>[/sourcecode]&lt;/p>
+&lt;p>The goal is set to a break-point only when the collection count is 2. Here is a bp script for doing this.&lt;/p></description><content type="html"><![CDATA[<p>I was recently showing someone the new ETW features in .NET especially the <a href="http://msdn.microsoft.com/en-us/library/ff356162.aspx">GC Event notification</a> and I was asked if we can get this using Windbg.</p>
 <p>So here is the sample code for the GC Collection</p>
 <p>[sourcecode language=”csharp”]</p>
 <p>namespace GCStartStop</p>
@@ -3116,7 +3183,8 @@ The goal is set to a break-point only when the collection count is 2.</descripti
 <p>[/sourcecode]</p>
 <p>The same thing can be done for clr!WKS::GCHeap::RestartEE.</p>
 <p>When showing this to someone I was asked what does “EE” acronym in “SuspendedEE” ?  “EE” is  Execution Engine.</p>
-]]></content></item><item><title>Get GC Information in Silverlight</title><link>/?p=1050/</link><pubDate>Wed, 11 Aug 2010 02:32:52 +0000</pubDate><guid>/?p=1050/</guid><description>I had earlier written a post on getting GC information on Silverlight using ETW. With that we would have to write code to parse the ETW csv file. In this post I am going to be using Perfmonitor to do this. This tools uses the same ETW under covers, but it does all the plumbing and gives a nice report , which is much easier to read. Here are the reports</description><content type="html"><![CDATA[<p>I had earlier written a <a href="http://naveensrinivasan.com/2010/03/21/get-gc-information-in-silverlight-using-etw/">post</a> on getting GC information on Silverlight using ETW. With that we would have to write code to parse the ETW csv file.  In this post I am going to be using <a href="http://bcl.codeplex.com/wikipage?title=PerfMonitor&referringTitle=Home">Perfmonitor</a> to do this. This tools uses the same ETW under covers, but it does all the plumbing and gives a nice report , which is much easier to read.  Here are the reports</p>
+]]></content></item><item><title>Get GC Information in Silverlight</title><link>/?p=1050/</link><pubDate>Wed, 11 Aug 2010 02:32:52 +0000</pubDate><guid>/?p=1050/</guid><description>&lt;p>I had earlier written a &lt;a href="http://naveensrinivasan.com/2010/03/21/get-gc-information-in-silverlight-using-etw/">post&lt;/a> on getting GC information on Silverlight using ETW. With that we would have to write code to parse the ETW csv file.  In this post I am going to be using &lt;a href="http://bcl.codeplex.com/wikipage?title=PerfMonitor&amp;referringTitle=Home">Perfmonitor&lt;/a> to do this. This tools uses the same ETW under covers, but it does all the plumbing and gives a nice report , which is much easier to read.  Here are the reports&lt;/p>
+&lt;p>&lt;a href="http://104.197.135.42/wp-content/uploads/2010/08/gc1.jpg">&lt;!-- raw HTML omitted -->&lt;/a>&lt;/p></description><content type="html"><![CDATA[<p>I had earlier written a <a href="http://naveensrinivasan.com/2010/03/21/get-gc-information-in-silverlight-using-etw/">post</a> on getting GC information on Silverlight using ETW. With that we would have to write code to parse the ETW csv file.  In this post I am going to be using <a href="http://bcl.codeplex.com/wikipage?title=PerfMonitor&referringTitle=Home">Perfmonitor</a> to do this. This tools uses the same ETW under covers, but it does all the plumbing and gives a nice report , which is much easier to read.  Here are the reports</p>
 <p><a href="http://104.197.135.42/wp-content/uploads/2010/08/gc1.jpg"><!-- raw HTML omitted --></a></p>
 <p><a href="http://104.197.135.42/wp-content/uploads/2010/08/gc-12.jpg"><!-- raw HTML omitted --></a></p>
 <p>To demonstrate this I used the bing’s world leader search page and here is the url</p>
@@ -3131,7 +3199,7 @@ The goal is set to a break-point only when the collection count is 2.</descripti
 <li>The command to get the report “PerfMonitor.exe GCTime”. This will generate a report and open it in the browser</li>
 </ol>
 <p>Perfmonitor is like xperf for managed code. This is non-intrusive and can collect some valuable information in production. This is an xcopy tool and does not need an install.</p>
-]]></content></item><item><title>Script to load sos within Windbg based on .NET Framework version</title><link>/?p=1032/</link><pubDate>Mon, 26 Jul 2010 04:33:21 +0000</pubDate><guid>/?p=1032/</guid><description>I often debug .NET Framework v 2.0 / v 4.0 code within windbg. In v 2.0 the main clr dll was called “mscorwks.dll” and in v 4.0 it is called “clr.dll”. As many of you are aware , to load sos in v 2.0 we would have to enter “.loadby sos mscorwks” and in v 4.0 it would be “.loadby sos clr” . This was a pain for me. Came up with a script to automate loading sos based on clr version</description><content type="html"><![CDATA[<p>I often debug  .NET Framework v 2.0 / v 4.0 code within windbg. In v 2.0 the main clr dll was called “mscorwks.dll” and in v 4.0 it is called “clr.dll”.  As many of you are aware , to load sos in v 2.0 we would have to enter “.loadby sos mscorwks” and in v 4.0 it would be “.loadby sos clr” . This was a pain for me. Came up with a script to automate loading sos based on clr version</p>
+]]></content></item><item><title>Script to load sos within Windbg based on .NET Framework version</title><link>/?p=1032/</link><pubDate>Mon, 26 Jul 2010 04:33:21 +0000</pubDate><guid>/?p=1032/</guid><description>&lt;p>I often debug  .NET Framework v 2.0 / v 4.0 code within windbg. In v 2.0 the main clr dll was called “mscorwks.dll” and in v 4.0 it is called “clr.dll”.  As many of you are aware , to load sos in v 2.0 we would have to enter “.loadby sos mscorwks” and in v 4.0 it would be “.loadby sos clr” . This was a pain for me. Came up with a script to automate loading sos based on clr version&lt;/p></description><content type="html"><![CDATA[<p>I often debug  .NET Framework v 2.0 / v 4.0 code within windbg. In v 2.0 the main clr dll was called “mscorwks.dll” and in v 4.0 it is called “clr.dll”.  As many of you are aware , to load sos in v 2.0 we would have to enter “.loadby sos mscorwks” and in v 4.0 it would be “.loadby sos clr” . This was a pain for me. Came up with a script to automate loading sos based on clr version</p>
 <p>[sourcecode]</p>
 <p>!for_each_module .if(($sicmp( &ldquo;@#ModuleName&rdquo; , &ldquo;mscorwks&rdquo;) = 0) ) {.loadby sos mscorwks} .elsif ($sicmp( &ldquo;@#ModuleName&rdquo; , &ldquo;clr&rdquo;) = 0) {.loadby sos clr}</p>
 <p>[/sourcecode]</p>
@@ -3139,15 +3207,15 @@ The goal is set to a break-point only when the collection count is 2.</descripti
 <p>[sourcecode]</p>
 <p>!for_each_module .if(($sicmp( &ldquo;@#ModuleName&rdquo; , &ldquo;mscorwks&rdquo;) = 0) ) {bp mscorwks!WKS::GCHeap::SuspendEE &ldquo;.if (dwo(mscorwks!WKS::GCHeap::GcCondemnedGeneration)==2) {.echo start of gen 2}&rdquo;} .elsif ($sicmp( &ldquo;@#ModuleName&rdquo; , &ldquo;clr&rdquo;) = 0) {bp clr!WKS::GCHeap::SuspendEE &ldquo;.if (dwo(clr!WKS::GCHeap::GcCondemnedGeneration)==2) {.echo start of gen 2}&rdquo;}</p>
 <p>[/sourcecode]</p>
-]]></content></item><item><title>Debugging .NET – mystery between DEBUG versus RELEASE within windbg</title><link>/?p=1015/</link><pubDate>Thu, 22 Jul 2010 02:48:17 +0000</pubDate><guid>/?p=1015/</guid><description>I am sure most of us have debugged applications that are build with debug turned on, which is obviously much easier compared to debugging release build (optimized code). In this post I am going to share one of my experiences of debugging release build code. I will demonstrate this with a simple Console Application.
-Here is the code
-[sourcecode language=”csharp”]
-using System;
-namespace ConsoleApplication
-{
-class Program
-{
-static void Main(string[] args)</description><content type="html"><![CDATA[<p>I am sure most of us have debugged applications that are build with debug turned on, which is obviously much easier compared to debugging release build (optimized code). In this post I am going to share one of my experiences of debugging release build code. I will demonstrate this with a simple Console Application.</p>
+]]></content></item><item><title>Debugging .NET – mystery between DEBUG versus RELEASE within windbg</title><link>/?p=1015/</link><pubDate>Thu, 22 Jul 2010 02:48:17 +0000</pubDate><guid>/?p=1015/</guid><description>&lt;p>I am sure most of us have debugged applications that are build with debug turned on, which is obviously much easier compared to debugging release build (optimized code). In this post I am going to share one of my experiences of debugging release build code. I will demonstrate this with a simple Console Application.&lt;/p>
+&lt;p>Here is the code&lt;/p>
+&lt;p>[sourcecode language=”csharp”]&lt;/p>
+&lt;p>using System;&lt;/p>
+&lt;p>namespace ConsoleApplication&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>class Program&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>static void Main(string[] args)&lt;/p></description><content type="html"><![CDATA[<p>I am sure most of us have debugged applications that are build with debug turned on, which is obviously much easier compared to debugging release build (optimized code). In this post I am going to share one of my experiences of debugging release build code. I will demonstrate this with a simple Console Application.</p>
 <p>Here is the code</p>
 <p>[sourcecode language=”csharp”]</p>
 <p>using System;</p>
@@ -3573,7 +3641,7 @@ static void Main(string[] args)</description><content type="html"><![CDATA[<p>I 
 </blockquote>
 <p>Notice in the above code it is Console.WriteLine and not Console.get_Out.</p>
 <p>Here is one of gotchas of debugging optimized code.</p>
-]]></content></item><item><title>Using F# to Automate Reading–The Morning Brew</title><link>/?p=997/</link><pubDate>Fri, 16 Jul 2010 04:27:24 +0000</pubDate><guid>/?p=997/</guid><description>I guess most of the .NET Devs read The Morning Brew, if not you should. It is a morning newspaper for the dev, so I end up reading it first thing when I go to work. I like to try and automate most of the stuff . So I thought why not write a script that reads the Morning Brew feed, filter the excluded content that I am not interested in and open the urls before I come in.</description><content type="html"><![CDATA[<p>I guess most of the .NET Devs read <a href="http://blog.cwa.me.uk/">The Morning Brew</a>, if not you should.  It is a morning newspaper for the dev, so I end up reading it first thing when I go to work. I like to  try and automate most of the stuff . So I thought why not write a script that reads the Morning Brew feed, filter the excluded content that I am not interested in and open the urls before I come in. The reason behind using F# is I don’t have to compile the code. I could use it with FSI.exe. Incase if the extraction logic changes and I don’t have to recompile , it is just fixing the script. The best part of writing in F# is I avoid all the ceremony. Here is the F# code, it is nothing fancy. And this code can easily be modified for other link collection sites.</p>
+]]></content></item><item><title>Using F# to Automate Reading–The Morning Brew</title><link>/?p=997/</link><pubDate>Fri, 16 Jul 2010 04:27:24 +0000</pubDate><guid>/?p=997/</guid><description>&lt;p>I guess most of the .NET Devs read &lt;a href="http://blog.cwa.me.uk/">The Morning Brew&lt;/a>, if not you should.  It is a morning newspaper for the dev, so I end up reading it first thing when I go to work. I like to  try and automate most of the stuff . So I thought why not write a script that reads the Morning Brew feed, filter the excluded content that I am not interested in and open the urls before I come in. The reason behind using F# is I don’t have to compile the code. I could use it with FSI.exe. Incase if the extraction logic changes and I don’t have to recompile , it is just fixing the script. The best part of writing in F# is I avoid all the ceremony. Here is the F# code, it is nothing fancy. And this code can easily be modified for other link collection sites.&lt;/p></description><content type="html"><![CDATA[<p>I guess most of the .NET Devs read <a href="http://blog.cwa.me.uk/">The Morning Brew</a>, if not you should.  It is a morning newspaper for the dev, so I end up reading it first thing when I go to work. I like to  try and automate most of the stuff . So I thought why not write a script that reads the Morning Brew feed, filter the excluded content that I am not interested in and open the urls before I come in. The reason behind using F# is I don’t have to compile the code. I could use it with FSI.exe. Incase if the extraction logic changes and I don’t have to recompile , it is just fixing the script. The best part of writing in F# is I avoid all the ceremony. Here is the F# code, it is nothing fancy. And this code can easily be modified for other link collection sites.</p>
 <p>[sourcecode]</p>
 <p>#r @&ldquo;C:WindowsMicrosoft.NETFrameworkv4.0.30319System.ServiceModel.dll&rdquo;</p>
 <p>#r @&ldquo;C:WindowsMicrosoft.NETFrameworkv4.0.30319System.Xml.Linq.dll&rdquo;</p>
@@ -3605,8 +3673,8 @@ static void Main(string[] args)</description><content type="html"><![CDATA[<p>I 
 <p>&ldquo;C:Program Files (x86)Microsoft F#v4.0Fsi.exe&rdquo; –quiet –exec &ldquo;C:Usersnaveenmorningbrew.fsx&rdquo;</p>
 <p>[/sourcecode]</p>
 <p><a href="http://104.197.135.42/wp-content/uploads/2010/07/themorningbrew2.jpg"><!-- raw HTML omitted --></a></p>
-]]></content></item><item><title>Combining Stack Overflow RSS, OData and API to query</title><link>/?p=978/</link><pubDate>Wed, 14 Jul 2010 03:18:05 +0000</pubDate><guid>/?p=978/</guid><description>In my opinion Stack Overflow has a ton of knowledge to learn new tricks. And there are some really smart people in the SO community. I try and learn new things when I find time.
-I subscribe to RSS feeds for new questions on a particular topic. Example, here is one for F# from Stack Overflow http://stackoverflow.com/feeds/tag/f%23. The advantage of the RSS feed is I get to see new questions, but the drawback is I would have to navigate to the site to look for answers.</description><content type="html"><![CDATA[<p>In my opinion <a href="http://stackoverflow.com/">Stack Overflow</a> has a ton of knowledge to learn new tricks. And there are some really smart people in the SO community. I try and learn new things when I find time.</p>
+]]></content></item><item><title>Combining Stack Overflow RSS, OData and API to query</title><link>/?p=978/</link><pubDate>Wed, 14 Jul 2010 03:18:05 +0000</pubDate><guid>/?p=978/</guid><description>&lt;p>In my opinion &lt;a href="http://stackoverflow.com/">Stack Overflow&lt;/a> has a ton of knowledge to learn new tricks. And there are some really smart people in the SO community. I try and learn new things when I find time.&lt;/p>
+&lt;p>I subscribe to RSS feeds for new questions on a particular topic. Example, here is one for F# from Stack Overflow &lt;a href="http://stackoverflow.com/feeds/tag/f%23">http://stackoverflow.com/feeds/tag/f%23&lt;/a>. The advantage of the RSS feed is I get to see new questions, but the drawback is I would have to navigate to the site to look for answers. AFAIK the &lt;a href="http://stacky.codeplex.com/">stacky&lt;/a> (stack overflow API) does not provide a mechanism for querying new questions based on a tag.&lt;/p></description><content type="html"><![CDATA[<p>In my opinion <a href="http://stackoverflow.com/">Stack Overflow</a> has a ton of knowledge to learn new tricks. And there are some really smart people in the SO community. I try and learn new things when I find time.</p>
 <p>I subscribe to RSS feeds for new questions on a particular topic. Example, here is one for F# from Stack Overflow <a href="http://stackoverflow.com/feeds/tag/f%23">http://stackoverflow.com/feeds/tag/f%23</a>. The advantage of the RSS feed is I get to see new questions, but the drawback is I would have to navigate to the site to look for answers. AFAIK the <a href="http://stacky.codeplex.com/">stacky</a> (stack overflow API) does not provide a mechanism for querying new questions based on a tag.</p>
 <p>It was easy for me to combine both of them to solve my problem. With RSS feed I could discover new questions and with the stacky I could get answers . And I use Linqpad as a scratchpad so it was easy to write-up something quick.</p>
 <p>[sourcecode language=”csharp”]</p>
@@ -3645,12 +3713,13 @@ I subscribe to RSS feeds for new questions on a particular topic. Example, here 
 <p>Answer = ans.Body.StripHTML()};</p>
 <p>tomasQA.Dump();</p>
 <p>[/sourcecode]</p>
-]]></content></item><item><title>Load the same Assembly from GAC and private bin path in .NET</title><link>/?p=966/</link><pubDate>Mon, 12 Jul 2010 21:31:40 +0000</pubDate><guid>/?p=966/</guid><description>This post is all about exploring the CLR loader to load an assembly from GAC and from private bin path. This is not possible because, if an assembly is loaded from GAC and if the code uses Assembly.LoadFrom to load the same assembly, then the loader would return the assembly that has already been loaded from the GAC.
-Here is the ClassLibrary2 code
-[sourcecode language=”csharp”]
-using System;
-namespace ClassLibrary2
-{</description><content type="html"><![CDATA[<p>This post is all about exploring the CLR loader to load an assembly from GAC and from private bin path. This is not possible because, if an assembly is loaded from GAC and if the code uses Assembly.LoadFrom to load the same assembly, then the loader would return the assembly that has already been loaded from the GAC.</p>
+]]></content></item><item><title>Load the same Assembly from GAC and private bin path in .NET</title><link>/?p=966/</link><pubDate>Mon, 12 Jul 2010 21:31:40 +0000</pubDate><guid>/?p=966/</guid><description>&lt;p>This post is all about exploring the CLR loader to load an assembly from GAC and from private bin path. This is not possible because, if an assembly is loaded from GAC and if the code uses Assembly.LoadFrom to load the same assembly, then the loader would return the assembly that has already been loaded from the GAC.&lt;/p>
+&lt;p>Here is the ClassLibrary2 code&lt;/p>
+&lt;p>[sourcecode language=”csharp”]&lt;/p>
+&lt;p>using System;&lt;/p>
+&lt;p>namespace ClassLibrary2&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>public class Class1&lt;/p></description><content type="html"><![CDATA[<p>This post is all about exploring the CLR loader to load an assembly from GAC and from private bin path. This is not possible because, if an assembly is loaded from GAC and if the code uses Assembly.LoadFrom to load the same assembly, then the loader would return the assembly that has already been loaded from the GAC.</p>
 <p>Here is the ClassLibrary2 code</p>
 <p>[sourcecode language=”csharp”]</p>
 <p>using System;</p>
@@ -3751,21 +3820,20 @@ namespace ClassLibrary2
 <p>This is not something that I would ever do. This was merely an exercise to bypass the loader.</p>
 <p>FYI when the assembly is uninstalled from GAC, the gacutil.exe creates a temp copy and stores the assembly in the temp directory because it is being used by a process. And the temp copy of the assembly is deleted when the process ends. Here is the screen shot of Procmon creating an temp copy of the GACed assembly which I uninstalled.</p>
 <p><a href="http://104.197.135.42/wp-content/uploads/2010/07/gacutil1.jpg"><!-- raw HTML omitted --></a></p>
-]]></content></item><item><title>Debugging Generic System.Nullable within Windbg</title><link>/?p=947/</link><pubDate>Thu, 08 Jul 2010 03:58:51 +0000</pubDate><guid>/?p=947/</guid><description>In this post I am going to unravel the mystery of debugging the Nullable within Windbg in .NET 3.5 and also compare it with .NET 4.0. Here is the sample code and it is compiled in .NET 3.5
-[sourcecode language=”csharp”]
-using System;
-namespace ConsoleApplication
-{
-class Program
-{
-Int32? test;
-int i = 10;
-static void Main(string[] args)
-{
-Nullable
-Int32? i = 10;
-Object o = 10;
-var p = new Program() { test = 20 };</description><content type="html"><![CDATA[<p>In this post I am going to unravel the mystery of debugging the Nullable<!-- raw HTML omitted --> within Windbg in .NET 3.5 and also compare it with .NET 4.0. Here is the sample code and it is compiled in .NET 3.5</p>
+]]></content></item><item><title>Debugging Generic System.Nullable within Windbg</title><link>/?p=947/</link><pubDate>Thu, 08 Jul 2010 03:58:51 +0000</pubDate><guid>/?p=947/</guid><description>&lt;p>In this post I am going to unravel the mystery of debugging the Nullable&lt;!-- raw HTML omitted --> within Windbg in .NET 3.5 and also compare it with .NET 4.0. Here is the sample code and it is compiled in .NET 3.5&lt;/p>
+&lt;p>[sourcecode language=”csharp”]&lt;/p>
+&lt;p>using System;&lt;/p>
+&lt;p>namespace ConsoleApplication&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>class Program&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>Int32? test;&lt;/p>
+&lt;p>int i = 10;&lt;/p>
+&lt;p>static void Main(string[] args)&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>Nullable&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>Int32? i = 10;&lt;/p>
+&lt;p>Object o = 10;&lt;/p></description><content type="html"><![CDATA[<p>In this post I am going to unravel the mystery of debugging the Nullable<!-- raw HTML omitted --> within Windbg in .NET 3.5 and also compare it with .NET 4.0. Here is the sample code and it is compiled in .NET 3.5</p>
 <p>[sourcecode language=”csharp”]</p>
 <p>using System;</p>
 <p>namespace ConsoleApplication</p>
@@ -4056,20 +4124,24 @@ var p = new Program() { test = 20 };</description><content type="html"><![CDATA[
 <p>i:0xa (System.Int32)</p>
 </blockquote>
 <p>Notice the “test” which is Nullable<!-- raw HTML omitted --> is now recognized by sosex and it also provides the method table.</p>
-]]></content></item><item><title>Recursive !dumpmt – Windbg</title><link>/?p=928/</link><pubDate>Tue, 06 Jul 2010 01:04:53 +0000</pubDate><guid>/?p=928/</guid><description>In this post I will be demonstrating how we could use CLR internal data-structures to recursively get the methodtable’s of an object and its base classes. The idea behind this is to understand the CLR data structure.
-Here is the sample code
-[sourcecode language=”csharp”]
-using System;
-namespace ConsoleApplication
-{
-class Program : B
-{
-string test = &amp;ldquo;cw&amp;rdquo;;
-static void Main(string[] args)
-{
-var p = new Program();
-Console.Read();
-}</description><content type="html"><![CDATA[<p>In this post I will be demonstrating how we could use CLR internal data-structures to recursively get the methodtable’s of an object and its base classes. The idea behind this is to understand the CLR data structure.</p>
+]]></content></item><item><title>Recursive !dumpmt – Windbg</title><link>/?p=928/</link><pubDate>Tue, 06 Jul 2010 01:04:53 +0000</pubDate><guid>/?p=928/</guid><description>&lt;p>In this post I will be demonstrating how we could use CLR internal data-structures to recursively get the methodtable’s of an object and its base classes. The idea behind this is to understand the CLR data structure.&lt;/p>
+&lt;p>Here is the sample code&lt;/p>
+&lt;p>[sourcecode language=”csharp”]&lt;/p>
+&lt;p>using System;&lt;/p>
+&lt;p>namespace ConsoleApplication&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>class Program : B&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>string test = &amp;ldquo;cw&amp;rdquo;;&lt;/p>
+&lt;p>static void Main(string[] args)&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>var p = new Program();&lt;/p>
+&lt;p>Console.Read();&lt;/p>
+&lt;p>}&lt;/p>
+&lt;p>}&lt;/p>
+&lt;p>class B : A&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>public void TestB()&lt;/p></description><content type="html"><![CDATA[<p>In this post I will be demonstrating how we could use CLR internal data-structures to recursively get the methodtable’s of an object and its base classes. The idea behind this is to understand the CLR data structure.</p>
 <p>Here is the sample code</p>
 <p>[sourcecode language=”csharp”]</p>
 <p>using System;</p>
@@ -4378,18 +4450,36 @@ Console.Read();
 <blockquote>
 <p>*<strong>*</strong>*<strong>*</strong>*****</p>
 </blockquote>
-]]></content></item><item><title>dumpstring – windbg</title><link>/?p=913/</link><pubDate>Wed, 30 Jun 2010 01:55:42 +0000</pubDate><guid>/?p=913/</guid><description>Viewing strings inside the debugger has never been pretty, especially if you are using sos extension. Here is a sample !dumpobj on a string
-0:000&amp;gt; !do 00000000025f2280
-Name: System.String
-MethodTable: 000007fef6e26960
-EEClass: 000007fef69aeec8
-Size: 32(0x20) bytes
-String: Foo
-Fields:
-MT Field Offset Type VT Attr Value Name
-000007fef6e2c848 40000ed 8 System.Int32 1 instance 3 m_stringLength
-000007fef6e2b388 40000ee c System.Char 1 instance 46 m_firstChar
-000007fef6e26960 40000ef 10 System.String 0 shared static Empty</description><content type="html"><![CDATA[<p>Viewing strings inside the debugger has never been pretty, especially if you are using sos extension.  Here is a sample !dumpobj on a string</p>
+]]></content></item><item><title>dumpstring – windbg</title><link>/?p=913/</link><pubDate>Wed, 30 Jun 2010 01:55:42 +0000</pubDate><guid>/?p=913/</guid><description>&lt;p>Viewing strings inside the debugger has never been pretty, especially if you are using sos extension.  Here is a sample !dumpobj on a string&lt;/p>
+&lt;blockquote>
+&lt;p>0:000&amp;gt; !do 00000000025f2280&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Name:        System.String&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>MethodTable: 000007fef6e26960&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>EEClass:     000007fef69aeec8&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Size:        32(0x20) bytes&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>String:     &lt;!-- raw HTML omitted -->Foo&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Fields:&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>MT    Field   Offset                 Type VT     Attr            Value Name&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>000007fef6e2c848  40000ed        8         System.Int32  1 instance                3 m_stringLength&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>000007fef6e2b388  40000ee        c          System.Char  1 instance               46 m_firstChar&lt;/p></description><content type="html"><![CDATA[<p>Viewing strings inside the debugger has never been pretty, especially if you are using sos extension.  Here is a sample !dumpobj on a string</p>
 <blockquote>
 <p>0:000&gt; !do 00000000025f2280</p>
 </blockquote>
@@ -4447,18 +4537,24 @@ MT Field Offset Type VT Attr Value Name
 <p><!-- raw HTML omitted -->Foo<!-- raw HTML omitted --></p>
 </blockquote>
 <p>I prefer .printf over du because I am not interested in looking at the memory address often especially dumping strings within a script.</p>
-]]></content></item><item><title>Custom DumpArray – Windbg</title><link>/?p=885/</link><pubDate>Fri, 25 Jun 2010 00:59:42 +0000</pubDate><guid>/?p=885/</guid><description>The The has !dumparray for getting contents of the array. But it cannot be used for scripting or automation. Here is an example
-[sourcecode language=”csharp”]
-using System;
-namespace ConsoleApplication
-{
-class Program
-{
-Test[] arr = new[] { new Test() { ID = 1, Name = &amp;ldquo;Foo&amp;rdquo; }, new Test() { ID = 2, Name = &amp;ldquo;Bar&amp;rdquo; } };
-static void Main(string[] args)
-{
-var p = new Program();
-Console.WriteLine(p.arr);</description><content type="html"><![CDATA[<p>The <a href="http://msdn.microsoft.com/en-us/library/bb190764.aspx">The</a> has !dumparray for getting contents of the array. But it cannot be used for scripting or automation. Here is an example</p>
+]]></content></item><item><title>Custom DumpArray – Windbg</title><link>/?p=885/</link><pubDate>Fri, 25 Jun 2010 00:59:42 +0000</pubDate><guid>/?p=885/</guid><description>&lt;p>The &lt;a href="http://msdn.microsoft.com/en-us/library/bb190764.aspx">The&lt;/a> has !dumparray for getting contents of the array. But it cannot be used for scripting or automation. Here is an example&lt;/p>
+&lt;p>[sourcecode language=”csharp”]&lt;/p>
+&lt;p>using System;&lt;/p>
+&lt;p>namespace ConsoleApplication&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>class Program&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>Test[] arr = new[] { new Test() { ID = 1, Name = &amp;ldquo;Foo&amp;rdquo; }, new Test() { ID = 2, Name = &amp;ldquo;Bar&amp;rdquo; } };&lt;/p>
+&lt;p>static void Main(string[] args)&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>var p = new Program();&lt;/p>
+&lt;p>Console.WriteLine(p.arr);&lt;/p>
+&lt;p>Console.Read();&lt;/p>
+&lt;p>}&lt;/p>
+&lt;p>}&lt;/p>
+&lt;p>class Test&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>public int ID;&lt;/p></description><content type="html"><![CDATA[<p>The <a href="http://msdn.microsoft.com/en-us/library/bb190764.aspx">The</a> has !dumparray for getting contents of the array. But it cannot be used for scripting or automation. Here is an example</p>
 <p>[sourcecode language=”csharp”]</p>
 <p>using System;</p>
 <p>namespace ConsoleApplication</p>
@@ -4865,8 +4961,8 @@ Console.WriteLine(p.arr);</description><content type="html"><![CDATA[<p>The <a h
 </blockquote>
 </blockquote>
 </blockquote>
-]]></content></item><item><title>Do I have Managed or Native memory leak?</title><link>/?p=868/</link><pubDate>Tue, 22 Jun 2010 22:38:52 +0000</pubDate><guid>/?p=868/</guid><description>I noticed someone who couldn’t figure out the cause of memory leak in managed application within the debugger. This person had basic debugging skills and was comfortable with sos. FYI the leak wasn’t in the managed code, but in the native code. The managed code was using native code via PInvoke.
-Here is how I figured out the cause. Every time I have to debug a memory leak in managed code ,the first command I run is !</description><content type="html"><![CDATA[<p>I noticed someone who couldn’t figure out the cause of memory leak in  managed application within the debugger. This person had basic debugging skills and was comfortable with sos.  FYI the leak wasn’t in the managed code, but in the native code. The managed code was using native code via PInvoke.</p>
+]]></content></item><item><title>Do I have Managed or Native memory leak?</title><link>/?p=868/</link><pubDate>Tue, 22 Jun 2010 22:38:52 +0000</pubDate><guid>/?p=868/</guid><description>&lt;p>I noticed someone who couldn’t figure out the cause of memory leak in  managed application within the debugger. This person had basic debugging skills and was comfortable with sos.  FYI the leak wasn’t in the managed code, but in the native code. The managed code was using native code via PInvoke.&lt;/p>
+&lt;p>Here is how I figured out the cause. Every time I have to debug a memory leak in managed code ,the first command I run is !vmstat. The !vmstat is available in psscor2.dll for .net 3.5 and for .net 4.0 it is available in sos. This command provides summary of VM. The output is similar to the &lt;a href="http://technet.microsoft.com/en-us/sysinternals/dd535533.aspx">VMMap&lt;/a> tool and here is the output from the command.&lt;/p></description><content type="html"><![CDATA[<p>I noticed someone who couldn’t figure out the cause of memory leak in  managed application within the debugger. This person had basic debugging skills and was comfortable with sos.  FYI the leak wasn’t in the managed code, but in the native code. The managed code was using native code via PInvoke.</p>
 <p>Here is how I figured out the cause. Every time I have to debug a memory leak in managed code ,the first command I run is !vmstat. The !vmstat is available in psscor2.dll for .net 3.5 and for .net 4.0 it is available in sos. This command provides summary of VM. The output is similar to the <a href="http://technet.microsoft.com/en-us/sysinternals/dd535533.aspx">VMMap</a> tool and here is the output from the command.</p>
 <p><a href="http://104.197.135.42/wp-content/uploads/2010/06/vmstat1.jpg"><!-- raw HTML omitted --></a></p>
 <p>Now that I know there is a memory leak, I always start of with running these commands</p>
@@ -4915,8 +5011,8 @@ Here is how I figured out the cause. Every time I have to debug a memory leak in
 <p>0:004&gt;</p>
 </blockquote>
 <p>And from the output I know there isn’t a managed memory leak. The total heap size is only 253,812 bytes and my loader heap is 65,536 bytes, so it has to be native code.  Now I can focus my efforts on the native code debugging.</p>
-]]></content></item><item><title>Customizing Witty Twitter Client Part 1- using C# as Compiler Service</title><link>/?p=840/</link><pubDate>Sun, 20 Jun 2010 03:28:46 +0000</pubDate><guid>/?p=840/</guid><description>This is going to be a multipart blog post where I am going to be demonstrating how I have customized This is going to be a multipart blog post where I am going to be demonstrating how I have customized twitter client for my need. I chose Witty because it is the only OSS .NET twitter client I know of.
-One of the reasons for customizing is primarily using C# as compiler service to extend it for my needs dynamically.</description><content type="html"><![CDATA[<p>This is going to be a multipart blog post where I am going to be demonstrating how I have customized <a href="http://code.google.com/p/wittytwitter/">This is going to be a multipart blog post where I am going to be demonstrating how I have customized</a> twitter client for my need. I chose Witty because it is the only OSS .NET twitter client I know of.</p>
+]]></content></item><item><title>Customizing Witty Twitter Client Part 1- using C# as Compiler Service</title><link>/?p=840/</link><pubDate>Sun, 20 Jun 2010 03:28:46 +0000</pubDate><guid>/?p=840/</guid><description>&lt;p>This is going to be a multipart blog post where I am going to be demonstrating how I have customized &lt;a href="http://code.google.com/p/wittytwitter/">This is going to be a multipart blog post where I am going to be demonstrating how I have customized&lt;/a> twitter client for my need. I chose Witty because it is the only OSS .NET twitter client I know of.&lt;/p>
+&lt;p>One of the reasons for customizing is primarily using C# as compiler service to extend it for my needs dynamically. For example I follow this twitter list &lt;a href="http://twitter.com/shanselman/programmers">http://twitter.com/shanselman/programmers&lt;/a> , it’s a cool list that Scott maintains, thanks to him. But there is one person in this list who keeps tweeting about weight loss, which I am least interested and I didn’t have control over it but to ignore, until now. And it is always fun to write  software for your daily needs, which for me saves time.  Thanks to Mono for C# as compiler service. FYI I have shown a simple usage of Mono Csharp compiler service in this &lt;a href="http://naveensrinivasan.com/2010/05/11/using-c-compiler-as-a-service-in-f-poshconsole-powershell/">post&lt;/a>.&lt;/p></description><content type="html"><![CDATA[<p>This is going to be a multipart blog post where I am going to be demonstrating how I have customized <a href="http://code.google.com/p/wittytwitter/">This is going to be a multipart blog post where I am going to be demonstrating how I have customized</a> twitter client for my need. I chose Witty because it is the only OSS .NET twitter client I know of.</p>
 <p>One of the reasons for customizing is primarily using C# as compiler service to extend it for my needs dynamically. For example I follow this twitter list <a href="http://twitter.com/shanselman/programmers">http://twitter.com/shanselman/programmers</a> , it’s a cool list that Scott maintains, thanks to him. But there is one person in this list who keeps tweeting about weight loss, which I am least interested and I didn’t have control over it but to ignore, until now. And it is always fun to write  software for your daily needs, which for me saves time.  Thanks to Mono for C# as compiler service. FYI I have shown a simple usage of Mono Csharp compiler service in this <a href="http://naveensrinivasan.com/2010/05/11/using-c-compiler-as-a-service-in-f-poshconsole-powershell/">post</a>.</p>
 <p>Here are things that I could get done by just spending few hours of my weekend time</p>
 <p>Here is my the default witty</p>
@@ -5025,11 +5121,11 @@ One of the reasons for customizing is primarily using C# as compiler service to 
 <p>}</p>
 <p>[/sourcecode]</p>
 <p>I know for the above 2 functions I could have written a High-Order Function</p>
-]]></content></item><item><title>Using Tuple as Dictionary / Map key</title><link>/?p=829/</link><pubDate>Sat, 19 Jun 2010 12:37:53 +0000</pubDate><guid>/?p=829/</guid><description>I recently had to create a dictionary which needed a multipart key like &amp;lt;string,int&amp;gt; . To do this I would have to create a custom class override equals and gethashcode. That’s when someone told I could use Tuple, but weren’t sure it was possible. Here was the quick sample to try it in F#
-[sourcecode]
-let x = [(&amp;ldquo;naveen&amp;rdquo;,1),1;(&amp;ldquo;naveen&amp;rdquo;,1),2] |&amp;gt; Map.ofList
-[/sourcecode]
-as expected only one item in the Map</description><content type="html"><![CDATA[<p>I  recently had to create a dictionary which needed a multipart key like &lt;string,int&gt; . To do this I would have to create a custom class  override equals and gethashcode. That’s when someone told I could use Tuple, but weren’t sure it was possible.  Here was the quick sample to try it in F#</p>
+]]></content></item><item><title>Using Tuple as Dictionary / Map key</title><link>/?p=829/</link><pubDate>Sat, 19 Jun 2010 12:37:53 +0000</pubDate><guid>/?p=829/</guid><description>&lt;p>I  recently had to create a dictionary which needed a multipart key like &amp;lt;string,int&amp;gt; . To do this I would have to create a custom class  override equals and gethashcode. That’s when someone told I could use Tuple, but weren’t sure it was possible.  Here was the quick sample to try it in F#&lt;/p>
+&lt;p>[sourcecode]&lt;/p>
+&lt;p>let x = [(&amp;ldquo;naveen&amp;rdquo;,1),1;(&amp;ldquo;naveen&amp;rdquo;,1),2] |&amp;gt; Map.ofList&lt;/p>
+&lt;p>[/sourcecode]&lt;/p>
+&lt;p>as expected only one item in the Map&lt;/p></description><content type="html"><![CDATA[<p>I  recently had to create a dictionary which needed a multipart key like &lt;string,int&gt; . To do this I would have to create a custom class  override equals and gethashcode. That’s when someone told I could use Tuple, but weren’t sure it was possible.  Here was the quick sample to try it in F#</p>
 <p>[sourcecode]</p>
 <p>let x = [(&ldquo;naveen&rdquo;,1),1;(&ldquo;naveen&rdquo;,1),2] |&gt; Map.ofList</p>
 <p>[/sourcecode]</p>
@@ -5044,11 +5140,11 @@ as expected only one item in the Map</description><content type="html"><![CDATA[
 <p>The next step was to actually disassemble Tuple in reflector</p>
 <p><a href="http://104.197.135.42/wp-content/uploads/2010/06/tuple2.jpg"><!-- raw HTML omitted --></a></p>
 <p>The code implements IStructuralComparable.CompareTo and does the comparison for each item. This is one of the reasons why generics is cool.</p>
-]]></content></item><item><title>Using Tech-Ed OData to download videos</title><link>/?p=2071/</link><pubDate>Tue, 15 Jun 2010 12:20:32 +0000</pubDate><guid>/?p=2071/</guid><description>I wanted to watch the Teched 2010 videos, but the problem I had was going to the site manually to download files for offline viewing. And I was also interested only in Dev sessions which were level 300 / 400. Thanks to OData for teched http://odata.msteched.com/sessions.svc/ ,I could write 3 statements in linqpad and had them all downloaded using wget
-[sourcecode language=”csharp”]
-File.Delete(@&amp;ldquo;C:tempdownload.txt&amp;rdquo;);
-Sessions
-.Where (s =&amp;gt; (s.Level.StartsWith(&amp;ldquo;400&amp;rdquo;) || s.Level.StartsWith(&amp;ldquo;300&amp;rdquo;) ) &amp;amp;&amp;amp; s.</description><content type="html"><![CDATA[<p>I wanted to watch the Teched 2010 videos, but the problem I had was going to the site manually to download files for offline viewing.  And I was also interested only in Dev sessions which were level 300 / 400. Thanks to OData for teched <a href="http://odata.msteched.com/sessions.svc/">http://odata.msteched.com/sessions.svc/</a> ,I  could write 3 statements in linqpad and had them all downloaded using <a href="http://gnuwin32.sourceforge.net/packages/wget.htm">wget</a></p>
+]]></content></item><item><title>Using Tech-Ed OData to download videos</title><link>/?p=2071/</link><pubDate>Tue, 15 Jun 2010 12:20:32 +0000</pubDate><guid>/?p=2071/</guid><description>&lt;p>I wanted to watch the Teched 2010 videos, but the problem I had was going to the site manually to download files for offline viewing.  And I was also interested only in Dev sessions which were level 300 / 400. Thanks to OData for teched &lt;a href="http://odata.msteched.com/sessions.svc/">http://odata.msteched.com/sessions.svc/&lt;/a> ,I  could write 3 statements in linqpad and had them all downloaded using &lt;a href="http://gnuwin32.sourceforge.net/packages/wget.htm">wget&lt;/a>&lt;/p>
+&lt;p>[sourcecode language=”csharp”]&lt;/p>
+&lt;p>File.Delete(@&amp;ldquo;C:tempdownload.txt&amp;rdquo;);&lt;/p>
+&lt;p>Sessions&lt;/p>
+&lt;p>.Where (s =&amp;gt; (s.Level.StartsWith(&amp;ldquo;400&amp;rdquo;) ||  s.Level.StartsWith(&amp;ldquo;300&amp;rdquo;) ) &amp;amp;&amp;amp; s.Code.StartsWith(&amp;ldquo;DEV&amp;rdquo;))&lt;/p></description><content type="html"><![CDATA[<p>I wanted to watch the Teched 2010 videos, but the problem I had was going to the site manually to download files for offline viewing.  And I was also interested only in Dev sessions which were level 300 / 400. Thanks to OData for teched <a href="http://odata.msteched.com/sessions.svc/">http://odata.msteched.com/sessions.svc/</a> ,I  could write 3 statements in linqpad and had them all downloaded using <a href="http://gnuwin32.sourceforge.net/packages/wget.htm">wget</a></p>
 <p>[sourcecode language=”csharp”]</p>
 <p>File.Delete(@&ldquo;C:tempdownload.txt&rdquo;);</p>
 <p>Sessions</p>
@@ -5060,8 +5156,8 @@ Sessions
 <p>Util.Cmd(@&ldquo;wget.exe -b -i c:Tempdownload.txt&rdquo;,true);</p>
 <p>[/sourcecode]<!-- raw HTML omitted --></p>
 <p>Forgot to mention for the Run extension method is from Reactive Extensions</p>
-]]></content></item><item><title>Debugging base class method with conditional break point in .NET using Windbg</title><link>/?p=803/</link><pubDate>Tue, 15 Jun 2010 04:40:17 +0000</pubDate><guid>/?p=803/</guid><description>In this post I am going to be demonstrating how to have a conditional break-point on the base class method where it has been used by multiple derived classes. A classic example is Winform UI.
-The Control base class has got methods like set_Enabled , set_Visible which could be consumed by multiple derived controls. The goal is to debug only the control instance that we are interested in. Here is the sample code.</description><content type="html"><![CDATA[<p>In this post I am going to be demonstrating how to have a conditional break-point on the base class method where it has been used by multiple derived classes. A classic example is Winform UI.</p>
+]]></content></item><item><title>Debugging base class method with conditional break point in .NET using Windbg</title><link>/?p=803/</link><pubDate>Tue, 15 Jun 2010 04:40:17 +0000</pubDate><guid>/?p=803/</guid><description>&lt;p>In this post I am going to be demonstrating how to have a conditional break-point on the base class method where it has been used by multiple derived classes. A classic example is Winform UI.&lt;/p>
+&lt;p>The Control base class has got methods like set_Enabled , set_Visible which could be consumed by multiple derived controls. The goal is to debug only the control instance that we are interested in. Here is the sample code.&lt;/p></description><content type="html"><![CDATA[<p>In this post I am going to be demonstrating how to have a conditional break-point on the base class method where it has been used by multiple derived classes. A classic example is Winform UI.</p>
 <p>The Control base class has got methods like set_Enabled , set_Visible which could be consumed by multiple derived controls. The goal is to debug only the control instance that we are interested in. Here is the sample code.</p>
 <p>[sourcecode language=”csharp”]</p>
 <p>using System;</p>
@@ -5145,8 +5241,8 @@ The Control base class has got methods like set_Enabled , set_Visible which coul
 <p>bp 000007fe`de335c4d &ldquo;as /mu ${/v:name} (poi(@rcx+40)+c);.block{ .if (0== $scmp( &ldquo;${name}&rdquo;, &ldquo;button1&rdquo;) ) { .echo ‘in button1’;gc } .else { gc}}&rdquo;</p>
 <p>[/sourcecode]</p>
 <p>The “as /mu ${/v:name} (poi(@rcx+40)+c)” will set the value of text property  to the variable “name”. The .block command is used to evaluate the variable  “name” and the rest is a simple .if .else command. Every time the button1 is clicked it would output  “in button1” and continue. Now we have managed to break-in only on the button1 click.</p>
-]]></content></item><item><title>Piracy in .NET Code – Part 3 – Even when the code is obfuscated</title><link>/?p=769/</link><pubDate>Sat, 12 Jun 2010 00:37:46 +0000</pubDate><guid>/?p=769/</guid><description>Continuing with my series on Piracy, in this post I am going to be exploring how someone with little advanced knowledge in CLR / Windows can bypass important function calls like license validation.
-Most of the developers assume just because the code is obfuscated nobody can bypass the licensing logic. I am going to be demonstrating how to bypass certain function call,this is very similar to “Set Next Statement ” in VS.</description><content type="html"><![CDATA[<p>Continuing with my <a href="http://naveensrinivasan.com/category/security/">series</a> on Piracy, in this post I am going to be  exploring how someone with little advanced knowledge in CLR / Windows can bypass important function calls like  license validation.</p>
+]]></content></item><item><title>Piracy in .NET Code – Part 3 – Even when the code is obfuscated</title><link>/?p=769/</link><pubDate>Sat, 12 Jun 2010 00:37:46 +0000</pubDate><guid>/?p=769/</guid><description>&lt;p>Continuing with my &lt;a href="http://naveensrinivasan.com/category/security/">series&lt;/a> on Piracy, in this post I am going to be  exploring how someone with little advanced knowledge in CLR / Windows can bypass important function calls like  license validation.&lt;/p>
+&lt;p>Most of the developers assume just because the code is obfuscated nobody can bypass the licensing logic. I am going to be demonstrating how to bypass certain function call,this is very similar to “Set Next Statement ” in VS. I am not going to be discussing on how to fix this problem.&lt;/p></description><content type="html"><![CDATA[<p>Continuing with my <a href="http://naveensrinivasan.com/category/security/">series</a> on Piracy, in this post I am going to be  exploring how someone with little advanced knowledge in CLR / Windows can bypass important function calls like  license validation.</p>
 <p>Most of the developers assume just because the code is obfuscated nobody can bypass the licensing logic. I am going to be demonstrating how to bypass certain function call,this is very similar to “Set Next Statement ” in VS. I am not going to be discussing on how to fix this problem.</p>
 <p>Here is a sample code.</p>
 <p>[sourcecode language=”csharp”]</p>
@@ -5286,7 +5382,7 @@ Most of the developers assume just because the code is obfuscated nobody can byp
 <p>Now we have managed to bypass the call to Console.WriteLine and here is my output .</p>
 <p><a href="http://104.197.135.42/wp-content/uploads/2010/06/console1.jpg"><!-- raw HTML omitted --></a></p>
 <p>So the key takeaway is to understand the working  of the platform closer to the metal, which can help us write better and secure code.</p>
-]]></content></item><item><title>Using Windows Error Reporting (WER) API in managed code to generate memory dump</title><link>/?p=750/</link><pubDate>Thu, 10 Jun 2010 03:01:09 +0000</pubDate><guid>/?p=750/</guid><description>The WER is a pretty cool technology from Microsoft for collecting memory dumps on process crash/ hang. This can be extended to generate on demand when the application needs to. The usual reason for getting a memory dump could be based on certain conditions, for example, the customer feels the application is slow and would want to send the information to WinQual (WER server). If the application happens to be installed on hundreds / thousands of boxes then its not going to be possible to get from individual customers, the best bet is WER.</description><content type="html"><![CDATA[<p>The WER is a pretty cool technology from Microsoft for collecting memory dumps on process crash/ hang. This can be extended to generate on demand when the application needs to. The usual reason for getting a memory dump could be based on certain conditions, for example, the customer feels the application is slow and would want to send the information to WinQual (WER server). If the application happens to be installed on hundreds / thousands of boxes then its not going to be possible to get from individual customers, the best bet is WER. To do this here is an <a href="http://msdn.microsoft.com/en-us/library/bb513635%28VS.85%29.aspx">API</a>. But this is unmanaged API and I didn’t see one for managed code. FYI this would work only on Vista + systems, it will not work on XP.</p>
+]]></content></item><item><title>Using Windows Error Reporting (WER) API in managed code to generate memory dump</title><link>/?p=750/</link><pubDate>Thu, 10 Jun 2010 03:01:09 +0000</pubDate><guid>/?p=750/</guid><description>&lt;p>The WER is a pretty cool technology from Microsoft for collecting memory dumps on process crash/ hang. This can be extended to generate on demand when the application needs to. The usual reason for getting a memory dump could be based on certain conditions, for example, the customer feels the application is slow and would want to send the information to WinQual (WER server). If the application happens to be installed on hundreds / thousands of boxes then its not going to be possible to get from individual customers, the best bet is WER. To do this here is an &lt;a href="http://msdn.microsoft.com/en-us/library/bb513635%28VS.85%29.aspx">API&lt;/a>. But this is unmanaged API and I didn’t see one for managed code. FYI this would work only on Vista + systems, it will not work on XP.&lt;/p></description><content type="html"><![CDATA[<p>The WER is a pretty cool technology from Microsoft for collecting memory dumps on process crash/ hang. This can be extended to generate on demand when the application needs to. The usual reason for getting a memory dump could be based on certain conditions, for example, the customer feels the application is slow and would want to send the information to WinQual (WER server). If the application happens to be installed on hundreds / thousands of boxes then its not going to be possible to get from individual customers, the best bet is WER. To do this here is an <a href="http://msdn.microsoft.com/en-us/library/bb513635%28VS.85%29.aspx">API</a>. But this is unmanaged API and I didn’t see one for managed code. FYI this would work only on Vista + systems, it will not work on XP.</p>
 <p>Here is the basic PInvoke for creating dump and submitting a report. I am also using it along with the watsonbuckets that I had <a href="http://naveensrinivasan.com/2010/04/24/exploring-unhandledexception-in-net-and-watson-buckets/">blogged</a> about.</p>
 <p>[sourcecode language=”csharp”]</p>
 <p>internal enum WER_CONSENT</p>
@@ -5468,7 +5564,7 @@ Most of the developers assume just because the code is obfuscated nobody can byp
 <p>[/sourcecode]</p>
 <p>In the above code ,I am using this within a windows form to create a memory dump when an exception is thrown. The GetWatson bucket and the clr hosting interface is just to get the watson bucket information from clr. This can even be extended to attach a custom log file. How cool is this. Here is the call-stack for the above exception</p>
 <p><a href="http://104.197.135.42/wp-content/uploads/2010/06/wer12.jpg"><!-- raw HTML omitted --></a></p>
-]]></content></item><item><title>Identifying High CPU in GC (.NET) because of LOH – using Windbg</title><link>/?p=40/</link><pubDate>Mon, 15 Feb 2010 04:57:22 +0000</pubDate><guid>/?p=40/</guid><description>I am sure most of us are aware that one of the common reasons for High CPU usage .NET is because of, percentage time spent on GC is high. There are lot of write up about this. Tess has amazing blog post on this specifically, which explains in detail how to identify the symptoms. But one thing that I want share was the experience I had ,where in i could identify the real call stack which was causing allocation on LOH by have a break-point on the CLR Garbage collector itself.</description><content type="html"><![CDATA[<p>I am sure most of us are aware that one of the common reasons for High CPU usage .NET is because of, percentage time spent on GC is high. There are lot of write up about this. <!-- raw HTML omitted -->Tess<!-- raw HTML omitted --> has amazing blog post  on this specifically, which explains in detail how to identify the symptoms. But one thing that I want share was the experience I had ,where in i could identify the real call stack which was causing allocation on LOH by have a break-point on the CLR Garbage collector itself. I am going to assume that you are aware of CLR GC and LOH and basic debugging using windbg.</p>
+]]></content></item><item><title>Identifying High CPU in GC (.NET) because of LOH – using Windbg</title><link>/?p=40/</link><pubDate>Mon, 15 Feb 2010 04:57:22 +0000</pubDate><guid>/?p=40/</guid><description>&lt;p>I am sure most of us are aware that one of the common reasons for High CPU usage .NET is because of, percentage time spent on GC is high. There are lot of write up about this. &lt;!-- raw HTML omitted -->Tess&lt;!-- raw HTML omitted --> has amazing blog post  on this specifically, which explains in detail how to identify the symptoms. But one thing that I want share was the experience I had ,where in i could identify the real call stack which was causing allocation on LOH by have a break-point on the CLR Garbage collector itself. I am going to assume that you are aware of CLR GC and LOH and basic debugging using windbg.&lt;/p></description><content type="html"><![CDATA[<p>I am sure most of us are aware that one of the common reasons for High CPU usage .NET is because of, percentage time spent on GC is high. There are lot of write up about this. <!-- raw HTML omitted -->Tess<!-- raw HTML omitted --> has amazing blog post  on this specifically, which explains in detail how to identify the symptoms. But one thing that I want share was the experience I had ,where in i could identify the real call stack which was causing allocation on LOH by have a break-point on the CLR Garbage collector itself. I am going to assume that you are aware of CLR GC and LOH and basic debugging using windbg.</p>
 <p>FYI the Perfmon counter like “% Time spent in GC”, “Large Object Heap size” can identify we have an issue with allocation in LOH. But this only indicates there is a problem in High allocations that’s causing  GC to work hard and in turn causing high CPU usage . But does not point where the exact problem is .If there is a large code base and all of sudden if there is an issue like this it is hard to pinpoint where the root cause of the problem.</p>
 <p>I am going to walk through an example on a button click the code allocates objects on LOH and identify it using windbg.</p>
 <p><!-- raw HTML omitted -->using <!-- raw HTML omitted -->System;</p>
@@ -5594,8 +5690,8 @@ Most of the developers assume just because the code is obfuscated nobody can byp
 </blockquote>
 <p>Bingo now at the bottom of the stack we can see the “allocate_large_object” and on the top of the stack it is the managed code that we wrote “AllocateinLOH”.  Now we have solved the reason behind the High CPU usage in GC because of LOH.</p>
 <p>The “allocate_large_object” is not documented by Microsoft as a public API and I don’t know whether the name would be same going forward from .NET framework 4.0.  This holds good until .NET framework 3.5. The idea behind this is just digging in to the framework can give us some information which has saved us valuable time and effort.</p>
-]]></content></item><item><title>Function hit count using Pseudo-Register in Windbg</title><link>/?p=30/</link><pubDate>Sat, 13 Feb 2010 01:41:01 +0000</pubDate><guid>/?p=30/</guid><description>What if we want to know the number of times a function was invoked. We can have “.echo” or “.printf” on break-point of a function and count the output manually. The better way to do this is using pseudo-registers.
-In my previous post I had mentioned about alias inside the debugger. The debugger also provides User defined Pseudo-Registers for scripting inside the debugger. We can use them to manipulate values within our scripts.</description><content type="html"><![CDATA[<p>What if we want to know the number of times a function was invoked. We can have “.echo” or “.printf” on break-point of a function and count the output manually. The better way to do this is using pseudo-registers.</p>
+]]></content></item><item><title>Function hit count using Pseudo-Register in Windbg</title><link>/?p=30/</link><pubDate>Sat, 13 Feb 2010 01:41:01 +0000</pubDate><guid>/?p=30/</guid><description>&lt;p>What if we want to know the number of times a function was invoked. We can have “.echo” or “.printf” on break-point of a function and count the output manually. The better way to do this is using pseudo-registers.&lt;/p>
+&lt;p>In my &lt;!-- raw HTML omitted -->previous&lt;!-- raw HTML omitted --> post I had mentioned about alias inside the debugger. The debugger also provides User defined Pseudo-Registers for scripting inside the debugger. We can use them to manipulate values within our scripts. There are 20 of them from $t0,$t1.. $t19. These are pre-defined names that we cannot change.&lt;/p></description><content type="html"><![CDATA[<p>What if we want to know the number of times a function was invoked. We can have “.echo” or “.printf” on break-point of a function and count the output manually. The better way to do this is using pseudo-registers.</p>
 <p>In my <!-- raw HTML omitted -->previous<!-- raw HTML omitted --> post I had mentioned about alias inside the debugger. The debugger also provides User defined Pseudo-Registers for scripting inside the debugger. We can use them to manipulate values within our scripts. There are 20 of them from $t0,$t1.. $t19. These are pre-defined names that we cannot change.</p>
 <p>The syntax to assign value to the register is “r”</p>
 <blockquote>
@@ -5613,8 +5709,8 @@ In my previous post I had mentioned about alias inside the debugger. The debugge
 <p>Evaluate expression: 5 = 00000000`00000005</p>
 </blockquote>
 <p>There quite a few places we can use these inside the debugger. Example we could calculate the total size of multiple instances of an object type inside the debugger. That is we could get !objsize of each instance for type DataTable and then total it, to get the total memory consumption of datatable within our process.</p>
-]]></content></item><item><title>Conditional Breakpoint in .NET using Windbg</title><link>/?p=26/</link><pubDate>Thu, 11 Feb 2010 03:50:00 +0000</pubDate><guid>/?p=26/</guid><description>With my few years of production debugging .NET code ,one thing that has really helped me a lot is Windbg. Lot us of know that using sos, sosex and Windbg we should be able to troubleshoot most of the .NET Code. But certain tips / tricks makes us productive in those crucial moments. I am assuming that you are aware of basic usage of sos and windbg.
-We know by using !</description><content type="html"><![CDATA[<p>With my few years of production debugging .NET code ,one thing that has really helped me a lot is Windbg. Lot us of know that using sos, sosex and Windbg we should be able to troubleshoot most of the .NET Code. But certain tips / tricks makes us productive in those crucial moments. I am assuming that you are aware of basic usage of sos and windbg.</p>
+]]></content></item><item><title>Conditional Breakpoint in .NET using Windbg</title><link>/?p=26/</link><pubDate>Thu, 11 Feb 2010 03:50:00 +0000</pubDate><guid>/?p=26/</guid><description>&lt;p>With my few years of production debugging .NET code ,one thing that has really helped me a lot is Windbg. Lot us of know that using sos, sosex and Windbg we should be able to troubleshoot most of the .NET Code. But certain tips / tricks makes us productive in those crucial moments. I am assuming that you are aware of basic usage of sos and windbg.&lt;/p>
+&lt;p>We know by using !bpmd command we can stick in a break-point on a method. But the issue is we would want to break in to the debugger only on a certain condition, very similar to VS.NET break-point condition.&lt;/p></description><content type="html"><![CDATA[<p>With my few years of production debugging .NET code ,one thing that has really helped me a lot is Windbg. Lot us of know that using sos, sosex and Windbg we should be able to troubleshoot most of the .NET Code. But certain tips / tricks makes us productive in those crucial moments. I am assuming that you are aware of basic usage of sos and windbg.</p>
 <p>We know by using !bpmd command we can stick in a break-point on a method. But the issue is we would want to break in to the debugger only on a certain condition, very similar to VS.NET break-point condition.</p>
 <p>Here is the sample code that i am going to be using to set the conditional break-point. This is a simple Winforms app.</p>
 <!-- raw HTML omitted -->
@@ -5686,8 +5782,9 @@ We know by using !</description><content type="html"><![CDATA[<p>With my few yea
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-]]></content></item><item><title>Identify and Patch .NET Code using Windbg</title><link>/?p=19/</link><pubDate>Sun, 07 Feb 2010 13:30:13 +0000</pubDate><guid>/?p=19/</guid><description>The last week was really an interesting one with debugging production code. I was debugging a Winforms application which was using .NET framework 3.5 version. The real problem was with the latest release of the code, there was bug which caused certain elements on the UI not to be displayed. This is was High priority bug and very important to the business.
-The code that was causing this bug was an integer variable inside a class.</description><content type="html"><![CDATA[<p> </p>
+]]></content></item><item><title>Identify and Patch .NET Code using Windbg</title><link>/?p=19/</link><pubDate>Sun, 07 Feb 2010 13:30:13 +0000</pubDate><guid>/?p=19/</guid><description>&lt;p> &lt;/p>
+&lt;p>The last week was really an interesting one with debugging production code. I was debugging a Winforms application which was using .NET framework 3.5 version. The real problem was with the latest release of the code, there was bug which caused certain elements on the UI not to be displayed. This is was High priority bug and very important to the business.&lt;/p>
+&lt;p>The code that was causing this bug was an integer variable inside a class.&lt;/p></description><content type="html"><![CDATA[<p> </p>
 <p>The last week was really an interesting one with debugging production code. I was debugging a Winforms application which was using .NET framework 3.5 version. The real problem was with the latest release of the code, there was bug which caused certain elements on the UI not to be displayed. This is was High priority bug and very important to the business.</p>
 <p>The code that was causing this bug was an integer variable inside a class.</p>
 <!-- raw HTML omitted -->
@@ -5724,8 +5821,9 @@ total 1 objects</p>
 <p>Voila here is the output of !dumpobj after updating the memory</p>
 <p><strong>000007ff002683d8  4000005      1d0         System.Int32  1 instance              100 Foo</strong></p>
 <p>Now we could make an emergency patch and be certain the patch would work with the fix already tested in production using the debugger. Having windbg in your toolbox is always saves a lot of time.  </p>
-]]></content></item><item><title>Home cooked web monitoring use Rx</title><link>/?p=14/</link><pubDate>Wed, 03 Feb 2010 03:07:22 +0000</pubDate><guid>/?p=14/</guid><description>One of the key things in software is to write succinct , declarative and asynchronous code. The answer to that is Reactive Extensions for .NET I have been digging into Rx for sometime now. Though there isn’t much of documentation I have been kind of successful in getting certain things done with it.
-One of requirement that came up from our Operations was to monitor some websites and notify someone if the site was not accessible.</description><content type="html"><![CDATA[<p>One of the key things in software is to write succinct , declarative and asynchronous code. The answer to that is <!-- raw HTML omitted -->Reactive Extensions for .NET<!-- raw HTML omitted --> </p>
+]]></content></item><item><title>Home cooked web monitoring use Rx</title><link>/?p=14/</link><pubDate>Wed, 03 Feb 2010 03:07:22 +0000</pubDate><guid>/?p=14/</guid><description>&lt;p>One of the key things in software is to write succinct , declarative and asynchronous code. The answer to that is &lt;!-- raw HTML omitted -->Reactive Extensions for .NET&lt;!-- raw HTML omitted --> &lt;/p>
+&lt;p>I have been digging into Rx for sometime now. Though there isn’t much of documentation I have been kind of successful in getting certain things done with it.&lt;/p>
+&lt;p>One of requirement that came up from our Operations was to monitor some websites and notify someone if the site was not accessible. But the added constraints to this were check for the site status only at a certain interval and report failure only if it was more than certain percentage within a certain duration.&lt;/p></description><content type="html"><![CDATA[<p>One of the key things in software is to write succinct , declarative and asynchronous code. The answer to that is <!-- raw HTML omitted -->Reactive Extensions for .NET<!-- raw HTML omitted --> </p>
 <p>I have been digging into Rx for sometime now. Though there isn’t much of documentation I have been kind of successful in getting certain things done with it.</p>
 <p>One of requirement that came up from our Operations was to monitor some websites and notify someone if the site was not accessible. But the added constraints to this were check for the site status only at a certain interval and report failure only if it was more than certain percentage within a certain duration.</p>
 <p>So it was like check the site status every 5 seconds , buffer the results for a minute and in the buffered response if it had more 3  failures then tweet someone about it.</p>
@@ -5736,7 +5834,7 @@ One of requirement that came up from our Operations was to monitor some websites
 <p>The “from time in Observable.Interval(TimeSpan.FromSeconds(5)” is for ensuring that an Observable is generated every 5 seconds to check the status of the website. In the next line the code creates a web request.</p>
 <p>Using the FromAsyncPattern I was able to reduce all the plumbing code to handle async i/o calls for the web request.  The materialize is for the sequence to continue even if there is an exception. Here is an good write up on <!-- raw HTML omitted -->Materialize<!-- raw HTML omitted -->. And the rest is just the usual Linq where the code filters Notification type of error.</p>
 <p>This was a fun exercise. I will continue to explore Rx and blog about it.</p>
-]]></content></item><item><title>Resharper Template for F#</title><link>/?p=6/</link><pubDate>Mon, 01 Feb 2010 19:06:03 +0000</pubDate><guid>/?p=6/</guid><description>I have been hacking F# lately and I am big fan of ReSharper. So why not create a few Live Templates for the things i do daily in F#.
-Download R# live template for F#. I am sure there are few more things that can be part of this template. I have posted the code in MSDN Code gallery so that others can find and contribute.</description><content type="html"><![CDATA[<p>I have been hacking F# lately and I am big fan of ReSharper. So why not create a few Live Templates for the things i do daily in F#.</p>
+]]></content></item><item><title>Resharper Template for F#</title><link>/?p=6/</link><pubDate>Mon, 01 Feb 2010 19:06:03 +0000</pubDate><guid>/?p=6/</guid><description>&lt;p>I have been hacking F# lately and I am big fan of ReSharper. So why not create a few Live Templates for the things i do daily in F#.&lt;/p>
+&lt;p>&lt;a href="http://bit.ly/dvXmEH">Download&lt;/a> R# live template for F#. I am sure there are few more things that can be part of this template. I have posted the code in MSDN Code gallery so that others can find and contribute.&lt;/p></description><content type="html"><![CDATA[<p>I have been hacking F# lately and I am big fan of ReSharper. So why not create a few Live Templates for the things i do daily in F#.</p>
 <p><a href="http://bit.ly/dvXmEH">Download</a> R# live template for F#. I am sure there are few more things that can be part of this template. I have posted the code in MSDN Code gallery so that others can find and contribute.</p>
 ]]></content></item></channel></rss>

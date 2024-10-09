@@ -1,9 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mono on naveen srinivasan</title><link>/categories/mono/</link><description>Recent content in Mono on naveen srinivasan</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 17 Nov 2010 02:01:13 +0000</lastBuildDate><atom:link href="/categories/mono/index.xml" rel="self" type="application/rss+xml"/><item><title>Decoding clr20r3 .NET exception – using mono cecil</title><link>/?p=1208/</link><pubDate>Wed, 17 Nov 2010 02:01:13 +0000</pubDate><guid>/?p=1208/</guid><description>I have often seen Devs trying to figure out the cause of the app crash without a memory dump. The only information that is available to analyze is the Windows Error Reporting message in the event viewer which would have “Event Name: CLR20r3” along with Watson bucket information like this.
-Fault bucket , type 0
-Event Name: CLR20r3
-Response: Not available
-Cab Id: 0
-Problem signature:
-P1: unhandledexception.exe
-P2: 1.0.0.0</description></item><item><title>Customizing Witty Twitter Client Part 1- using C# as Compiler Service</title><link>/?p=840/</link><pubDate>Sun, 20 Jun 2010 03:28:46 +0000</pubDate><guid>/?p=840/</guid><description>This is going to be a multipart blog post where I am going to be demonstrating how I have customized This is going to be a multipart blog post where I am going to be demonstrating how I have customized twitter client for my need. I chose Witty because it is the only OSS .NET twitter client I know of.
-One of the reasons for customizing is primarily using C# as compiler service to extend it for my needs dynamically.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mono on naveen srinivasan</title><link>/categories/mono/</link><description>Recent content in Mono on naveen srinivasan</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 17 Nov 2010 02:01:13 +0000</lastBuildDate><atom:link href="/categories/mono/index.xml" rel="self" type="application/rss+xml"/><item><title>Decoding clr20r3 .NET exception – using mono cecil</title><link>/?p=1208/</link><pubDate>Wed, 17 Nov 2010 02:01:13 +0000</pubDate><guid>/?p=1208/</guid><description>&lt;p>I have often seen Devs trying to figure out the cause of the app crash without a memory dump. The only information that is available to analyze is the Windows Error Reporting message in the event viewer which would have “Event Name: CLR20r3” along with &lt;a href="http://naveensrinivasan.com/2010/04/24/exploring-unhandledexception-in-net-and-watson-buckets/">Watson bucket&lt;/a> information like this.&lt;/p>
+&lt;blockquote>
+&lt;p>Fault bucket , type 0&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Event Name: CLR20r3&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Response: Not available&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Cab Id: 0&lt;/p>
+&lt;p>Problem signature:&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>P1: unhandledexception.exe&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>P2: 1.0.0.0&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>P3: 4ce1e0f1&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>P4: LibraryCode&lt;/p></description></item><item><title>Customizing Witty Twitter Client Part 1- using C# as Compiler Service</title><link>/?p=840/</link><pubDate>Sun, 20 Jun 2010 03:28:46 +0000</pubDate><guid>/?p=840/</guid><description>&lt;p>This is going to be a multipart blog post where I am going to be demonstrating how I have customized &lt;a href="http://code.google.com/p/wittytwitter/">This is going to be a multipart blog post where I am going to be demonstrating how I have customized&lt;/a> twitter client for my need. I chose Witty because it is the only OSS .NET twitter client I know of.&lt;/p>
+&lt;p>One of the reasons for customizing is primarily using C# as compiler service to extend it for my needs dynamically. For example I follow this twitter list &lt;a href="http://twitter.com/shanselman/programmers">http://twitter.com/shanselman/programmers&lt;/a> , it’s a cool list that Scott maintains, thanks to him. But there is one person in this list who keeps tweeting about weight loss, which I am least interested and I didn’t have control over it but to ignore, until now. And it is always fun to write  software for your daily needs, which for me saves time.  Thanks to Mono for C# as compiler service. FYI I have shown a simple usage of Mono Csharp compiler service in this &lt;a href="http://naveensrinivasan.com/2010/05/11/using-c-compiler-as-a-service-in-f-poshconsole-powershell/">post&lt;/a>.&lt;/p></description></item></channel></rss>

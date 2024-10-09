@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Adventcode on naveen srinivasan</title><link>/tags/adventcode/</link><description>Recent content in Adventcode on naveen srinivasan</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 12 Jan 2016 22:33:14 +0000</lastBuildDate><atom:link href="/tags/adventcode/index.xml" rel="self" type="application/rss+xml"/><item><title>Solution to Adventcode Day 7 in FSharp</title><link>/?p=2641/</link><pubDate>Tue, 12 Jan 2016 22:33:14 +0000</pubDate><guid>/?p=2641/</guid><description>Here is my solution to adventcode problem 7 using F#.
-I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s and these depend on other gates.
-The puzzle starts of with simple problem
-123 -&amp;gt; x 456 -&amp;gt; y ``Here is my solution to adventcode problem 7 using F#. I am using the adventofcode to improve my functional programming skills.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Adventcode on naveen srinivasan</title><link>/tags/adventcode/</link><description>Recent content in Adventcode on naveen srinivasan</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 12 Jan 2016 22:33:14 +0000</lastBuildDate><atom:link href="/tags/adventcode/index.xml" rel="self" type="application/rss+xml"/><item><title>Solution to Adventcode Day 7 in FSharp</title><link>/?p=2641/</link><pubDate>Tue, 12 Jan 2016 22:33:14 +0000</pubDate><guid>/?p=2641/</guid><description>&lt;p>Here is my solution to &lt;!-- raw HTML omitted -->adventcode problem 7 &lt;!-- raw HTML omitted --> using F#.&lt;/p>
+&lt;p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.&lt;/p>
+&lt;p>The puzzle starts of with simple problem&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>123 -&amp;gt; x&lt;/code>&lt;/li>
+&lt;li>&lt;code>456 -&amp;gt; y&lt;/code>&lt;/li>
+&lt;li>``Here is my solution to &lt;!-- raw HTML omitted -->adventcode problem 7 &lt;!-- raw HTML omitted --> using F#.&lt;/li>
+&lt;/ul>
+&lt;p>I am using the adventofcode to improve my functional programming skills. The gist of the problem is to solve the logic gates which is represented as 16 bit integer’s  and these depend on other gates.&lt;/p></description></item></channel></rss>

@@ -1,20 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SOSEX on naveen srinivasan</title><link>/categories/sosex/</link><description>Recent content in SOSEX on naveen srinivasan</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 06 Dec 2010 00:16:53 +0000</lastBuildDate><atom:link href="/categories/sosex/index.xml" rel="self" type="application/rss+xml"/><item><title>Why isn’t the !bpmd in sos / windbg not working?</title><link>/?p=1271/</link><pubDate>Mon, 06 Dec 2010 00:16:53 +0000</pubDate><guid>/?p=1271/</guid><description>I recently noticed another blog post refer to one of my post. The issue was, sos wasn’t enabling the break-points on non-jitted functions. The classic example being “Main”. Thanks to Steve I have been using sosex and not sos for setting break-points.
-From my previous post you can understand how CLR is using clrn/CLRNotificationException to notify sos/sosex on JIT. With this information when I looked at the rotor code, I noticed an interesting member variable “g_dacNotificationFlags”.</description></item><item><title>Using sosex within windbg to understand IL and Assembly code</title><link>/?p=1261/</link><pubDate>Tue, 30 Nov 2010 01:33:25 +0000</pubDate><guid>/?p=1261/</guid><description>Sometimes when debugging managed code within the debugger I would like to see the C# code ,the IL translation for the managed code and the Assembly code for the IL. For example I recently learned that callvirt MSIL instruction must do the null-check before invoking method.
-C:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication13Program.cs @ 18:
-00bc26d8 8b4dec mov ecx,dword ptr [ebp-14h]
-00bc26db 3909 cmp dword ptr [ecx],ecx //NULL Check
-00bc26dd ff1508a82900 call dword ptr ds:[29A808h] (System.</description></item><item><title>Debugging Generic System.Nullable within Windbg</title><link>/?p=947/</link><pubDate>Thu, 08 Jul 2010 03:58:51 +0000</pubDate><guid>/?p=947/</guid><description>In this post I am going to unravel the mystery of debugging the Nullable within Windbg in .NET 3.5 and also compare it with .NET 4.0. Here is the sample code and it is compiled in .NET 3.5
-[sourcecode language=”csharp”]
-using System;
-namespace ConsoleApplication
-{
-class Program
-{
-Int32? test;
-int i = 10;
-static void Main(string[] args)
-{
-Nullable
-Int32? i = 10;
-Object o = 10;
-var p = new Program() { test = 20 };</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SOSEX on naveen srinivasan</title><link>/categories/sosex/</link><description>Recent content in SOSEX on naveen srinivasan</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 06 Dec 2010 00:16:53 +0000</lastBuildDate><atom:link href="/categories/sosex/index.xml" rel="self" type="application/rss+xml"/><item><title>Why isn’t the !bpmd in sos / windbg not working?</title><link>/?p=1271/</link><pubDate>Mon, 06 Dec 2010 00:16:53 +0000</pubDate><guid>/?p=1271/</guid><description>&lt;p>I recently noticed another blog &lt;!-- raw HTML omitted -->post &lt;!-- raw HTML omitted -->refer to one of my &lt;!-- raw HTML omitted -->post&lt;!-- raw HTML omitted -->. The issue was, sos wasn’t enabling the break-points on non-jitted functions. The classic example being “Main”.  Thanks to &lt;!-- raw HTML omitted -->Steve &lt;!-- raw HTML omitted --> I have been using sosex and not sos for setting break-points.&lt;/p>
+&lt;p>From my previous &lt;!-- raw HTML omitted -->post &lt;!-- raw HTML omitted --> you can understand how CLR is using clrn/CLRNotificationException to notify sos/sosex on JIT. With this information when I looked at the rotor &lt;!-- raw HTML omitted -->code&lt;!-- raw HTML omitted -->, I noticed an interesting member variable “g_dacNotificationFlags”. So I decided to check the value of this variable when using !bpmd from sos and !mbm from sosex.&lt;/p></description></item><item><title>Using sosex within windbg to understand IL and Assembly code</title><link>/?p=1261/</link><pubDate>Tue, 30 Nov 2010 01:33:25 +0000</pubDate><guid>/?p=1261/</guid><description>&lt;p>Sometimes when debugging managed code within the debugger I would like to see the C# code ,the IL translation for the managed code and the Assembly code for the IL. For example I recently learned that callvirt MSIL instruction must do the null-check before invoking method.&lt;/p>
+&lt;blockquote>
+&lt;p>C:UsersnaveenDocumentsVisual Studio 2010ProjectsConsoleApplication13Program.cs @ 18:&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>00bc26d8 8b4dec          mov     ecx,dword ptr [ebp-14h]&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>00bc26db 3909            cmp     dword ptr [ecx],ecx //NULL Check&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>00bc26dd ff1508a82900    call    dword ptr ds:[29A808h] (System.String.ToLower(), mdToken: 0600031d)&lt;/p></description></item><item><title>Debugging Generic System.Nullable within Windbg</title><link>/?p=947/</link><pubDate>Thu, 08 Jul 2010 03:58:51 +0000</pubDate><guid>/?p=947/</guid><description>&lt;p>In this post I am going to unravel the mystery of debugging the Nullable&lt;!-- raw HTML omitted --> within Windbg in .NET 3.5 and also compare it with .NET 4.0. Here is the sample code and it is compiled in .NET 3.5&lt;/p>
+&lt;p>[sourcecode language=”csharp”]&lt;/p>
+&lt;p>using System;&lt;/p>
+&lt;p>namespace ConsoleApplication&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>class Program&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>Int32? test;&lt;/p>
+&lt;p>int i = 10;&lt;/p>
+&lt;p>static void Main(string[] args)&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>Nullable&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>Int32? i = 10;&lt;/p>
+&lt;p>Object o = 10;&lt;/p></description></item></channel></rss>

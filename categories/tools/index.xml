@@ -1,3 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on naveen srinivasan</title><link>/categories/tools/</link><description>Recent content in Tools on naveen srinivasan</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 28 Mar 2016 00:57:41 +0000</lastBuildDate><atom:link href="/categories/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>How I try avoid using mouse</title><link>/?p=2901/</link><pubDate>Mon, 28 Mar 2016 00:57:41 +0000</pubDate><guid>/?p=2901/</guid><description>Like most of the Dev’s I love using my Keyboard more than mouse. I am big vim fan and have been using vim for over 7-8 years. I still consider myself novice.
-Here are the ways I manage to use keyboard over mouse
-Shortcat – Great app get rids of use mouse in OSX – This is a Paid App , which IMHO is the best investment for me. There is also a trial version.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tools on naveen srinivasan</title><link>/categories/tools/</link><description>Recent content in Tools on naveen srinivasan</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 28 Mar 2016 00:57:41 +0000</lastBuildDate><atom:link href="/categories/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>How I try avoid using mouse</title><link>/?p=2901/</link><pubDate>Mon, 28 Mar 2016 00:57:41 +0000</pubDate><guid>/?p=2901/</guid><description>&lt;p>Like most of the Dev’s I love using my Keyboard more than mouse. I am big vim fan and have been using vim for over 7-8 years. I still consider myself novice.&lt;/p>
+&lt;p>Here are the ways I manage to use keyboard over mouse&lt;/p>
+&lt;ul>
+&lt;li>&lt;!-- raw HTML omitted -->Shortcat&lt;!-- raw HTML omitted --> – Great app get rids of use mouse in OSX – This is a Paid App , which IMHO is the best investment for me. There is also a trial version.&lt;/li>
+&lt;li>MacVim – I have been using MacVim as my primary text editor.&lt;/li>
+&lt;li>&lt;!-- raw HTML omitted -->cVim&lt;!-- raw HTML omitted --> – Vim features within chrome. The best part is it allows custom vimrc.&lt;/li>
+&lt;li>IntelliJ Vim Plugin – &lt;!-- raw HTML omitted -->&lt;a href="https://github.com/JetBrains/ideavim">https://github.com/JetBrains/ideavim&lt;/a>&lt;!-- raw HTML omitted --> also allow vimrc&lt;/li>
+&lt;li>Here is a plugin &lt;!-- raw HTML omitted -->&lt;a href="https://github.com/athiele/key-promoter-fork">https://github.com/athiele/key-promoter-fork&lt;/a>&lt;!-- raw HTML omitted --> for IntelliJ – show hints when using the mouse for something which could be done with the keyboard.&lt;/li>
+&lt;li>&lt;!-- raw HTML omitted -->Spectacle&lt;!-- raw HTML omitted --> – For window management in OSX with keyboard.&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;p> &lt;/p></description></item></channel></rss>
